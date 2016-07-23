@@ -11,3 +11,5 @@ __version__= '1.0'
 from flask import Blueprint
 
 main = Blueprint('main',__name__)
+
+from . import views,forms
