@@ -10,7 +10,6 @@ __version__= '1.0'
 
 #! /usr/bin/env python
 import os
-import sys
 from app import create_app,db
 from app.models import User,Role
 from flask.ext.script import Manager,Shell

@@ -7,6 +7,7 @@ __author__ = 'Yang'
 __version__= '1.0'
 
 """
+
 from flask import Flask
 from flask.ext.bootstrap import Bootstrap
 from flask.ext.mail import Mail
