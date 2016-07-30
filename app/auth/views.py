@@ -5,7 +5,7 @@ from . import auth
 from .. import db
 from ..models import User
 from ..email import send_email
-from .forms import LoginForm, RegistrationForm
+from .forms import LoginForm, RegistrationForm,ChangePasswordForm
 
 
 @auth.before_app_request
@@ -82,4 +82,12 @@ def resend_confirmation():
     flash('A new confirmation email has been sent to you by email.')
     return redirect(url_for('main.index'))
 
+
+@auth.route('/change-password',methods=['GET','POST'])
+def change_password():
+    form = ChangePasswordForm()
+    if current_user.is_authenticated:
+        pass
+
+    return render_template('auth/change_password.html',form=form)
 
