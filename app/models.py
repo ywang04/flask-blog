@@ -53,7 +53,7 @@ class User(UserMixin,db.Model):
     def confirm(self,token):
         s = Serializer(current_app.config['SECRET_KEY'])
         try:
-            data = s.load(token)
+            data = s.loads(token)
         except:
             return False
         if data.get('confirm') != self.id:
