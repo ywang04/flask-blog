@@ -1,20 +1,12 @@
-#!/usr/bin/env
-# coding:utf-8
-"""
-Created on 26/07/2016 20:42
-
-__author__ = 'Yang'
-__version__= '1.0'
-
-"""
-
-from flask import render_template,redirect,request,url_for,flash
-from flask.ext.login import login_user,login_required,logout_user,current_user
+from flask import render_template, redirect, request, url_for, flash
+from flask.ext.login import login_user, logout_user, login_required, \
+    current_user
 from . import auth
-from ..models import User
-from .forms import LoginForm,RegistrationForm
 from .. import db
+from ..models import User
 from ..email import send_email
+from .forms import LoginForm, RegistrationForm
+
 
 @auth.before_app_request
 def before_request():
@@ -24,6 +16,7 @@ def before_request():
             and request.endpoint != 'static':
         return redirect(url_for('auth.unconfirmed'))
 
+
 @auth.route('/unconfirmed')
 def unconfirmed():
     if current_user.is_anonymous or current_user.confirmed:
@@ -31,16 +24,16 @@ def unconfirmed():
     return render_template('auth/unconfirmed.html')
 
 
-@auth.route('/login',methods=['GET','POST'])
+@auth.route('/login', methods=['GET', 'POST'])
 def login():
     form = LoginForm()
     if form.validate_on_submit():
         user = User.query.filter_by(email=form.email.data).first()
         if user is not None and user.verify_password(form.password.data):
-            login_user(user,form.remember_me.data)
+            login_user(user, form.remember_me.data)
             return redirect(request.args.get('next') or url_for('main.index'))
         flash('Invalid username or password.')
-    return render_template('auth/login.html',form = form)
+    return render_template('auth/login.html', form=form)
 
 
 @auth.route('/logout')
@@ -51,7 +44,7 @@ def logout():
     return redirect(url_for('main.index'))
 
 
-@auth.route('/register',methods=['GET','POST'])
+@auth.route('/register', methods=['GET', 'POST'])
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
@@ -61,10 +54,11 @@ def register():
         db.session.add(user)
         db.session.commit()
         token = user.generate_confirmation_token()
-        send_email(user.email,'Confirm Your Account','auth/email/confirm',user=user,token=token)
+        send_email(user.email, 'Confirm Your Account',
+                   'auth/email/confirm', user=user, token=token)
         flash('A confirmation email has been sent to you by email.')
-        return redirect(url_for('main.index'))
-    return render_template('auth/register.html',form=form)
+        return redirect(url_for('auth.login'))
+    return render_template('auth/register.html', form=form)
 
 
 @auth.route('/confirm/<token>')
@@ -83,7 +77,9 @@ def confirm(token):
 @login_required
 def resend_confirmation():
     token = current_user.generate_confirmation_token()
-    send_email(current_user.email,'Confirm Your Account',
-               'auth/email/confirm',user=current_user,token=token)
+    send_email(current_user.email, 'Confirm Your Account',
+               'auth/email/confirm', user=current_user, token=token)
     flash('A new confirmation email has been sent to you by email.')
     return redirect(url_for('main.index'))
+
+
