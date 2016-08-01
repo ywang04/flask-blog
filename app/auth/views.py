@@ -5,7 +5,7 @@ from . import auth
 from .. import db
 from ..models import User
 from ..email import send_email
-from .forms import LoginForm, RegistrationForm,ChangePasswordForm,PasswordResetForm
+from .forms import LoginForm, RegistrationForm,ChangePasswordForm,PasswordResetForm,PasswordResetRequestForm
 
 
 @auth.before_app_request
@@ -102,14 +102,37 @@ def change_password():
 
 
 @auth.route('/reset',methods=['GET','POST'])
-def password_reset_password():
-    form = PasswordResetForm()
+def password_reset_request():
+    #if the user is login
+    if not current_user.is_anonymous:
+        return redirect(url_for('main.index'))
+    form = PasswordResetRequestForm()
     if form.validate_on_submit():
         # to check whether this email has been registered before
-        user = User.query.filter_by(email=form.email.data)
+        user = User.query.filter_by(email=form.email.data).first()
         if user:
-            token = user.generate_confirmation_token()
-            send_email(form.email.data,'Reset Your Password','auth/email/reset_password',token=token)
+            token = user.generate_reset_token()
+            send_email(user.email,'Reset Your Password','auth/email/reset_password',user=user,token=token,
+                        next=request.args.get('next'))
+        flash('An email with instructions to reset your password has been sent to you.')
         return redirect(url_for('auth.login'))
-
     return render_template('auth/reset_password.html',form=form)
+
+@auth.route('/reset/<token>',methods=['GET','POST'])
+def password_reset(token):
+    #if the user is login
+    if not current_user.is_anonymous:
+        return redirect(url_for('main.index'))
+    form = PasswordResetForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        if user.reset_password(token,form.password.data):
+            flash('Your password has been updated.')
+            return redirect(url_for('auth.login'))
+        else:
+            flash('The reset link is invalid or has expired.')
+            return redirect(url_for('main.index'))
+    return render_template('auth/reset_password.html',form=form)
+
+
+
