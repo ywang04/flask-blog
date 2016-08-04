@@ -17,7 +17,6 @@ def index():
     return render_template('index.html')
 
 
-
 @main.route('/user/<username>')
 def user(username):
     user = User.query.filter_by(username=username).first()
@@ -25,3 +24,7 @@ def user(username):
         abort(404)
     return render_template('user.html',user=user)
 
+
+@main.route('/about')
+def about():
+    return render_template('about.html')
