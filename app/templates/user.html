@@ -18,6 +18,11 @@
     {% endif %}
     {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
     <p>Member since {{ moment(user.member_since).format('L') }}. Last seen {{ moment(user.last_seen).fromNow()}}.</p>
+    <p>
+
+        <a class="btn btn-default" href="{{ url_for('main.edit_profile') }}">Edit Profile</a>
+
+    </p>
 </div>
 {% endblock %}
 

@@ -9,7 +9,7 @@ __version__= '1.0'
 """
 
 from flask import render_template,abort,redirect,url_for,flash
-from flask.ext.login import current_user
+from flask.ext.login import current_user,login_required
 from . import main
 from ..models import User
 from .forms import EditProfile
@@ -21,6 +21,7 @@ def index():
 
 
 @main.route('/user/<username>')
+@login_required
 def user(username):
     user = User.query.filter_by(username=username).first()
     if user is None:
@@ -28,6 +29,7 @@ def user(username):
     return render_template('user.html',user=user)
 
 @main.route('/edit-profile',methods=['GET','POST'])
+@login_required
 def edit_profile():
     form = EditProfile()
     if form.validate_on_submit():
