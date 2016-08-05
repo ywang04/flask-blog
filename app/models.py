@@ -69,6 +69,7 @@ class User(UserMixin,db.Model):
     confirmed = db.Column(db.BOOLEAN,default=False)
     name = db.Column(db.String(64))
     location = db.Column(db.String(64))
+    #it is blob on db side
     about_me = db.Column(db.Text())
     member_since = db.Column(db.DateTime(),default=datetime.utcnow)
     last_seen = db.Column(db.DateTime(),default=datetime.utcnow)
