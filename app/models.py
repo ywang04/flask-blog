@@ -7,6 +7,7 @@ __author__ = 'Yang'
 __version__= '1.0'
 
 """
+from datetime import datetime
 import hashlib
 from datetime import datetime
 from werkzeug.security import generate_password_hash,check_password_hash
@@ -66,6 +67,7 @@ class User(UserMixin,db.Model):
     email = db.Column(db.String(64),unique=True,index=True)
     username = db.Column(db.String(64), unique=True, index=True)
     password_hash = db.Column(db.String(128))
+    #roles is the name of table Role in database
     role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
     confirmed = db.Column(db.BOOLEAN,default=False)
     name = db.Column(db.String(64))
@@ -75,6 +77,7 @@ class User(UserMixin,db.Model):
     member_since = db.Column(db.DateTime(),default=datetime.utcnow)
     last_seen = db.Column(db.DateTime(),default=datetime.utcnow)
     avatar_hash = db.Column(db.String(32))
+    posts = db.relationship('Post',backref='author',lazy='dynamic')
 
 
     def __init__(self, **kwargs):
@@ -192,3 +195,9 @@ def load_user(user_id):
     return User.query.get(int(user_id))
 
 
+class Post(db.Model):
+    __tablename__ = 'posts'
+    id = db.Column(db.Integer,primary_key=True)
+    body = db.Column(db.Text)
+    timestamp = db.Column(db.DateTime,index=True,default=datetime.utcnow)
+    author_id = db.Column(db.Integer,db.ForeignKey('users.id'))
