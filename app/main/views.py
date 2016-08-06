@@ -11,14 +11,22 @@ __version__= '1.0'
 from flask import render_template,abort,redirect,url_for,flash
 from flask.ext.login import current_user,login_required
 from . import main
-from ..models import User,Role
-from .forms import EditProfile,EditProfileAdminForm
+from ..models import User,Role,Permission,Post
+from .forms import EditProfile,EditProfileAdminForm,PostForm
 from .. import db
 from ..decorators import admin_required
 
-@main.route('/')
+@main.route('/',methods=['GET','POST'])
 def index():
-    return render_template('index.html')
+    form = PostForm()
+    if current_user.can(Permission.WRITE_ARTICLES) and \
+            form.validate_on_submit():
+        post = Post(body=form.body.data,author=current_user._get_current_object())
+        db.session.add(post)
+        flash('Your minds have been posted.')
+        return redirect(url_for('main.index'))
+    posts = Post.query.order_by(Post.timestamp.desc()).all()
+    return render_template('index.html',form=form,posts=posts)
 
 
 @main.route('/user/<username>')
@@ -74,6 +82,8 @@ def edit_profile_admin(id):
     form.location.data = user.location
     form.about_me.data = user.about_me
     return render_template('edit_profile.html',form=form,user=user)
+
+
 
 
 @main.route('/about')
