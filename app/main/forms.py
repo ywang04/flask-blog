@@ -60,7 +60,9 @@ class EditProfileAdminForm(Form):
             raise ValidationError('Username already in use.')
 
 
-
+class Post(Form):
+    body = TextAreaField("What's on your mind?",validators=[Required()])
+    submit = SubmitField('Submit')
 
 
 
