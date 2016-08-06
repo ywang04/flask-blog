@@ -7,10 +7,11 @@ __author__ = 'Yang'
 __version__= '1.0'
 
 """
+import hashlib
 from datetime import datetime
 from werkzeug.security import generate_password_hash,check_password_hash
 from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
-from flask import current_app
+from flask import current_app,request
 from flask.ext.login import UserMixin,AnonymousUserMixin
 from . import db
 from . import login_manager
@@ -159,6 +160,16 @@ class User(UserMixin,db.Model):
     def ping(self):
         self.last_seen = datetime.utcnow()
         db.session.add(self)
+
+    def gravatar(self,size=100,default='retro',rating='g'):
+        if request.is_secure:
+            url = 'https://secure.gravatar.com/avatar'
+        else:
+            url = 'http://www.gravatar.com/avatar'
+        #returns a string of hexadecimal digits 'd4c74594d841139328695756648b6bd6'
+        hash = hashlib.md5(self.email.encode('utf-8')).hexdigest()
+        return '{url}/{hash}?s={size}&d={default}&r={rating}'.format(
+            url=url,hash=hash,size=size,default=default,rating=rating)
 
     def __repr__(self):
         return '<User %r>' % self.username
