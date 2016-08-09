@@ -25,6 +25,7 @@ def index():
         db.session.add(post)
         flash('Your minds have been posted.')
         return redirect(url_for('main.index'))
+    #to get all posts from database
     posts = Post.query.order_by(Post.timestamp.desc()).all()
     return render_template('index.html',form=form,posts=posts)
 

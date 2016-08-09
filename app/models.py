@@ -27,6 +27,8 @@ class Permission:
 
 class Role(db.Model):
     __tablename__ = 'roles'
+
+    #Folloiwng are class attributes like id,name,default etc.
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(64), unique=True)
     default = db.Column(db.Boolean,default=False,index=True)
@@ -35,7 +37,7 @@ class Role(db.Model):
 
     @staticmethod
     def insert_roles():
-    # roles is a dictionary and value is a tuple
+    # roles is a dictionary while value is a tuple
         roles = {
             'User': (Permission.FOLLOW |
                      Permission.COMMENT |
@@ -49,8 +51,12 @@ class Role(db.Model):
             'Administrator':(0xff, False)}
 
         for r in roles:
+            #role is a instance of class Role from ORM(OOP) aspect while role is a row in table "roles" from db aspect
+            #name = r is from class attributes
             role = Role.query.filter_by(name=r).first()
             if role is None:
+                #As a instance of class, role can also have its instance attributes like name,permissions, default etc,
+                #which overrides class attributes from ORM aspect.
                 role = Role(name=r)
             role.permissions = roles[r][0]
             role.default = roles[r][1]
@@ -67,7 +73,7 @@ class User(UserMixin,db.Model):
     email = db.Column(db.String(64),unique=True,index=True)
     username = db.Column(db.String(64), unique=True, index=True)
     password_hash = db.Column(db.String(128))
-    #roles is the name of table Role in database
+    #roles is the name of table Role in database and role_id is the true column in users table, which used rarely.
     role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
     confirmed = db.Column(db.BOOLEAN,default=False)
     name = db.Column(db.String(64))
@@ -167,7 +173,7 @@ class User(UserMixin,db.Model):
         self.last_seen = datetime.utcnow()
         db.session.add(self)
 
-    def gravatar(self,size=100,default='retro',rating='g'):
+    def gravatar(self,size=100,default='identicon',rating='g'):
         if request.is_secure:
             url = 'https://secure.gravatar.com/avatar'
         else:
@@ -200,4 +206,5 @@ class Post(db.Model):
     id = db.Column(db.Integer,primary_key=True)
     body = db.Column(db.Text)
     timestamp = db.Column(db.DateTime,index=True,default=datetime.utcnow)
+    #author_id is replaced by author, which defines in table users.
     author_id = db.Column(db.Integer,db.ForeignKey('users.id'))
