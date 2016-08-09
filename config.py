@@ -10,9 +10,10 @@ class Config:
     MAIL_USE_TLS = True
     MAIL_USERNAME = os.environ.get('MAIL_USERNAME')
     MAIL_PASSWORD = os.environ.get('MAIL_PASSWORD')
-    FLASKY_MAIL_SUBJECT_PREFIX = '[YBlog]'
-    FLASKY_MAIL_SENDER = 'YBlog Admin <flasky@example.com>'
-    FLASKY_ADMIN = os.environ.get('FLASKY_ADMIN')
+    YBLOG_MAIL_SUBJECT_PREFIX = '[YBLOG]'
+    YBLOG_MAIL_SENDER = 'YBLOG Admin <yblog@example.com>'
+    YBLOG_ADMIN = os.environ.get('YBLOG_ADMIN')
+    YBLOG_POSTS_PER_PAGE = 20
 
     @staticmethod
     def init_app(app):
