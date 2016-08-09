@@ -35,7 +35,10 @@ def user(username):
     user = User.query.filter_by(username=username).first()
     if user is None:
         abort(404)
-    return render_template('user.html',user=user)
+    #The list of blog posts for a user is obtained from the User.posts relationship,
+    # which is a query object, so filters such as order_by() can be used on it as well.
+    posts = user.posts.order_by(Post.timestamp.desc()).all()
+    return render_template('user.html',user=user,posts=posts)
 
 @main.route('/edit-profile',methods=['GET','POST'])
 @login_required
