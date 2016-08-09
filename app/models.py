@@ -232,3 +232,18 @@ class Post(db.Model):
     timestamp = db.Column(db.DateTime,index=True,default=datetime.utcnow)
     #author_id is replaced by author, which defines in table users.
     author_id = db.Column(db.Integer,db.ForeignKey('users.id'))
+
+    @staticmethod
+    def generate_fake(count=100):
+        from random import seed,randint
+        import forgery_py
+
+        seed()
+        user_count = User.query.count()
+        for i in range(count):
+            u = User.query.offset(randint(0,user_count -1)).first()
+            p = Post(body=forgery_py.lorem_ipsum.sentence(randint(1,5)),
+                     timestamp=forgery_py.date.date(True),
+                     author=u)
+            db.session.add(p)
+            db.session.commit()
