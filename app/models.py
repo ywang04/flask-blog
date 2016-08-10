@@ -100,7 +100,7 @@ class User(UserMixin,db.Model):
                      name=forgery_py.name.full_name(),
                      location=forgery_py.address.city(),
                      about_me=forgery_py.lorem_ipsum.sentence(),
-                     member_since=forgery_py.data.data(True))
+                     member_since=forgery_py.date.date(True))
 
             db.session.add(u)
             try:
@@ -235,14 +235,15 @@ class Post(db.Model):
 
     @staticmethod
     def generate_fake(count=100):
-        from random import seed,randint
+        from random import seed, randint
         import forgery_py
 
         seed()
         user_count = User.query.count()
         for i in range(count):
-            u = User.query.offset(randint(0,user_count -1)).first()
-            p = Post(body=forgery_py.lorem_ipsum.sentence(randint(1,5)),
+            #The random post generation must assign a random user to each post.
+            u = User.query.offset(randint(0, user_count - 1)).first()
+            p = Post(body=forgery_py.lorem_ipsum.sentences(randint(1, 5)),
                      timestamp=forgery_py.date.date(True),
                      author=u)
             db.session.add(p)

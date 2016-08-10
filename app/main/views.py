@@ -8,7 +8,7 @@ __version__= '1.0'
 
 """
 
-from flask import render_template,abort,redirect,url_for,flash
+from flask import render_template,abort,redirect,url_for,flash,request,current_app
 from flask.ext.login import current_user,login_required
 from . import main
 from ..models import User,Role,Permission,Post
@@ -25,9 +25,15 @@ def index():
         db.session.add(post)
         flash('Your minds have been posted.')
         return redirect(url_for('main.index'))
+    #http://localhost:5000/?page=2,to get the value of page, which is 2
+    page = request.args.get('page',1,type=int)
+    pagination = Post.query.order_by(Post.timestamp.desc()).paginate(
+        page,per_page=current_app.config['YBLOG_POSTS_PER_PAGE'],
+        error_out=False)
+
     #to get all posts from database
-    posts = Post.query.order_by(Post.timestamp.desc()).all()
-    return render_template('index.html',form=form,posts=posts)
+    posts = pagination.items
+    return render_template('index.html',form=form,posts=posts,pagination=pagination)
 
 
 @main.route('/user/<username>')
