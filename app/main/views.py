@@ -27,11 +27,12 @@ def index():
         return redirect(url_for('main.index'))
     #http://localhost:5000/?page=2,to get the value of page, which is 2
     page = request.args.get('page',1,type=int)
+
+    #pagination is a <flask_sqlalchemy.Pagination object at 0x10e50cf10> object, class Pagination
     pagination = Post.query.order_by(Post.timestamp.desc()).paginate(
         page,per_page=current_app.config['YBLOG_POSTS_PER_PAGE'],
         error_out=False)
 
-    #to get all posts from database
     posts = pagination.items
     return render_template('index.html',form=form,posts=posts,pagination=pagination)
 
@@ -44,8 +45,12 @@ def user(username):
         abort(404)
     #The list of blog posts for a user is obtained from the User.posts relationship,
     # which is a query object, so filters such as order_by() can be used on it as well.
-    posts = user.posts.order_by(Post.timestamp.desc()).all()
-    return render_template('user.html',user=user,posts=posts)
+    page = request.args.get('page',1,type=int)
+    pagination = user.posts.order_by(Post.timestamp.desc()).paginate\
+        (page,per_page=current_app.config['YBLOG_POSTS_PER_PAGE'],
+         error_out = False)
+    posts = pagination.items
+    return render_template('user.html',user=user,posts=posts,pagination=pagination)
 
 @main.route('/edit-profile',methods=['GET','POST'])
 @login_required
@@ -63,7 +68,6 @@ def edit_profile():
     form.location.data = current_user.location
     form.about_me.data = current_user.about_me
     return render_template('edit_profile.html',form=form)
-
 
 
 @main.route('/edit-profile/<int:id>',methods=['GET','POST'])
