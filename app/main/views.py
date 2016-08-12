@@ -23,7 +23,7 @@ def index():
             form.validate_on_submit():
         post = Post(body=form.body.data,author=current_user._get_current_object())
         db.session.add(post)
-        flash('Your minds have been posted.')
+        flash('Your blog has been posted.')
         return redirect(url_for('main.index'))
     #http://localhost:5000/?page=2,to get the value of page, which is 2
     page = request.args.get('page',1,type=int)
@@ -96,8 +96,6 @@ def edit_profile_admin(id):
     form.location.data = user.location
     form.about_me.data = user.about_me
     return render_template('edit_profile.html',form=form,user=user)
-
-
 
 
 @main.route('/about')
