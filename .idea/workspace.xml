@@ -103,9 +103,7 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/../flask_blog" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Tango" afterPath="$PROJECT_DIR$/../Tango" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models.py" afterPath="$PROJECT_DIR$/app/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/_posts.html" afterPath="$PROJECT_DIR$/app/templates/_posts.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.py" afterPath="$PROJECT_DIR$/config.py" />
     </list>
     <ignored path="flask-blog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -656,13 +654,6 @@
       <option name="presentableId" value="Default" />
       <updated>1467419683927</updated>
     </task>
-    <task id="LOCAL-00041" summary="Create PasswordResetForm">
-      <created>1469878942067</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1469878942067</updated>
-    </task>
     <task id="LOCAL-00042" summary="Create reset your password form">
       <created>1469965800195</created>
       <option name="number" value="00042" />
@@ -999,7 +990,14 @@
       <option name="project" value="LOCAL" />
       <updated>1470973088870</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="Markdown text handling in the Post model">
+      <created>1470991266104</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1470991266104</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -1038,7 +1036,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Change prefix from Flasky to YBlog" />
     <MESSAGE value="Create profile edit route" />
     <MESSAGE value="Add login required check for user_profile and change profile" />
     <MESSAGE value="Create Administrator-Level Profile Editor" />
@@ -1063,7 +1060,8 @@
     <MESSAGE value="Add comments into _macros.html" />
     <MESSAGE value="Markdown-enabled post form" />
     <MESSAGE value="Modify styles.css" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modify styles.css" />
+    <MESSAGE value="Markdown text handling in the Post model" />
+    <option name="LAST_COMMIT_MESSAGE" value="Markdown text handling in the Post model" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
