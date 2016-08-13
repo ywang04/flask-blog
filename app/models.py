@@ -235,6 +235,7 @@ class Post(db.Model):
     timestamp = db.Column(db.DateTime,index=True,default=datetime.utcnow)
     #author_id is replaced by author, which defines in table users.
     author_id = db.Column(db.Integer,db.ForeignKey('users.id'))
+    category_id = db.Column(db.Integer,db.ForeignKey('categories.id'))
 
     @staticmethod
     def generate_fake(count=100):
@@ -263,4 +264,13 @@ class Post(db.Model):
             tags=allowed_tags,strip=True))
 
 db.event.listen(Post.body,'set',Post.on_changed_body)
+
+class Category(db.Model):
+    __tablename__ = 'categories'
+    id = db.Column(db.Integer,primary_key=True)
+    category = db.Column(db.String(64),unique=True)
+    count = db.Column(db.Integer)
+    posts = db.relationship('Post',backref='category',lazy='dynamic')
+
+
 
