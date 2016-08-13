@@ -18,23 +18,16 @@ from ..decorators import admin_required
 
 @main.route('/',methods=['GET','POST'])
 def index():
-    form = PostForm()
-    if current_user.can(Permission.WRITE_ARTICLES) and \
-            form.validate_on_submit():
-        post = Post(body=form.body.data,author=current_user._get_current_object())
-        db.session.add(post)
-        flash('Your blog has been posted.')
-        return redirect(url_for('main.index'))
     #http://localhost:5000/?page=2,to get the value of page, which is 2
     page = request.args.get('page',1,type=int)
 
     #pagination is a <flask_sqlalchemy.Pagination object at 0x10e50cf10> object, class Pagination
-    pagination = Post.query.order_by(Post.timestamp.desc()).paginate(
+    pagination = current_user.posts.order_by(Post.timestamp.desc()).paginate(
         page,per_page=current_app.config['YBLOG_POSTS_PER_PAGE'],
         error_out=False)
 
     posts = pagination.items
-    return render_template('index.html',form=form,posts=posts,pagination=pagination)
+    return render_template('index.html',posts=posts,pagination=pagination)
 
 
 @main.route('/user/<username>')
@@ -102,6 +95,12 @@ def post(id):
     post = Post.query.get_or_404(id)
     print post,[post]
     return render_template('post.html',posts=[post])
+
+
+@main.route('/post-article',methods=['GET','POST'])
+def post_article():
+    return render_template('post_article.html')
+
 
 @main.route('/about')
 def about():
