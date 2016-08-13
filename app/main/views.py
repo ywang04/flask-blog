@@ -22,9 +22,10 @@ def index():
     page = request.args.get('page',1,type=int)
 
     #pagination is a <flask_sqlalchemy.Pagination object at 0x10e50cf10> object, class Pagination
-    pagination = current_user.posts.order_by(Post.timestamp.desc()).paginate(
-        page,per_page=current_app.config['YBLOG_POSTS_PER_PAGE'],
-        error_out=False)
+
+    pagination = Post.query.order_by(Post.timestamp.desc()).paginate(
+            page, per_page=current_app.config['YBLOG_POSTS_PER_PAGE'],
+            error_out=False)
 
     posts = pagination.items
     return render_template('index.html',posts=posts,pagination=pagination)
@@ -97,9 +98,22 @@ def post(id):
     return render_template('post.html',posts=[post])
 
 
-@main.route('/post-article',methods=['GET','POST'])
-def post_article():
+@main.route('/post-blog',methods=['GET','POST'])
+def post_blog():
     return render_template('post_article.html')
+
+
+@main.route('/my-blog',methods=['GET','POST'])
+@login_required
+def my_blog():
+    page = request.args.get('page', 1, type=int)
+    pagination = current_user.posts.order_by(Post.timestamp.desc()).paginate(
+            page, per_page=current_app.config['YBLOG_POSTS_PER_PAGE'],
+            error_out=False)
+
+    posts = pagination.items
+    return render_template('my_blog.html', posts=posts, pagination=pagination)
+
 
 
 @main.route('/about')
