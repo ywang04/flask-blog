@@ -100,6 +100,7 @@ def edit_profile_admin(id):
 @main.route('/post/<int:id>')
 def post(id):
     post = Post.query.get_or_404(id)
+    print post,[post]
     return render_template('post.html',posts=[post])
 
 @main.route('/about')
