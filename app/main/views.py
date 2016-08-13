@@ -91,18 +91,6 @@ def edit_profile_admin(id):
     form.about_me.data = user.about_me
     return render_template('edit_profile.html',form=form,user=user)
 
-@main.route('/post/<int:id>')
-def post(id):
-    post = Post.query.get_or_404(id)
-    print post,[post]
-    return render_template('post.html',posts=[post])
-
-
-@main.route('/post-blog',methods=['GET','POST'])
-def post_blog():
-    return render_template('post_article.html')
-
-
 @main.route('/my-blog',methods=['GET','POST'])
 @login_required
 def my_blog():
@@ -115,7 +103,26 @@ def my_blog():
     return render_template('my_blog.html', posts=posts, pagination=pagination)
 
 
+@main.route('/post/<int:id>')
+def post(id):
+    post = Post.query.get_or_404(id)
+    return render_template('post.html',posts=[post])
+
+@main.route('/post-blog',methods=['GET','POST'])
+def post_blog():
+    form = PostForm()
+    if current_user.can(Permission.WRITE_ARTICLES) and \
+            form.validate_on_submit():
+        post = Post(body=form.body.data,author=current_user._get_current_object())
+        db.session.add(post)
+        db.session.commit()
+        return redirect(url_for('main.post', id=post.id))
+    return render_template('post_blog.html',form=form)
+
 
 @main.route('/about')
 def about():
     return render_template('about.html')
+
+
+

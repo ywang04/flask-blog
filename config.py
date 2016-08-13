@@ -13,7 +13,7 @@ class Config:
     YBLOG_MAIL_SUBJECT_PREFIX = '[YBLOG]'
     YBLOG_MAIL_SENDER = 'YBLOG Admin <yblog@example.com>'
     YBLOG_ADMIN = os.environ.get('YBLOG_ADMIN')
-    YBLOG_POSTS_PER_PAGE = 10
+    YBLOG_POSTS_PER_PAGE = 5
 
     @staticmethod
     def init_app(app):

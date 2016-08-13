@@ -5,16 +5,17 @@
 {% block title %}YBLOG{% endblock %}
 
 {% block page_content %}
-
-{% include '_posts.html' %}
-{% if pagination %}
-<div class="pagination">
-    {{ macros.pagination_widget(pagination, 'main.index') }}
-</div>
+{% if current_user.can(Permission.WRITE_ARTICLES)  %}
+    {{ wtf.quick_form(form) }}
 {% endif %}
 
-{% endblock %}
 
+{% if pagination %}
+<div class="pagination">
+    {{ macros.pagination_widget(pagination, 'main.my_blog') }}
+</div>
+{% endif %}
+{% endblock %}
 
 {% block scripts %}
 {{ super() }}
