@@ -27,7 +27,9 @@
                 <li><a href={{ url_for('main.post_blog') }}>Post New Blog </a></li>
                 {% endif %}
                 <li><a href="{{ url_for('main.my_blog') }}">My Blog</a></li>
-
+                {% if current_user.is_administrator() %}
+                <li><a href="{{ url_for('main.add_category') }}">Add Category</a></li>
+                {% endif %}
                 <li><a href={{ url_for('main.about') }}>Contact</a></li>
             </ul>
             <url class="nav navbar-nav navbar-right">

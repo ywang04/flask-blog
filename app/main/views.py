@@ -11,8 +11,8 @@ __version__= '1.0'
 from flask import render_template,abort,redirect,url_for,flash,request,current_app
 from flask.ext.login import current_user,login_required
 from . import main
-from ..models import User,Role,Permission,Post
-from .forms import EditProfile,EditProfileAdminForm,PostForm
+from ..models import User,Role,Permission,Post,Category
+from .forms import EditProfile,EditProfileAdminForm,PostForm,AddCategory
 from .. import db
 from ..decorators import admin_required
 
@@ -119,6 +119,15 @@ def post_blog():
         return redirect(url_for('main.post', id=post.id))
     return render_template('post_blog.html',form=form)
 
+@main.route('/add-Category',methods=['GET','POST'])
+@admin_required
+def add_category():
+    form = AddCategory()
+    if form.validate_on_submit():
+        category = Category(name=form.category.data)
+        db.session.add(category)
+        return redirect(url_for('main.index'))
+    return render_template('add_category.html',form=form)
 
 @main.route('/about')
 def about():

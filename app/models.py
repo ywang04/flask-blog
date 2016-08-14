@@ -268,8 +268,8 @@ db.event.listen(Post.body,'set',Post.on_changed_body)
 class Category(db.Model):
     __tablename__ = 'categories'
     id = db.Column(db.Integer,primary_key=True)
-    category = db.Column(db.String(64),unique=True)
-    count = db.Column(db.Integer)
+    name = db.Column(db.String(64),unique=True)
+    count = db.Column(db.Integer,index=True)
     posts = db.relationship('Post',backref='category',lazy='dynamic')
 
 
