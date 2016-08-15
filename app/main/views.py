@@ -111,20 +111,24 @@ def post(id):
 @main.route('/new-post',methods=['GET','POST'])
 def new_post():
     form = PostForm()
-    if current_user.can(Permission.WRITE_ARTICLES) and \
-            form.validate_on_submit():
-        post = Post(body=form.body.data,author=current_user._get_current_object())
+    if form.validate_on_submit():
+        post = Post(title=form.title.data,category=Category.query.get(form.category.data),body=form.body.data,author=current_user._get_current_object())
         db.session.add(post)
         db.session.commit()
         return redirect(url_for('main.post', id=post.id))
     return render_template('new_post.html',form=form)
+
+
+
+
+
 
 @main.route('/add-Category',methods=['GET','POST'])
 @admin_required
 def add_category():
     form = AddCategory()
     if form.validate_on_submit():
-        category = Category(name=form.category.data)
+        category = Category(category_name=form.category.data)
         db.session.add(category)
         return redirect(url_for('main.index'))
     return render_template('add_category.html',form=form)
