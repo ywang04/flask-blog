@@ -91,16 +91,16 @@ def edit_profile_admin(id):
     form.about_me.data = user.about_me
     return render_template('edit_profile.html',form=form,user=user)
 
-@main.route('/my-blog',methods=['GET','POST'])
+@main.route('/my-post',methods=['GET','POST'])
 @login_required
-def my_blog():
+def my_post():
     page = request.args.get('page', 1, type=int)
     pagination = current_user.posts.order_by(Post.timestamp.desc()).paginate(
             page, per_page=current_app.config['YBLOG_POSTS_PER_PAGE'],
             error_out=False)
 
     posts = pagination.items
-    return render_template('my_blog.html', posts=posts, pagination=pagination)
+    return render_template('my_post.html', posts=posts, pagination=pagination)
 
 
 @main.route('/post/<int:id>')
@@ -108,8 +108,8 @@ def post(id):
     post = Post.query.get_or_404(id)
     return render_template('post.html',posts=[post])
 
-@main.route('/post-blog',methods=['GET','POST'])
-def post_blog():
+@main.route('/new-post',methods=['GET','POST'])
+def new_post():
     form = PostForm()
     if current_user.can(Permission.WRITE_ARTICLES) and \
             form.validate_on_submit():
@@ -117,7 +117,7 @@ def post_blog():
         db.session.add(post)
         db.session.commit()
         return redirect(url_for('main.post', id=post.id))
-    return render_template('post_blog.html',form=form)
+    return render_template('new_post.html',form=form)
 
 @main.route('/add-Category',methods=['GET','POST'])
 @admin_required
