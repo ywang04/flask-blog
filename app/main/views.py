@@ -119,10 +119,6 @@ def new_post():
     return render_template('new_post.html',form=form)
 
 
-
-
-
-
 @main.route('/add-Category',methods=['GET','POST'])
 @admin_required
 def add_category():
@@ -130,8 +126,9 @@ def add_category():
     if form.validate_on_submit():
         category = Category(category_name=form.category.data)
         db.session.add(category)
-        return redirect(url_for('main.index'))
-    return render_template('add_category.html',form=form)
+        return redirect(url_for('main.add_category'))
+    categories = Category.query.all()
+    return render_template('add_category.html',form=form,categories=categories)
 
 @main.route('/about')
 def about():

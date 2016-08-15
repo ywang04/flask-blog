@@ -1,13 +1,27 @@
 {% extends "base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
+{% import "_macros.html" as macros %}
 
 
 {% block title %}YBLOG - Add Category{% endblock %}
 
 {% block page_content %}
 
-    {{ wtf.quick_form(form) }}
+<div class="page-header">
+    <h3>Create a new Category</h3>
+</div>
 
+<div class="col-md-4">
+{{ wtf.quick_form(form) }}
+</div>
+
+{% include '_categories.html' %}
+
+{% if pagination %}
+<div class="pagination">
+    {{ macros.pagination_widget(pagination, 'main.index') }}
+</div>
+{% endif %}
 
 {% endblock %}
 

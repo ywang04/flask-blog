@@ -230,6 +230,7 @@ def load_user(user_id):
 class Post(db.Model):
     __tablename__ = 'posts'
     id = db.Column(db.Integer,primary_key=True)
+    title = db.Column(db.String(128))
     body = db.Column(db.Text)
     body_html = db.Column(db.Text)
     timestamp = db.Column(db.DateTime,index=True,default=datetime.utcnow)
@@ -268,7 +269,7 @@ db.event.listen(Post.body,'set',Post.on_changed_body)
 class Category(db.Model):
     __tablename__ = 'categories'
     id = db.Column(db.Integer,primary_key=True)
-    name = db.Column(db.String(64),unique=True)
+    category_name = db.Column(db.String(64),unique=True)
     count = db.Column(db.Integer,index=True)
     posts = db.relationship('Post',backref='category',lazy='dynamic')
 

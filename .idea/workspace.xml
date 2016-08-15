@@ -2,116 +2,112 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1abe30d1-7743-40f4-8c69-773a5c924c12" name="Default" comment="Review codes and add some comments">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/CSS/2/10.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/Test2/borgar.png" />
       <change type="NEW" beforePath="" afterPath="$USER_HOME$/Desktop/九章JAVA基础班/第六次课/Java_Chap6_20160206/hello6_20160206/src/com/guojing/Test.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/.idea/Checkio.iml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/2/Count Inversions_1.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/2/Binary count_5.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Home/1/Xs and Os Referee_6.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Udacity/Programming Foundations with Python/Bulk Rename Files.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Xiao/1.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/2/test ending.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/1/monkey-typing_4.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/templates/rango/category.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/1/Boolean-algebra_8.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec15.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Udacity/Programming Foundations with Python/Take a break.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/templates/registration/registration_form.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Home/1/Moore Neighbourhood_4.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Imooc/property_read.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/2/Common Words_7.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/.idea/modules.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Home/1/The Flat Dictionary_7.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/2/Building Base_9.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec3.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/1/right_to_left_9.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Imooc/Polymorphism1.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/2/The end of other_2.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec11.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/templates/rango/search.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/1/fizz-buzz_1.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Udacity/Programming Foundations with Python/Moive Website/media.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/1/Three words_6.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Home/1/Pawn Brotherhood_8.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec16.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec8.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec2.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/2/Friends_10.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/templates/rango/login.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Home/1/House password_3.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec7.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/CSS/3/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../imooc/closure_1.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/CSS/2/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/1/Secret_message_5.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/CSS/3/style1.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/1/Index Power_2.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/2/Absolute sorting_8.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/2/Pangram_4.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/1/The most numbers_7.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec10.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec4.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../imooc/closure_2.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/2/Days Between_3.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Imooc/property_write.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/Test2/borgar.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/templates/rango/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/.idea/vcs.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/templates/registration/login.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Udacity/Programming Foundations with Python/Moive Website/fresh_tomatoes.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Home/1/How to find friends_9.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Home/1/test.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/CSS/2/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/templates/rango/add_page.html" />
+      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Library/Preferences/IntelliJIdea2016.1/options/runner.layout.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/.idea/workspace.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/CSS/0/MyCss.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/1/Digits multiplication_10.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec1.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/2/Number Base_6.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec6.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Udacity/Programming Foundations with Python/Profanity Editor/movie_quotes" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/.idea/encodings.xml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/.idea/misc.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/.idea/modules.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/.idea/workspace.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/1/Boolean-algebra_8.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/1/Digits multiplication_10.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/1/Even the last_3.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/1/Index Power_2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/1/Secret_message_5.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/1/Test_ending.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/1/The most numbers_7.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/1/Three words_6.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/1/fizz-buzz_1.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/1/monkey-typing_4.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/1/right_to_left_9.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/2/Absolute sorting_8.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/2/Binary count_5.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/2/Building Base_9.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/2/Common Words_7.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/2/Count Inversions_1.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/2/Days Between_3.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/2/Friends_10.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/2/Number Base_6.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/2/Pangram_4.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/2/The end of other_2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/2/test ending.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Home/1/House password_3.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Home/1/How to find friends_9.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Home/1/Moore Neighbourhood_4.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Home/1/Pawn Brotherhood_8.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Home/1/The Flat Dictionary_7.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Home/1/The Most Wanted Letter_5.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Home/1/Xs and Os Referee_6.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Home/1/median_2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Home/1/non-unique-elements_1.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Home/1/test.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Xiao/1.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Xiao/3.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Imooc/Polymorphism1.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Imooc/property_read.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Imooc/property_write.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec1.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec10.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec11.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec12.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec13.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec15.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec16.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec3.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec4.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec5.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec6.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec7.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec8.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec9.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/CSS/0/MyCss.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/CSS/0/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/CSS/1/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/CSS/1/mycss.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/CSS/2/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/CSS/2/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/CSS/3/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/CSS/3/index1.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/CSS/3/style.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/CSS/3/style1.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/Test2/Test2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/templates/rango/about.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/templates/rango/add_category.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/templates/rango/add_page.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/templates/rango/category.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/templates/rango/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/templates/rango/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/templates/rango/register.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/templates/rango/search.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/templates/registration/login.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/templates/registration/logout.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/templates/registration/registration_complete.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/templates/registration/registration_form.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Udacity/Programming Foundations with Python/Bulk Rename Files.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Udacity/Programming Foundations with Python/Moive Website/fresh_tomatoes.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Udacity/Programming Foundations with Python/Moive Website/media.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Udacity/Programming Foundations with Python/Profanity Editor/movie_quotes" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Udacity/Programming Foundations with Python/Take a break.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/add_category.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../imooc/closure_1.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../imooc/closure_2.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../imooc/decorator_1.py" />
       <change type="NEW" beforePath="" afterPath="$USER_HOME$/Library/Preferences/IntelliJIdea2016.1/options/find.recents.xml" />
-      <change type="NEW" beforePath="" afterPath="$USER_HOME$/Library/Preferences/IntelliJIdea2016.1/options/runner.layout.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/1/Test_ending.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/templates/rango/about.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Home/1/median_2.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../imooc/decorator_1.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Elementary/1/Even the last_3.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/.idea/Checkio.iml" />
       <change type="NEW" beforePath="" afterPath="$USER_HOME$/Library/Preferences/IntelliJIdea2016.1/options/window.manager.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Calculator" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/../Dictionary" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/migrations/README" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/migrations/alembic.ini" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/migrations/env.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/migrations/script.py.mako" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Home/1/The Most Wanted Letter_5.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/CSS/0/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/Test2/Test2.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec13.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec9.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec5.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Home/1/non-unique-elements_1.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/Xiao/3.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../MIT/Lec12.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/templates/registration/logout.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/CSS/3/index1.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/CSS/1/mycss.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/CSS/3/style.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/templates/rango/register.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/CSS/2/10.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/CSS/1/index.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TangowithDjango/templates/registration/registration_complete.html" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../flask_blog" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Tango" afterPath="$PROJECT_DIR$/../Tango" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/main/forms.py" afterPath="$PROJECT_DIR$/app/main/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/main/views.py" afterPath="$PROJECT_DIR$/app/main/views.py" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Dictionary" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/post_blog.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/../Calculator" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models.py" afterPath="$PROJECT_DIR$/app/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/base.html" afterPath="$PROJECT_DIR$/app/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/add_category.html" afterPath="$PROJECT_DIR$/app/templates/add_category.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/main/views.py" afterPath="$PROJECT_DIR$/app/main/views.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Tango" afterPath="$PROJECT_DIR$/../Tango" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/main/forms.py" afterPath="$PROJECT_DIR$/app/main/forms.py" />
     </list>
     <ignored path="flask-blog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -140,33 +136,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/models.py">
+      <file leaf-file-name="user.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/user.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="270" column="41" selection-start-line="270" selection-start-column="35" selection-end-line="270" selection-end-column="41" />
-              <folding>
-                <element signature="e#107#136#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/main/forms.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="405">
-              <caret line="68" column="24" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="24" />
+            <state relative-caret-position="540">
+              <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/main/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="127" column="31" selection-start-line="127" selection-start-column="31" selection-end-line="127" selection-end-column="31" />
+            <state relative-caret-position="347">
+              <caret line="118" column="52" selection-start-line="118" selection-start-column="52" selection-end-line="118" selection-end-column="52" />
               <folding>
                 <element signature="e#108#190#0" expanded="true" />
               </folding>
@@ -175,11 +159,13 @@
         </entry>
       </file>
       <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/auth/forms.py">
+        <entry file="file://$PROJECT_DIR$/app/main/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
-              <folding />
+            <state relative-caret-position="705">
+              <caret line="66" column="24" selection-start-line="66" selection-start-column="11" selection-end-line="66" selection-end-column="24" />
+              <folding>
+                <element signature="e#108#138#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -187,28 +173,48 @@
       <file leaf-file-name="add_category.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/add_category.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+            <state relative-caret-position="255">
+              <caret line="17" column="23" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="23" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/index.html">
+      <file leaf-file-name="_posts.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/templates/_posts.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+            <state relative-caret-position="240">
+              <caret line="19" column="26" selection-start-line="16" selection-start-column="12" selection-end-line="22" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="my_blog.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/my_blog.html">
+      <file leaf-file-name="_categories.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/_categories.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="62" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
+            <state relative-caret-position="225">
+              <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/static/styles.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="548">
+              <caret line="68" column="13" selection-start-line="68" selection-start-column="3" selection-end-line="68" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="new_post.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/new_post.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -219,26 +225,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="75">
               <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="post_blog.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/post_blog.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="30" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="base.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/base.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="30" column="51" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
               <folding />
             </state>
           </provider>
@@ -293,7 +279,6 @@
         <option value="$PROJECT_DIR$/app/email.py" />
         <option value="$PROJECT_DIR$/app/templates/_macros.html" />
         <option value="$PROJECT_DIR$/app/__init__.py" />
-        <option value="$PROJECT_DIR$/app/static/styles.css" />
         <option value="$PROJECT_DIR$/app/templates/post.html" />
         <option value="$PROJECT_DIR$/app/templates/_posts.html" />
         <option value="$PROJECT_DIR$/app/templates/post_article.html" />
@@ -302,11 +287,16 @@
         <option value="$PROJECT_DIR$/app/templates/my_blog.html" />
         <option value="$PROJECT_DIR$/app/templates/index.html" />
         <option value="$PROJECT_DIR$/app/templates/post_blog.html" />
-        <option value="$PROJECT_DIR$/app/main/forms.py" />
+        <option value="$PROJECT_DIR$/app/templates/my_post.html" />
         <option value="$PROJECT_DIR$/app/templates/base.html" />
         <option value="$PROJECT_DIR$/app/models.py" />
+        <option value="$PROJECT_DIR$/app/main/forms.py" />
+        <option value="$PROJECT_DIR$/app/templates/_categorys.html" />
+        <option value="$PROJECT_DIR$/app/static/styles.css" />
+        <option value="$PROJECT_DIR$/app/templates/_categories.html" />
         <option value="$PROJECT_DIR$/app/templates/add_category.html" />
         <option value="$PROJECT_DIR$/app/main/views.py" />
+        <option value="$PROJECT_DIR$/app/templates/new_post.html" />
       </list>
     </option>
   </component>
@@ -317,10 +307,10 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1341" />
-    <option name="y" value="46" />
-    <option name="width" value="1186" />
-    <option name="height" value="851" />
+    <option name="x" value="126" />
+    <option name="y" value="44" />
+    <option name="width" value="1280" />
+    <option name="height" value="730" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -357,13 +347,23 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flask-blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flask-blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="last_opened_file_path" value="$USER_HOME$/flasky" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="SearchEverywhereHistoryKey" value="iter_pages&#9;null&#9;null&#10;auth.password_reset_password&#9;null&#9;null&#10;app.app_context()&#9;null&#9;null" />
@@ -727,27 +727,6 @@
       <option name="presentableId" value="Default" />
       <updated>1467419683927</updated>
     </task>
-    <task id="LOCAL-00049" summary="Role Assignment">
-      <created>1470136239945</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1470136239945</updated>
-    </task>
-    <task id="LOCAL-00050" summary="Evaluate whether a user has a given permission">
-      <created>1470141904649</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1470141904650</updated>
-    </task>
-    <task id="LOCAL-00051" summary="Add a page for the 403 error">
-      <created>1470189163539</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1470189163539</updated>
-    </task>
     <task id="LOCAL-00052" summary="Adding the Permission class to the template context">
       <created>1470218701380</created>
       <option name="number" value="00052" />
@@ -1070,21 +1049,42 @@
       <option name="project" value="LOCAL" />
       <updated>1471091394630</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="Implement Add Category function">
+      <created>1471178275637</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1471178275637</updated>
+    </task>
+    <task id="LOCAL-00099" summary="Modify template files">
+      <created>1471231143417</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1471231143417</updated>
+    </task>
+    <task id="LOCAL-00100" summary="Implement New Post function">
+      <created>1471246117155</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1471246117155</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1341" y="46" width="1186" height="851" extended-state="0" />
+    <frame x="126" y="44" width="1280" height="730" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18094406" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18336026" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41856676" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41856676" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.16371077" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19281046" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1109,9 +1109,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value=" Gravatar URL generation with caching of MD5 hashes" />
-    <MESSAGE value="Create Post model" />
-    <MESSAGE value="Create Post form" />
     <MESSAGE value="Change Post name to PostForm" />
     <MESSAGE value="Home page route with a blog post&#10;" />
     <MESSAGE value="Profile page route with a blog post&#10;" />
@@ -1134,7 +1131,10 @@
     <MESSAGE value="Add my blog function to show blogs belong to current user" />
     <MESSAGE value="Implement Post New Blog with basic function" />
     <MESSAGE value="Create model Category" />
-    <option name="LAST_COMMIT_MESSAGE" value="Create model Category" />
+    <MESSAGE value="Implement Add Category function" />
+    <MESSAGE value="Modify template files" />
+    <MESSAGE value="Implement New Post function" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement New Post function" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1160,14 +1160,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/.pyenv/versions/2.7.11/lib/python2.7/hmac.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1755">
-          <caret line="119" column="76" selection-start-line="119" selection-start-column="30" selection-end-line="119" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/favicon.ico.bak" />
     <entry file="file://$PROJECT_DIR$/app/templates/mail/new_user.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1236,13 +1228,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/auth/register.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/auth/unconfirmed.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -1261,7 +1246,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="64">
           <caret line="505" column="6" selection-start-line="505" selection-start-column="6" selection-end-line="505" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1297,7 +1281,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1312,7 +1295,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
           <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1320,6 +1302,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
           <caret line="423" column="8" selection-start-line="423" selection-start-column="8" selection-end-line="423" selection-end-column="8" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1327,7 +1310,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="106">
           <caret line="2263" column="8" selection-start-line="2263" selection-start-column="8" selection-end-line="2263" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1366,7 +1348,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="118">
           <caret line="269" column="16" selection-start-line="269" selection-start-column="6" selection-end-line="269" selection-end-column="16" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1374,9 +1355,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="615">
           <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
-          <folding>
-            <element signature="e#108#131#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1391,10 +1369,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
-          <folding>
-            <element signature="e#991#999#0#HTML" expanded="false" />
-            <element signature="e#1355#1362#0#HTML" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1402,7 +1376,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1410,31 +1383,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
           <caret line="19" column="31" selection-start-line="19" selection-start-column="31" selection-end-line="19" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="43" column="0" selection-start-line="43" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/_posts.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="24" column="83" selection-start-line="24" selection-start-column="76" selection-end-line="24" selection-end-column="83" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="478">
-          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1442,7 +1390,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
           <caret line="343" column="4" selection-start-line="343" selection-start-column="4" selection-end-line="343" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1458,7 +1405,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="375">
           <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1466,30 +1412,96 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.pyenv/versions/2.7.11/lib/python2.7/site-packages/wtforms/fields/core.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="481" column="6" selection-start-line="481" selection-start-column="6" selection-end-line="481" selection-end-column="6" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/my_post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="14" selection-start-line="15" selection-start-column="14" selection-end-line="15" selection-end-column="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/base.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="30" column="51" selection-start-line="30" selection-start-column="51" selection-end-line="30" selection-end-column="51" />
+        <state relative-caret-position="405">
+          <caret line="27" column="27" selection-start-line="27" selection-start-column="27" selection-end-line="27" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="277" column="0" selection-start-line="277" selection-start-column="0" selection-end-line="277" selection-end-column="0" />
+          <folding>
+            <element signature="e#107#136#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+        <state relative-caret-position="180">
+          <caret line="12" column="6" selection-start-line="9" selection-start-column="0" selection-end-line="13" selection-end-column="11" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/my_blog.html">
+    <entry file="file://$PROJECT_DIR$/app/main/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="62" selection-start-line="11" selection-start-column="62" selection-end-line="11" selection-end-column="62" />
+        <state relative-caret-position="347">
+          <caret line="118" column="52" selection-start-line="118" selection-start-column="52" selection-end-line="118" selection-end-column="52" />
+          <folding>
+            <element signature="e#108#190#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/_categories.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="0" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/add_category.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="23" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/auth/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/styles.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="548">
+          <caret line="68" column="13" selection-start-line="68" selection-start-column="3" selection-end-line="68" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1502,47 +1514,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/post_blog.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/add_category.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="270" column="41" selection-start-line="270" selection-start-column="35" selection-end-line="270" selection-end-column="41" />
-          <folding>
-            <element signature="e#107#136#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/main/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="68" column="24" selection-start-line="68" selection-start-column="23" selection-end-line="68" selection-end-column="24" />
+        <state relative-caret-position="705">
+          <caret line="66" column="24" selection-start-line="66" selection-start-column="11" selection-end-line="66" selection-end-column="24" />
+          <folding>
+            <element signature="e#108#138#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/new_post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="14" selection-start-line="28" selection-start-column="14" selection-end-line="28" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/main/views.py">
+    <entry file="file://$PROJECT_DIR$/app/templates/_posts.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="127" column="31" selection-start-line="127" selection-start-column="31" selection-end-line="127" selection-end-column="31" />
-          <folding>
-            <element signature="e#108#190#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="240">
+          <caret line="19" column="26" selection-start-line="16" selection-start-column="12" selection-end-line="22" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>

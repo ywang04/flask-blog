@@ -74,7 +74,7 @@ class PostForm(Form):
 
 
 class AddCategory(Form):
-    category = StringField('Please enter the name of the category',validators=[Required(),Length(0,128)])
+    category = StringField('Please enter category name',validators=[Required(),Length(0,128)])
     submit = SubmitField('Create Category')
 
 
