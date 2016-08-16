@@ -112,11 +112,35 @@ def post(id):
 def new_post():
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(title=form.title.data,category=Category.query.get(form.category.data),body=form.body.data,author=current_user._get_current_object())
+        #category is an object(<app.models.Category object at 0x10faded90>)
+        post = Post(title=form.title.data,category=Category.query.get(form.category.data),body=form.body.data,
+                    author=current_user._get_current_object())
         db.session.add(post)
-        db.session.commit()
+        flash('The post has been updated.')
         return redirect(url_for('main.post', id=post.id))
     return render_template('new_post.html',form=form)
+
+@main.route('/edit-post/<int:id>',methods=['GET','POST'])
+def edit_post(id):
+    #check the id and permission for the post
+    post = Post.query.get_or_404(id)
+    if current_user != post.author and \
+        not current_user.is_administrator:
+        abort(403)
+    form = PostForm()
+    if form.validate_on_submit():
+        post.title = form.title.data
+        #form.category.data is to get the category id in categories table
+        #Category.query.get(id) is to get the category object
+        post.category = Category.query.get(form.category.data)
+        post.body = form.body.data
+        db.session.add(post)
+        flash('The post has been updated.')
+        return redirect(url_for('main.my_post'))
+    form.title.data = post.title
+    form.category.data = post.category_id
+    form.body.data = post.body
+    return render_template('edit_post.html',form=form)
 
 
 @main.route('/add-Category',methods=['GET','POST'])
@@ -127,7 +151,7 @@ def add_category():
         category = Category(category_name=form.category.data)
         db.session.add(category)
         return redirect(url_for('main.add_category'))
-    categories = Category.query.all()
+    categories = Category.query.order_by(Category.category_name).all()
     return render_template('add_category.html',form=form,categories=categories)
 
 @main.route('/about')

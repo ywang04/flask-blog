@@ -1,7 +1,6 @@
 {% extends "base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 
-
 {% block title %}YBLOG - New Post{% endblock %}
 
 {% block page_content %}
@@ -18,6 +17,11 @@
 
 {% endif %}
 </div>
+{% endblock %}
 
+
+{% block scripts %}
+{{ super() }}
+{{ pagedown.include_pagedown() }}
 {% endblock %}
 

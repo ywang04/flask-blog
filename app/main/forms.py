@@ -70,7 +70,8 @@ class PostForm(Form):
     def __init__(self,*args,**kwargs):
         super(PostForm,self).__init__(*args,**kwargs)
         #choices is the category's attribute while category is the instance of SelectField
-        self.category.choices = [(category.id,category.category_name) for category in Category.query.order_by(Category.category_name).all()]
+        self.category.choices = [(category.id,category.category_name)
+                                 for category in Category.query.order_by(Category.category_name).all()]
 
 
 class AddCategory(Form):

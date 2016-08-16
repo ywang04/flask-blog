@@ -235,7 +235,7 @@ class Post(db.Model):
     body_html = db.Column(db.Text)
     timestamp = db.Column(db.DateTime,index=True,default=datetime.utcnow)
     #author_id is replaced by author, which defines in table users.
-    author_id = db.Column(db.Integer,db.ForeignKey('users.id'))
+    author_id = db.Column(db.Integer,db.ForeignKey('users.id'),nullable=False)
     category_id = db.Column(db.Integer,db.ForeignKey('categories.id'))
 
     @staticmethod
