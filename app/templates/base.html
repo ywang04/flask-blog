@@ -23,15 +23,16 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                {% if current_user.is_authenticated %}
                 <li><a href={{ url_for('main.new_post') }}>New Post</a></li>
-                {% endif %}
+                {% if current_user.is_authenticated %}
                 <li><a href="{{ url_for('main.my_post') }}">My Post</a></li>
+                {% endif %}
                 {% if current_user.is_administrator() %}
                 <li><a href="{{ url_for('main.add_category') }}">Add Category</a></li>
                 {% endif %}
                 <li><a href={{ url_for('main.about') }}>Contact</a></li>
             </ul>
+
             <url class="nav navbar-nav navbar-right">
                 {% if current_user.is_authenticated %}
                  <li class="dropdown">
