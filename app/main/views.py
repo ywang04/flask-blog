@@ -98,7 +98,6 @@ def my_post():
     pagination = current_user.posts.order_by(Post.timestamp.desc()).paginate(
             page, per_page=current_app.config['YBLOG_POSTS_PER_PAGE'],
             error_out=False)
-
     posts = pagination.items
     return render_template('my_post.html', posts=posts, pagination=pagination)
 
@@ -106,9 +105,10 @@ def my_post():
 @main.route('/post/<int:id>')
 def post(id):
     post = Post.query.get_or_404(id)
-    return render_template('post.html',posts=[post])
+    return render_template('post.html',post=post)
 
 @main.route('/new-post',methods=['GET','POST'])
+@login_required
 def new_post():
     form = PostForm()
     if form.validate_on_submit():
