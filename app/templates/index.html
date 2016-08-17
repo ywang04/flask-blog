@@ -6,6 +6,11 @@
 
 {% block page_content %}
 
+<ul class="nav nav-tabs">
+    <!--点赞最多的就是Top-->
+    <li class="active"><a href="{{ url_for('main.index') }}">Latest</a></li>
+    <li class="active"><a href="{{ url_for('main.index') }}">Top</a></li>
+</ul>
 {% include '_posts.html' %}
 {% if pagination %}
 <div class="pagination">

@@ -6,15 +6,15 @@
 {% block page_content %}
 <div class="page-header">
 
-<h3>Create a New Post </h3>
+<h2>Create a New Post</h2>
 
 </div>
 
 <div>
 {% if current_user.can(Permission.WRITE_ARTICLES) %}
-
+<div class="col-md-5">
 {{ wtf.quick_form(form) }}
-
+</div>
 {% endif %}
 </div>
 {% endblock %}

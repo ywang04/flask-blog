@@ -4,10 +4,10 @@
 {% block title %}YBLOG - {{ user.username }}{% endblock %}
 
 {% block page_content %}
+
 <div class="page-header">
 
     <img class="img-rounded profile-thumbnail" src="{{ user.gravatar(size=220) }}">
-
 
     <div class="profile-header">
         <h1>{{ user.username }}</h1>
@@ -33,5 +33,7 @@
             {% endif %}
         </p>
     </div>
+
 </div>
+
 {% endblock %}

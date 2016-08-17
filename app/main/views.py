@@ -116,8 +116,9 @@ def new_post():
         post = Post(title=form.title.data,category=Category.query.get(form.category.data),body=form.body.data,
                     author=current_user._get_current_object())
         db.session.add(post)
-        flash('The post has been updated.')
-        return redirect(url_for('main.post', id=post.id))
+        db.session.commit()
+        flash('The post has been created.')
+        return redirect(url_for('main.post',id=post.id))
     return render_template('new_post.html',form=form)
 
 @main.route('/edit-post/<int:id>',methods=['GET','POST'])

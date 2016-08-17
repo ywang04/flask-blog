@@ -199,7 +199,7 @@ class User(UserMixin,db.Model):
         self.last_seen = datetime.utcnow()
         db.session.add(self)
 
-    def gravatar(self,size=100,default='identicon',rating='g'):
+    def gravatar(self,size=100,default='wavatar',rating='g'):
         if request.is_secure:
             url = 'https://secure.gravatar.com/avatar'
         else:

@@ -7,12 +7,12 @@
 {% block page_content %}
 
 {% include '_posts.html' %}
+
 {% if pagination %}
 <div class="pagination">
     {{ macros.pagination_widget(pagination, 'main.my_post') }}
 </div>
 {% endif %}
-
 {% endblock %}
 
 

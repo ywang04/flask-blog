@@ -7,6 +7,11 @@
     margin-left: 280px;
 }
 
+div.post-tabs {
+  margin-top: 16px;
+
+}
+
 ul.posts {
     list-style-type: none;
     padding: 0px;
@@ -32,6 +37,7 @@ div.post-thumbnail {
 div.post-content {
     margin-left: 48px;
     min-height: 48px;
+    color: #009ACD;
 }
 
 div.pagination {
@@ -72,3 +78,11 @@ ul.categories {
     margin: 16px 0px 0px 0px;
     border-top: 1px solid #e0e0e0;
 }
+
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a:hover
+{ background-color: #fff;
+    color: #009ACD;
+    font-weight: bold;
+    cursor: default; }
