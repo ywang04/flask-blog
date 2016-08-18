@@ -11,38 +11,9 @@
     <li class="active"><a href="{{ url_for('main.index') }}">Latest</a></li>
     <li class="active"><a href="{{ url_for('main.index') }}">Top</a></li>
 </ul>
-{% include '_posts.html' %}
+{% include '_posts_all.html' %}
 
-<div style="padding:10px;">
-            <div style="border-bottom:1px solid #DAD4D4;;padding:10px 10px;">
-                <h5><span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>CATEGORY</h5>
-            </div>
-
-            <ul>
-
-                <li class="presentation" style="padding-top:0px;"><a href="/category/python爬虫"><p><span style="font-size:15px;">&gt; PYTHON爬虫</span><span class="badge text-right" style="float:right">7</span></p></a></li>
-
-                <li class="presentation" style="padding-top:0px;"><a href="/category/机器学习"><p><span style="font-size:15px;">&gt; 机器学习</span><span class="badge text-right" style="float:right">3</span></p></a></li>
-
-                <li class="presentation" style="padding-top:0px;"><a href="/category/web开发"><p><span style="font-size:15px;">&gt; WEB开发</span><span class="badge text-right" style="float:right">3</span></p></a></li>
-
-                <li class="presentation" style="padding-top:0px;"><a href="/category/tornado"><p><span style="font-size:15px;">&gt; TORNADO</span><span class="badge text-right" style="float:right">3</span></p></a></li>
-
-                <li class="presentation" style="padding-top:0px;"><a href="/category/数据分析"><p><span style="font-size:15px;">&gt; 数据分析</span><span class="badge text-right" style="float:right">2</span></p></a></li>
-
-                <li class="presentation" style="padding-top:0px;"><a href="/category/生活随笔"><p><span style="font-size:15px;">&gt; 生活随笔</span><span class="badge text-right" style="float:right">2</span></p></a></li>
-
-                <li class="presentation" style="padding-top:0px;"><a href="/category/数据库"><p><span style="font-size:15px;">&gt; 数据库</span><span class="badge text-right" style="float:right">1</span></p></a></li>
-
-                <li class="presentation" style="padding-top:0px;"><a href="/category/Django"><p><span style="font-size:15px;">&gt; DJANGO</span><span class="badge text-right" style="float:right">1</span></p></a></li>
-
-                <li class="presentation" style="padding-top:0px;"><a href="/category/科学计算"><p><span style="font-size:15px;">&gt; 科学计算</span><span class="badge text-right" style="float:right">1</span></p></a></li>
-
-                <li class="presentation" style="padding-top:0px;"><a href="/category/R语言"><p><span style="font-size:15px;">&gt; R语言</span><span class="badge text-right" style="float:right">1</span></p></a></li>
-
-            </ul>
-
-    </div>
+{% include '_category.html' %}
 
 {% if pagination %}
 <div class="pagination">

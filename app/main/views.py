@@ -125,8 +125,10 @@ def new_post():
 def edit_post(id):
     #check the id and permission for the post
     post = Post.query.get_or_404(id)
-    if current_user != post.author and \
-        not current_user.is_administrator:
+    # if current_user != post.author and \
+    #     not current_user.is_administrator:
+    #     abort(403)
+    if current_user != post.author:
         abort(403)
     form = PostForm()
     if form.validate_on_submit():
@@ -138,9 +140,9 @@ def edit_post(id):
         db.session.add(post)
         flash('The post has been updated.')
         return redirect(url_for('main.my_post'))
-    form.title.data = post.title
-    form.category.data = post.category_id
-    form.body.data = post.body
+        form.title.data = post.title
+        form.category.data = post.category_id
+        form.body.data = post.body
     return render_template('edit_post.html',form=form)
 
 

@@ -1,4 +1,4 @@
-<div class="col-md-8">
+<div class="col-md-9">
 
 <ul class="posts">
     {% for post in posts %}
@@ -21,16 +21,11 @@
                <a href="{{ url_for('main.post',id=post.id) }}">{{ post.title }}</a>
         <!--The permanent links are added at the bottom of each post in the generic _posts.html template.-->
             <div class="post-footer">
+
                 {% if current_user == post.author %}
 
-                <a href="{{ url_for('main.edit_post',id=post.id) }}">
-                    <span class="label label-primary">Edit</span>
-                </a>
-
-                {% elif current_user.is_administrator() %}
-
                    <a href="{{ url_for('main.edit_post',id=post.id) }}">
-                    <span class="label label-danger">Edit [Admin]</span>
+                    <span class="label label-primary">Edit</span>
                    </a>
                 {% endif %}
             </div>
