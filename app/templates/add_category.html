@@ -15,13 +15,7 @@
 {{ wtf.quick_form(form) }}
 </div>
 
-{% include '_categories.html' %}
-
-{% if pagination %}
-<div class="pagination">
-    {{ macros.pagination_widget(pagination, 'main.index') }}
-</div>
-{% endif %}
+{% include '_show_categories.html' %}
 
 {% endblock %}
 

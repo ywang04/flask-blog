@@ -273,5 +273,18 @@ class Category(db.Model):
     count = db.Column(db.Integer,index=True)
     posts = db.relationship('Post',backref='category',lazy='dynamic')
 
+# class Comment(db.Model):
+#     __tablename__ = 'comments'
+#     id = db.Column(db.Integer,primary_key=True)
+#     body = db.Column(db.Text)
+#     body_html = db.Column(db.Text)
+#     timestamp = db.Column(db.DateTime,index=True,default=datetime.utcnow)
+#     disabled = db.Column(db.BOOLEAN)
+#     author_id = db.Column(db.Integer,db.ForeignKey('users.id'))
+#     post_id = db.Column(db.Integer,db.ForeignKey('posts.id'))
+#
+#     @staticmethod
+#     def
+#
 
 

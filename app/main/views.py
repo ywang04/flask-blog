@@ -44,7 +44,7 @@ def user(username):
         (page,per_page=current_app.config['YBLOG_POSTS_PER_PAGE'],
          error_out = False)
     posts = pagination.items
-    return render_template('profile.html',user=user,posts=posts,pagination=pagination)
+    return render_template('homepage.html',user=user,posts=posts,pagination=pagination)
 
 @main.route('/edit-profile',methods=['GET','POST'])
 @login_required
@@ -91,17 +91,6 @@ def edit_profile_admin(id):
     form.about_me.data = user.about_me
     return render_template('edit_profile.html',form=form,user=user)
 
-@main.route('/my-post',methods=['GET','POST'])
-@login_required
-def my_post():
-    page = request.args.get('page', 1, type=int)
-    pagination = current_user.posts.order_by(Post.timestamp.desc()).paginate(
-            page, per_page=current_app.config['YBLOG_POSTS_PER_PAGE'],
-            error_out=False)
-    posts = pagination.items
-    return render_template('my_post.html', posts=posts, pagination=pagination)
-
-
 @main.route('/post/<int:id>')
 def post(id):
     post = Post.query.get_or_404(id)
@@ -128,7 +117,8 @@ def edit_post(id):
     # if current_user != post.author and \
     #     not current_user.is_administrator:
     #     abort(403)
-    if current_user != post.author:
+    if current_user != post.author and \
+          not current_user.is_administrator:
         abort(403)
     form = PostForm()
     if form.validate_on_submit():
@@ -139,11 +129,14 @@ def edit_post(id):
         post.body = form.body.data
         db.session.add(post)
         flash('The post has been updated.')
-        return redirect(url_for('main.my_post'))
-        form.title.data = post.title
-        form.category.data = post.category_id
-        form.body.data = post.body
+        return redirect(url_for('main.post',id=post.id))
+    form.title.data = post.title
+    form.category.data = post.category_id
+    form.body.data = post.body
     return render_template('edit_post.html',form=form)
+
+
+
 
 
 @main.route('/add-Category',methods=['GET','POST'])

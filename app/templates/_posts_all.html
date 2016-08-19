@@ -6,7 +6,7 @@
 
        <!--author is a foreign key, which is a left image-->
         <div class="post-thumbnail">
-            <a href="{{ url_for('.user', username=post.author.username) }}">
+            <a href="{{ url_for('main.user', username=post.author.username) }}">
                 <img class="img-rounded profile-thumbnail" src="{{ post.author.gravatar(size=40) }}">
             </a>
         </div>
@@ -20,16 +20,17 @@
 
                <a href="{{ url_for('main.post',id=post.id) }}">{{ post.title }}</a>
         <!--The permanent links are added at the bottom of each post in the generic _posts.html template.-->
-            <div class="post-footer">
-
-                {% if current_user.is_administrator() %}
-
-                   <a href="{{ url_for('main.edit_post',id=post.id) }}">
+                <div class="post-footer">
+                {% if current_user == post.author %}
+                <a href="{{ url_for('main.edit_post', id=post.id) }}">
+                    <span class="label label-primary">Edit</span>
+                </a>
+                {% elif current_user.is_administrator() %}
+                <a href="{{ url_for('main.edit_post', id=post.id) }}">
                     <span class="label label-danger">Edit [Admin]</span>
-                   </a>
+                </a>
                 {% endif %}
             </div>
-
         </div>
     </li>
     {% endfor %}
