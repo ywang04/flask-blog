@@ -24,7 +24,7 @@ def index():
     #pagination is a <flask_sqlalchemy.Pagination object at 0x10e50cf10> object, class Pagination
 
     pagination = Post.query.order_by(Post.timestamp.desc()).paginate(
-            page, per_page=current_app.config['YBLOG_POSTS_PER_PAGE'],
+            page, per_page=current_app.config['YUORA_POSTS_PER_PAGE'],
             error_out=False)
 
     posts = pagination.items
@@ -41,7 +41,7 @@ def user(username):
     # which is a query object, so filters such as order_by() can be used on it as well.
     page = request.args.get('page',1,type=int)
     pagination = user.posts.order_by(Post.timestamp.desc()).paginate\
-        (page,per_page=current_app.config['YBLOG_POSTS_PER_PAGE'],
+        (page,per_page=current_app.config['YUORA_POSTS_PER_PAGE'],
          error_out = False)
     posts = pagination.items
     return render_template('homepage.html',user=user,posts=posts,pagination=pagination)
@@ -134,9 +134,6 @@ def edit_post(id):
     form.category.data = post.category_id
     form.body.data = post.body
     return render_template('edit_post.html',form=form)
-
-
-
 
 
 @main.route('/add-Category',methods=['GET','POST'])
