@@ -13,6 +13,8 @@ from flask.ext.pagedown.fields import PageDownField
 from wtforms import StringField,SubmitField,TextAreaField,BooleanField,SelectField,ValidationError
 from wtforms.validators import Required,Length,Email,Regexp
 from ..models import Role,User,Category
+from flaskckeditor import CKEditor
+
 
 class NameForm(Form):
     name = StringField('What is your name?',validators=[Required()])
@@ -64,7 +66,7 @@ class EditProfileAdminForm(Form):
 class PostForm(Form):
     title = StringField('Enter Title',validators=[Required()])
     category = SelectField('Select Category',coerce=int)
-    body = PageDownField("What's on your mind?",validators=[Required()])
+    body = TextAreaField("What's on your mind?",validators=[Required()])
     submit = SubmitField('Post')
 
     def __init__(self,*args,**kwargs):
