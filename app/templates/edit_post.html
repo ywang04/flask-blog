@@ -10,14 +10,42 @@
     <h3>Edit Post</h3>
     </div>
 
-    <div>
+{#<form method="post">#}
+{##}
+{#    <div class="col-md-9" >#}
+{##}
+{#    {{ form.title(class='form-control',placeholder='Enter Title',type='text') }}<br>#}
+{#    {{ form.category(class='form-control') }}<br>#}
+{#    {{ form.body(class='ckeditor') }}<br>#}
+{#    {{ form.submit(class="btn btn-default") }}#}
+{##}
+{#    </div>#}
+{#</form>#}
 
-    {{ wtf.quick_form(form) }}
 
-    </div>
+     <form method="post">
+        <div style="display:none;">
+            {{ form.csrf_token() }}
+        </div>
+        <div class="form-group required">
+            {{ form.title(class="form-control", placeholder=form.title.label.text) }}
+        </div>
+        <div class="form-group required">
+            {{ form.category(class="form-control") }}
+        </div>
+        <div class="form-group required">
+            <div class="row">
+                <div class="col-md-6">
+                    {{ form.body(class="ckeditor", placeholder=form.body.label.text) }}
+                </div>
+            </div>
+        </div>
+        <div class="form-group">
+             {{ form.submit(class="btn btn-default") }}
+             <a href="{{ url_for('.index') }}"><button type="button" class="btn btn-link">取消编辑</button></a>
+        </div>
+    </form>
+
+
 {% endblock %}
 
-{% block scripts %}
-{{ super() }}
-{{ pagedown.include_pagedown() }}
-{% endblock %}
