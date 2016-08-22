@@ -127,9 +127,11 @@ def edit_post(id):
         #Category.query.get(id) is to get the category object
         post.category = Category.query.get(form.category.data)
         post.body = form.body.data
+        print post.body
         db.session.add(post)
         flash('The post has been updated.')
         return redirect(url_for('main.post',id=post.id))
+    print post.body
     form.title.data = post.title
     form.category.data = post.category_id
     form.body.data = post.body
