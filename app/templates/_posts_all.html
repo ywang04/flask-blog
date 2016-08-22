@@ -17,8 +17,14 @@
             <div class="post-author"><a href="{{ url_for('main.user', username=post.author.username) }}">
                 {{ post.author.username }}</a>
             </div>
+{#            <a href="{{ url_for('main.post',id=post.id) }}">{{ post.title }}</a>#}
+          <div class="post-title">
+                <a href="{{ url_for('.post', id=post.id) }}">
+                    {{ post.title }}
+                </a>
+            </div>
 
-               <a href="{{ url_for('main.post',id=post.id) }}">{{ post.title }}</a>
+
         <!--The permanent links are added at the bottom of each post in the generic _posts.html template.-->
                 <div class="post-footer">
                 {% if current_user == post.author %}
@@ -32,12 +38,12 @@
                 {% endif %}
             </div>
         </div>
+
     </li>
     {% endfor %}
 </ul>
 
 </div>
-
 
 
 

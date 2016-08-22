@@ -28,9 +28,14 @@ ul.posts li.post:hover {
 div.post-date {
     float: right;
 }
+
 div.post-author {
     font-weight: bold;
+    float:left;
+    margin-right: 6px;
+
 }
+
 div.post-thumbnail {
     position: absolute;
 }
@@ -39,6 +44,7 @@ div.post-content {
     min-height: 48px;
     color: #009ACD;
 }
+
 
 div.pagination {
     width: 100%;
@@ -82,7 +88,18 @@ div.flask-pagedown-preview h3 {
 div.category{
 
     border: solid;
+}
 
+.post-body h1 {
+    font-size: 140%;
+}
+.post-body h2 {
+    font-size: 130%;
+}
+.post-body h3 {
+    font-size: 120%;
+}
 
-
+.post-title {
+    clear: both;
 }
