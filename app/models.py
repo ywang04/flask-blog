@@ -86,6 +86,7 @@ class User(UserMixin,db.Model):
     last_seen = db.Column(db.DateTime(),default=datetime.utcnow)
     avatar_hash = db.Column(db.String(32))
     posts = db.relationship('Post',backref='author',lazy='dynamic')
+    comments = db.relationship('Comment',backref='author',lazy='dynamic')
 
     @staticmethod
     def generate_fake(count=100):
@@ -237,6 +238,7 @@ class Post(db.Model):
     #author_id is replaced by author, which defines in table users.
     author_id = db.Column(db.Integer,db.ForeignKey('users.id'),nullable=False)
     category_id = db.Column(db.Integer,db.ForeignKey('categories.id'))
+    comments = db.relationship('Comment',backref='post',lazy='dynamic')
 
     @staticmethod
     def generate_fake(count=100):
@@ -273,18 +275,25 @@ class Category(db.Model):
     count = db.Column(db.Integer,index=True)
     posts = db.relationship('Post',backref='category',lazy='dynamic')
 
-# class Comment(db.Model):
-#     __tablename__ = 'comments'
-#     id = db.Column(db.Integer,primary_key=True)
-#     body = db.Column(db.Text)
-#     body_html = db.Column(db.Text)
-#     timestamp = db.Column(db.DateTime,index=True,default=datetime.utcnow)
-#     disabled = db.Column(db.BOOLEAN)
-#     author_id = db.Column(db.Integer,db.ForeignKey('users.id'))
-#     post_id = db.Column(db.Integer,db.ForeignKey('posts.id'))
-#
-#     @staticmethod
-#     def
-#
+class Comment(db.Model):
+    __tablename__ = 'comments'
+    id = db.Column(db.Integer,primary_key=True)
+    body = db.Column(db.Text)
+    body_html = db.Column(db.Text)
+    timestamp = db.Column(db.DateTime,index=True,default=datetime.utcnow)
+    disabled = db.Column(db.BOOLEAN)
+    author_id = db.Column(db.Integer,db.ForeignKey('users.id'))
+    post_id = db.Column(db.Integer,db.ForeignKey('posts.id'))
+
+
+    @staticmethod
+    def on_changed_body(target, value, oldvalue, initiator):
+        allowed_tags = ['a', 'abbr', 'acronym', 'b', 'code', 'em', 'i',
+                        'strong']
+        target.body_html = bleach.linkify(bleach.clean(
+            markdown(value, output_format='html'),
+            tags=allowed_tags, strip=True))
+
+db.event.listen(Comment.body, 'set', Comment.on_changed_body)
 
 
