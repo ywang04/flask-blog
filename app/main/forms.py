@@ -63,7 +63,7 @@ class EditProfileAdminForm(Form):
             raise ValidationError('Username already in use.')
 
 
-class PostForm(Form):
+class PostForm(Form,CKEditor):
     title = StringField('Enter Title',validators=[Required()])
     category = SelectField('Select Category',coerce=int)
     body = TextAreaField("What's on your mind?",validators=[Required()])
@@ -74,6 +74,10 @@ class PostForm(Form):
         #choices is the category's attribute while category is the instance of SelectField
         self.category.choices = [(category.id,category.category_name)
                                  for category in Category.query.order_by(Category.category_name).all()]
+
+class CommentForm(Form):
+    body = StringField('Add a comment',validators=[Required()])
+    submit = SubmitField('Comment')
 
 
 class AddCategory(Form):
