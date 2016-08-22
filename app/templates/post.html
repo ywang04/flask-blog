@@ -4,6 +4,9 @@
 {% block title %}Yuora - Post{% endblock %}
 
 {% block page_content %}
+
+  <div class="col-xs-12 col-md-9 main">
+
   <div class="post-title">
       <h3>{{ post.title }}</h3>
   </div>
@@ -12,12 +15,21 @@
           {{ post.author.username }}
       </a>
   </div>
-
     <div class="post-time">- Posted {{ moment(post.timestamp).fromNow() }}</div>
+  <br>
+<div class="post-body">
+    {% if post.body_html %}
+        {{ post.body_html | safe }}
+    {% else %}
+        {{ post.body }}
+    {% endif %}
+</div>
 
 {% if pagination %}
 <div class="pagination">
     {{ macros.pagination_widget(pagination, 'main.post') }}
+</div>
+
 </div>
 {% endif %}
 
