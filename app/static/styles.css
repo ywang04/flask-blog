@@ -3,8 +3,8 @@
 }
 
 .profile-header {
-    min-height: 260px;
-    margin-left: 280px;
+    min-height: 100px;
+    margin-left: 230px;
 }
 
 div.post-tabs {
@@ -33,7 +33,6 @@ div.post-author {
     font-weight: bold;
     float:left;
     margin-right: 6px;
-
 }
 
 div.post-thumbnail {
@@ -102,4 +101,37 @@ div.category{
 
 .post-title {
     clear: both;
+}
+
+ul.comments {
+    list-style-type: none;
+    padding: 0px;
+    margin: 16px 0px 0px 0px;
+}
+ul.comments li.comment {
+    margin-left: 32px;
+    padding: 8px;
+    border-bottom: 1px solid #e0e0e0;
+}
+ul.comments li.comment:nth-child(1) {
+    border-top: 1px solid #e0e0e0;
+}
+ul.comments li.comment:hover {
+    background-color: #f0f0f0;
+}
+div.comment-date {
+    float: right;
+}
+div.comment-author {
+    font-weight: bold;
+}
+div.comment-thumbnail {
+    position: absolute;
+}
+div.comment-content {
+    margin-left: 48px;
+    min-height: 48px;
+}
+div.comment-form {
+    margin: 16px 0px 16px 30px;
 }
