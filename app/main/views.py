@@ -105,12 +105,12 @@ def post(id):
     page = request.args.get('page',1,type=int)
     if page == -1:
         page = (post.comments.count() - 1) // \
-            current_app.config['YUPRA_COMMENTS_PER_PAGE'] + 1
+            current_app.config['YUORA_COMMENTS_PER_PAGE'] + 1
     pagination = post.comments.order_by(Comment.timestamp.asc()).paginate(
-        page,per_page= current_app.config['YUPRA_COMMENTS_PER_PAGE'],
+        page,per_page= current_app.config['YUORA_COMMENTS_PER_PAGE'],
         error_out = False)
     comments = pagination.items
-    return render_template('post.html',posts=[post],form=form,comments=comments,pagination=pagination)
+    return render_template('post.html',post=post,form=form,comments=comments,pagination=pagination)
 
 @main.route('/new-post',methods=['GET','POST'])
 @login_required
@@ -143,11 +143,9 @@ def edit_post(id):
         #Category.query.get(id) is to get the category object
         post.category = Category.query.get(form.category.data)
         post.body = form.body.data
-        print post.body
         db.session.add(post)
         flash('The post has been updated.')
         return redirect(url_for('main.post',id=post.id))
-    print post.body
     form.title.data = post.title
     form.category.data = post.category_id
     form.body.data = post.body
