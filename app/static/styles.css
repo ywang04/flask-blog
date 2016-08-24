@@ -89,15 +89,11 @@ div.category{
     border: solid;
 }
 
-.post-body h1 {
+div.post-body h2 {
     font-size: 140%;
+    line-height: 1cm;
 }
-.post-body h2 {
-    font-size: 130%;
-}
-.post-body h3 {
-    font-size: 120%;
-}
+
 
 .post-title {
     clear: both;
@@ -135,3 +131,14 @@ div.comment-content {
 div.comment-form {
     margin: 16px 0px 16px 30px;
 }
+
+.post-body h1 {
+    font-size: 140%;
+}
+.post-body h2 {
+    font-size: 130%;
+}
+.post-body h3 {
+    font-size: 120%;
+}
+

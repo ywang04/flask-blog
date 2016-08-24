@@ -1,22 +1,36 @@
 {% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
 {% import "_macros.html" as macros %}
 
 {% block title %}Yuora - Post{% endblock %}
 
 {% block page_content %}
 
-  <div class="col-xs-12 col-md-9 main">
+<div class="col-md-9">
+ <div class="page-header">
 
-  <div class="post-title">
-      <h3>{{ post.title }}</h3>
-  </div>
+     <h2>{{ post.title }}</h2>
+
+<div class="tag">
   <div class="post-author">
       <a href="{{ url_for('main.user', username=post.author.username) }}">
           {{ post.author.username }}
       </a>
   </div>
-    <div class="post-time">- Posted {{ moment(post.timestamp).fromNow() }}</div>
-  <br>
+    - Posted {{ moment(post.timestamp).fromNow() }}
+
+
+      {% if current_user == post.author %}
+        <a href="{{ url_for('main.edit_post', id=post.id) }}">
+            <span class="label label-default">Edit</span>
+        </a>
+        {% elif current_user.is_administrator() %}
+        <a href="{{ url_for('main.edit_post', id=post.id) }}">
+            <span class="label label-danger">Edit [Admin]</span>
+        </a>
+        {% endif %}
+</div>
+<br>
 <div class="post-body">
     {% if post.body_html %}
         {{ post.body_html | safe }}
@@ -25,12 +39,28 @@
     {% endif %}
 </div>
 
-{% if pagination %}
-<div class="pagination">
-    {{ macros.pagination_widget(pagination, 'main.post') }}
 </div>
 
+<h4>Comments</h4>
+
+{% if current_user.can(Permission.COMMENT) %}
+
+<div class="comment-form">
+    {{ wtf.quick_form(form) }}
+</div>
+
+{% endif %}
+
+
+{% include '_comments.html' %}
+
+
+{% if pagination %}
+<div class="pagination">
+    {{ macros.pagination_widget(pagination, 'main.post',fragment='#comments',id=post.id) }}
 </div>
 {% endif %}
 
+</div>
 {% endblock %}
+

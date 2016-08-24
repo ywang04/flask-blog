@@ -8,12 +8,14 @@
 
 <ul class="nav nav-tabs">
     <!--点赞最多的就是Top-->
-    <li class="active"><a href="{{ url_for('main.index') }}">Latest</a></li>
     <li class="active"><a href="{{ url_for('main.index') }}">Top</a></li>
+    <li class="active"><a href="{{ url_for('main.index') }}">Latest</a></li>
+    {% if current_user.is_authenticated %}
+    <li class="active"><a href="{{ url_for('main.index') }}">Followers</a></li>
+    {% endif %}
 </ul>
-{% include '_posts_all.html' %}
 
-{% include '_category.html' %}
+{% include '_posts_all.html' %}
 
 {% if pagination %}
 <div class="pagination">
@@ -23,8 +25,3 @@
 
 {% endblock %}
 
-
-{% block scripts %}
-{{ super() }}
-{{ pagedown.include_pagedown() }}
-{% endblock %}
