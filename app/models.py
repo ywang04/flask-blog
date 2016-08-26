@@ -35,6 +35,7 @@ class Role(db.Model):
     name = db.Column(db.String(64), unique=True)
     default = db.Column(db.Boolean,default=False,index=True)
     permissions = db.Column(db.Integer)
+    #users and role mean user_id and role_id accordingly
     users = db.relationship('User', backref='role', lazy='dynamic')
 
     @staticmethod
@@ -72,7 +73,7 @@ class Follow(db.Model):
     __tablename__ = 'follows'
     follower_id = db.Column(db.Integer,db.ForeignKey('users.id')),
     followed_id = db.Column(db.Integer,db.ForeignKey('users.id')),
-    timestamp = db.Column(db.DateTime,default=datetime.utcnow)
+    timestamp = db.Column(db.DateTime,index=True,default=datetime.utcnow)
 
 
 class User(UserMixin,db.Model):
@@ -81,7 +82,7 @@ class User(UserMixin,db.Model):
     email = db.Column(db.String(64),unique=True,index=True)
     username = db.Column(db.String(64), unique=True, index=True)
     password_hash = db.Column(db.String(128))
-    #roles is the name of table Role in database and role_id is the true column in users table, which used rarely.
+    #roles is the name of table Role in database and role_id is the true column in users table, which is used rarely.
     role_id = db.Column(db.Integer, db.ForeignKey('roles.id'))
     confirmed = db.Column(db.BOOLEAN,default=False)
     name = db.Column(db.String(64))
@@ -93,6 +94,19 @@ class User(UserMixin,db.Model):
     avatar_hash = db.Column(db.String(32))
     posts = db.relationship('Post',backref='author',lazy='dynamic')
     comments = db.relationship('Comment',backref='author',lazy='dynamic')
+    #I follow who
+    followed = db.relationship('Follow',
+                               foreign_keys=[Follow.follower_id],
+                               backref=db.backref('follower',lazy='joined'),
+                               lazy='dynamic',
+                               cascade='all,delete-orphan')
+    #who follows me
+    follower = db.relationship('Follow',
+                               foreign_keys=[Follow.followed_id],
+                               backref=db.backref('followed',lazy='joined'),
+                               lazy='dynamic',
+                               cascade='all,delete-orphan')
+
 
     @staticmethod
     def generate_fake(count=100):
