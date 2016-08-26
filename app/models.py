@@ -68,6 +68,12 @@ class Role(db.Model):
     def __repr__(self):
         return '<Role %r>' % self.name
 
+class Follow(db.Model):
+    __tablename__ = 'follows'
+    follower_id = db.Column(db.Integer,db.ForeignKey('users.id')),
+    followed_id = db.Column(db.Integer,db.ForeignKey('users.id')),
+    timestamp = db.Column(db.DateTime,default=datetime.utcnow)
+
 
 class User(UserMixin,db.Model):
     __tablename__ = 'users'
@@ -302,3 +308,21 @@ class Comment(db.Model):
 db.event.listen(Comment.body, 'set', Comment.on_changed_body)
 
 
+#below codes just example to learn many to many relationship
+registrations = db.Table('registrations',
+        db.Column('student_id',db.Integer,db.ForeignKey('students.student_id')),
+        db.Column('class_id',db.Integer,db.ForeignKey('classes.class_id'))
+)
+
+class Student(db.Model):
+    __tablename__ = "students"
+    student_id = db.Column(db.Integer,primary_key=True)
+    name = db.Column(db.String(64))
+    classes = db.relationship('Class',secondary=registrations,
+                              backref=db.backref('students',lazy='dynamic'),lazy='dynamic')
+
+class Class(db.Model):
+    __tablename__ = "classes"
+    class_id = db.Column(db.Integer,primary_key=True)
+    name = db.Column(db.String(64))
+   
