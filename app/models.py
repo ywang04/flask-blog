@@ -71,8 +71,10 @@ class Role(db.Model):
 
 class Follow(db.Model):
     __tablename__ = 'follows'
-    follower_id = db.Column(db.Integer,db.ForeignKey('users.id')),
-    followed_id = db.Column(db.Integer,db.ForeignKey('users.id')),
+    follower_id = db.Column(db.Integer,db.ForeignKey('users.id'),
+                            primary_key=True)
+    followed_id = db.Column(db.Integer,db.ForeignKey('users.id'),
+                            primary_key=True
     timestamp = db.Column(db.DateTime,index=True,default=datetime.utcnow)
 
 
@@ -229,6 +231,14 @@ class User(UserMixin,db.Model):
         hash = self.avatar_hash or hashlib.md5(self.email.encode('utf-8')).hexdigest()
         return '{url}/{hash}?s={size}&d={default}&r={rating}'.format(
             url=url,hash=hash,size=size,default=default,rating=rating)
+
+    def follow(self,user):
+        if not self.is_following(user):
+            f= Follow(followed=user)
+            self.followed.append(f)
+
+    def unfollow(self,user):
+        pass
 
     def __repr__(self):
         return '<User %r>' % self.username
