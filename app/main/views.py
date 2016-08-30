@@ -15,7 +15,7 @@ from . import main
 from ..models import User,Role,Permission,Post,Category,Comment
 from .forms import EditProfile,EditProfileAdminForm,PostForm,AddCategory,CommentForm
 from .. import db
-from ..decorators import admin_required
+from ..decorators import admin_required,permission_required
 
 @main.route('/',methods=['GET','POST'])
 def index():
@@ -27,7 +27,6 @@ def index():
     pagination = Post.query.order_by(Post.timestamp.desc()).paginate(
             page, per_page=current_app.config['YUORA_POSTS_PER_PAGE'],
             error_out=False)
-
     posts = pagination.items
     return render_template('index.html',posts=posts,pagination=pagination)
 
@@ -105,8 +104,7 @@ def post(id):
         return redirect(url_for('main.post',id=post.id,page=-1))
     page = request.args.get('page',1,type=int)
     if page == -1:
-        page = (post.comments.count() - 1) // \
-            current_app.config['YUORA_COMMENTS_PER_PAGE'] + 1
+        page = (post.comments.count() - 1) // current_app.config['YUORA_COMMENTS_PER_PAGE'] + 1
     pagination = post.comments.order_by(Comment.timestamp.asc()).paginate(
         page,per_page= current_app.config['YUORA_COMMENTS_PER_PAGE'],
         error_out = False)
@@ -151,6 +149,53 @@ def edit_post(id):
     form.category.data = post.category_id
     form.body.data = post.body
     return render_template('edit_post.html',form=form,post=post)
+
+@main.route('/follow/<username>')
+@login_required
+@permission_required(Permission.FOLLOW)
+def follow(username):
+    user = User.query.filter_by(username=username).first()
+    if user is None:
+        flash('Invalid user.')
+        return redirect(url_for('main.user',username=username))
+    if current_user.is_following(user):
+        flash('You are already following this user.')
+        return redirect(url_for('main.user',username=username))
+    current_user.follow(user)
+    flash('You are now following {}.'.format(username))
+    return redirect(url_for('main.user', username=username))
+
+@main.route('/unfollow/<username>')
+@login_required
+@permission_required(Permission.FOLLOW)
+def unfollow(username):
+    user = User.query.filter_by(username=username).first()
+    if user is None:
+        flash('Invalid user.')
+        return redirect(url_for('main.user',username=username))
+    if not current_user.is_following(user):
+        flash('You are not following this user.')
+        return redirect(url_for('main.user',username=username))
+    current_user.unfollow(user)
+    flash('You are not following %s anymore.' % username)
+    return redirect(url_for('main.user',username=username))
+
+
+@main.route('/followers/<username>')
+def followers(username):
+    user = User.query.filter_by(username=username).first()
+    if user is None:
+        flash('Invalid user.')
+        return redirect(url_for('main.user',username=username))
+    page = request.args.get('page',1,type=int)
+    pagination = user.followers.paginate(
+        page,per_page=current_app.config['YUORA_FOLLOWERS_PER_PAGE'],
+        error_out = False)
+    follows = [{'user':item.follower,'timestamp': item.timestamp} for item in pagination.items]
+    #[{'timestamp': datetime.datetime(2016, 8, 29, 5, 55, 21), 'user': <User u'Admin'>}, {'timestamp': datetime.datetime(2016, 8, 30, 6, 3, 55), 'user': <User u'yang01'>}]
+    return render_template('followers.html',user=user,title='Followers of',
+                           endpoint='main.followers',pagination=pagination,
+                           follows=follows)
 
 def gen_rnd_filename():
     filename_prefix = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
