@@ -40,11 +40,11 @@
 
             </a>
 
-{#            <a href="{{ url_for('main.followed_by',username=user.username) }}">#}
-{##}
-{#                Following: <span class="badge">{{ user.followed.count() }}</span>#}
-{##}
-{#            </a>#}
+            <a href="{{ url_for('main.followed_by',username=user.username) }}" style="text-decoration:none;">
+
+                Following: <span class="badge">{{ user.followed.count() }}</span>
+
+            </a>
 
             {% if current_user.is_authenticated and user != current_user and user.is_following(current_user) %}
                 <span class="label label-default">Follows you</span>

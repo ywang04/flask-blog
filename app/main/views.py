@@ -197,6 +197,21 @@ def followers(username):
                            endpoint='main.followers',pagination=pagination,
                            follows=follows)
 
+@main.route('/followed-by/<username>')
+def followed_by(username):
+    user = User.query.filter_by(username=username).first()
+    if user is None:
+        flash('Invalid user.')
+        return redirect(url_for('main.user',username=username))
+    page = request.args.get('page',1,type=int)
+    pagination = user.followed.paginate(
+        page,per_page=current_app.config['YUORA_FOLLOWERS_PER_PAGE'],
+        error_out = False)
+    follows = [{'user':item.followed,'timestamp': item.timestamp} for item in pagination.items]
+    return render_template('followers.html', user=user, title='Followed by',
+                           endpoint='main.followed_by', pagination=pagination,
+                           follows=follows)
+
 def gen_rnd_filename():
     filename_prefix = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
     return '%s%s' % (filename_prefix, str(random.randrange(1000, 10000)))
