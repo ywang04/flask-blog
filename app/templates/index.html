@@ -6,16 +6,21 @@
 
 {% block page_content %}
 
+<div class="post-tabs">
+
 <ul class="nav nav-tabs">
     <!--点赞最多的就是Top-->
-    <li class="active"><a href="{{ url_for('main.index') }}">Top</a></li>
+
+    <li{% if not show_followed %} class="active"{% endif %}><a href="{{ url_for('main.show_all') }}">All</a></li>
     <li class="active"><a href="{{ url_for('main.index') }}">Latest</a></li>
     {% if current_user.is_authenticated %}
-    <li class="active"><a href="{{ url_for('main.index') }}">Followers</a></li>
+        <li{% if show_followed %} class="active"{% endif %}><a href="{{ url_for('main.show_followed') }}">Followers</a>
+    </li>
     {% endif %}
 </ul>
+    {% include '_posts_all.html' %}
 
-{% include '_posts_all.html' %}
+</div>
 
 {% if pagination %}
 <div class="pagination">
