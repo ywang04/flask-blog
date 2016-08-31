@@ -219,7 +219,6 @@ def followed_by(username):
                            follows=follows)
 
 @main.route('/all')
-@login_required
 def show_all():
     resp = make_response(redirect(url_for('main.index')))
     resp.set_cookie('show_followed','',max_age=30*24*60*60)
