@@ -75,7 +75,6 @@ class Follow(db.Model):
 
     follower_id = db.Column(db.Integer,db.ForeignKey('users.id'),
                             primary_key=True)
-
     followed_id = db.Column(db.Integer,db.ForeignKey('users.id'),
                             primary_key=True)
     timestamp = db.Column(db.DateTime,index=True,default=datetime.utcnow)
@@ -234,6 +233,7 @@ class User(UserMixin,db.Model):
         return '{url}/{hash}?s={size}&d={default}&r={rating}'.format(
             url=url,hash=hash,size=size,default=default,rating=rating)
 
+    #follow and unfollow are actions
     def follow(self,user):
         if not self.is_following(user):
             f = Follow(follower=self,followed=user)
@@ -244,12 +244,17 @@ class User(UserMixin,db.Model):
         if f:
             db.session.delete(f)
 
+    #is_following and is_followed_by are status
     def is_following(self,user):
         return self.followed.filter_by(followed_id=user.id).first() is not None
 
     def is_followed_by(self,user):
         return self.followers.filter_by(follower_id=user.id).first() is not None
 
+    @property
+    def followed_posts(self):
+        return Post.query.join(Follow,Follow.followed_id == Post.author_id)\
+            .filter(Follow.follower_id == self.id)
 
     def __repr__(self):
         return '<User %r>' % self.username
