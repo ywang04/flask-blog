@@ -13,7 +13,7 @@
 
 <div class="tag">
   <div class="post-author">
-      <a href="{{ url_for('main.user', username=post.author.username) }}">
+      <a href="{{ url_for('main.user', username=post.author.username) }}" style="text-decoration:none;">
           {{ post.author.username }}
       </a>
   </div>
@@ -21,11 +21,11 @@
 
 
       {% if current_user == post.author %}
-        <a href="{{ url_for('main.edit_post', id=post.id) }}">
+        <a href="{{ url_for('main.edit_post', id=post.id) }}" style="text-decoration:none;">
             <span class="label label-default">Edit</span>
         </a>
         {% elif current_user.is_administrator() %}
-        <a href="{{ url_for('main.edit_post', id=post.id) }}">
+        <a href="{{ url_for('main.edit_post', id=post.id) }}" style="text-decoration:none;">
             <span class="label label-danger">Edit [Admin]</span>
         </a>
         {% endif %}
