@@ -16,6 +16,7 @@ from ..models import User,Role,Permission,Post,Category,Comment
 from .forms import EditProfile,EditProfileAdminForm,PostForm,AddCategory,CommentForm
 from .. import db
 from ..decorators import admin_required,permission_required
+from sqlalchemy.exc import IntegrityError
 
 @main.route('/',methods=['GET','POST'])
 def index():
@@ -272,8 +273,16 @@ def add_category():
     form = AddCategory()
     if form.validate_on_submit():
         category = Category(category_name=form.category.data)
-        db.session.add(category)
+        try:
+            db.session.add(category)
+            db.session.commit()
+        except IntegrityError as e:
+            db.session.rollback()
+            flash('Category already exists.')
+            return redirect(url_for('main.add_category'))
+        flash('Category has been added.')
         return redirect(url_for('main.add_category'))
+
     categories = Category.query.order_by(Category.category_name).all()
     return render_template('add_category.html',form=form,categories=categories)
 
