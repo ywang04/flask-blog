@@ -35,7 +35,10 @@ def index():
             page, per_page=current_app.config['YUORA_POSTS_PER_PAGE'],
             error_out=False)
     posts = pagination.items
-    return render_template('index.html',posts=posts,show_followed=show_followed,pagination=pagination)
+
+    categories = Category.query.order_by(Category.category_name).all()
+    return render_template('index.html',posts=posts,show_followed=show_followed,pagination=pagination,
+                           categories=categories,Post=Post)
 
 
 @main.route('/user/<username>')
@@ -282,7 +285,6 @@ def add_category():
             return redirect(url_for('main.add_category'))
         flash('Category has been added.')
         return redirect(url_for('main.add_category'))
-
     categories = Category.query.order_by(Category.category_name).all()
     return render_template('add_category.html',form=form,categories=categories)
 

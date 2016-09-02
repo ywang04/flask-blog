@@ -1,34 +1,35 @@
 <div class="category">
-
-<table>
-
-    <tr>
-
-        <th>Category Name</th>
-        <th>Number</th>
-
-    </tr>
-
-    {% for category in categories %}
-
-    <tr>
+    <h3><span class="glyphicon glyphicon-leaf" aria-hidden="true"></span> CATEGORY</h3>
+</div>
 
 
-    <td>
-
-        {{ category.category_name }}
-
-    </td>
+{#<div style="border-bottom:1px solid #DAD4D4;">#}
+{#					<h5><span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>CATEGORY</h5>#}
+{#				</div>#}
 
 
-    <td>
+{#<li class="presentation" style="padding-top:0px;"><a href="/category/python爬虫"><p><span style="font-size:15px;">&gt; PYTHON爬虫</span><span class="badge text-right" style="float:right">7</span></p></a></li>#}
+<br>
+<div class="show-category">
+    <ul style="list-style-type: square">
+         {% for category in categories %}
 
-        5
-    </td>
+      <li>
 
-    </tr>
+        <a href="#" style="text-decoration:none;">
 
-    {% endfor %}
-</table>
+            <p style="width: 120px">
 
+               <span style="font-size: 15px;">{{ category.category_name }}</span>
+               <span class="badge text-right" style="float:right">{{ Post.query.filter(Post.category_id==category.id).count()}}</span>
+
+            </p>
+
+        </a>
+
+        {% endfor %}
+
+      </li>
+
+    </ul>
 </div>

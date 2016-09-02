@@ -15,12 +15,6 @@ from wtforms.validators import Required,Length,Email,Regexp
 from ..models import Role,User,Category
 from flaskckeditor import CKEditor
 
-
-class NameForm(Form):
-    name = StringField('What is your name?',validators=[Required()])
-    submit = SubmitField('Submit')
-
-
 class EditProfile(Form):
     #db has the length limit
     name = StringField('Real name',validators=[Length(0,64)])

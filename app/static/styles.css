@@ -84,16 +84,10 @@ div.flask-pagedown-preview h3 {
     font-weight: bold;
     cursor: default; }
 
-div.category{
-
-    border: solid;
-}
-
 div.post-body h2 {
     font-size: 140%;
     line-height: 1cm;
 }
-
 
 .post-title {
     clear: both;
@@ -106,7 +100,8 @@ ul.comments {
 }
 ul.comments li.comment {
     margin-left: 32px;
-    padding: 8px;
+    padding-bottom: 10px;
+    padding-top: 5px;
     border-bottom: 1px solid #e0e0e0;
 }
 ul.comments li.comment:nth-child(1) {
@@ -115,11 +110,10 @@ ul.comments li.comment:nth-child(1) {
 ul.comments li.comment:hover {
     background-color: #f0f0f0;
 }
-div.comment-date {
-    float: right;
-}
+
 div.comment-author {
     font-weight: bold;
+    margin-bottom: 2px;
 }
 div.comment-thumbnail {
     position: absolute;
@@ -132,6 +126,16 @@ div.comment-form {
     margin: 16px 0px 16px 30px;
 }
 
+div.comment-date {
+    float: left;
+    margin-right: 6px;
+    margin-top: 3px;
+}
+
+div.comment-edit {
+     margin-top: 3px;
+}
+
 .post-body h1 {
     font-size: 140%;
 }
@@ -140,5 +144,20 @@ div.comment-form {
 }
 .post-body h3 {
     font-size: 120%;
+}
+
+.category {
+
+    margin-top: 25px;
+    margin-left: 930px;
+
+
+}
+
+.show-category {
+
+    margin-left: 920px;
+
+
 }
 
