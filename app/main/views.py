@@ -136,6 +136,7 @@ def new_post():
     return render_template('new_post.html',form=form)
 
 @main.route('/edit-post/<int:id>',methods=['GET','POST'])
+@login_required
 def edit_post(id):
     #check the id and permission for the post
     post = Post.query.get_or_404(id)
@@ -192,6 +193,7 @@ def unfollow(username):
 
 
 @main.route('/followers/<username>')
+@login_required
 def followers(username):
     user = User.query.filter_by(username=username).first()
     if user is None:
@@ -208,6 +210,7 @@ def followers(username):
                            follows=follows)
 
 @main.route('/followed-by/<username>')
+@login_required
 def followed_by(username):
     user = User.query.filter_by(username=username).first()
     if user is None:
@@ -270,7 +273,17 @@ def ckupload():
     response.headers["Content-Type"] = "text/html"
     return response
 
-@main.route('/add-Category',methods=['GET','POST'])
+@main.route('/show-category/<int:id>')
+def show_category(id):
+    #difference between filter and filter_by,both are fine.
+    posts = Post.query.filter(Post.category_id==id)
+    # posts = Post.query.filter_by(category_id=id)
+    categories = Category.query.order_by(Category.category_name).all()
+    page = request.args.get('page', 1, type=int)
+    return render_template('category.html',posts=posts,categories=categories,Post=Post)
+
+
+@main.route('/add-category',methods=['GET','POST'])
 @admin_required
 def add_category():
     form = AddCategory()
