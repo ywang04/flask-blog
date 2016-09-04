@@ -8,14 +8,13 @@
 
       <li>
 
-        <a href="{{ url_for('main.show_category',id=category.id) }}" style="text-decoration:none;">
+        <a href="{{ url_for('main.show_category',id=category.id) }}">
 
             <p style="width: 120px">
 
                <span style="font-size: 15px;">{{ category.category_name }}</span>
                <span class="badge text-right" style="float:right">{{ Post.query.filter_by(category_id=category.id).count()}}
                </span>
-
             </p>
 
         </a>

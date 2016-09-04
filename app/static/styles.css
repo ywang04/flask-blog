@@ -67,6 +67,12 @@ div.flask-pagedown-preview h3 {
     font-size: 120%;
 }
 
+div.tag {
+
+margin-bottom: 12px;
+
+}
+
 .post-body h1 {
     font-size: 140%;
 }
@@ -150,14 +156,19 @@ div.comment-edit {
 
     margin-top: 25px;
     margin-left: 930px;
-
-
+    margin-bottom: 20px;
 }
 
 .show-category {
 
     margin-left: 920px;
 
+
+}
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration:none;
 
 }
 

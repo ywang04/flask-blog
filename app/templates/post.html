@@ -17,20 +17,24 @@
           {{ post.author.username }}
       </a>
   </div>
+
+<a href="{{ url_for('main.show_category',id=post.category.id) }}">
+    {{ post.category.category_name }}</a>
     - Posted {{ moment(post.timestamp).fromNow() }}
 
 
+
       {% if current_user == post.author %}
-        <a href="{{ url_for('main.edit_post', id=post.id) }}" style="text-decoration:none;">
+        <a href="{{ url_for('main.edit_post', id=post.id) }}">
             <span class="label label-default">Edit</span>
         </a>
         {% elif current_user.is_administrator() %}
-        <a href="{{ url_for('main.edit_post', id=post.id) }}" style="text-decoration:none;">
+        <a href="{{ url_for('main.edit_post', id=post.id) }}">
             <span class="label label-danger">Edit [Admin]</span>
         </a>
         {% endif %}
 </div>
-<br>
+
 <div class="post-body">
     {% if post.body_html %}
         {{ post.body_html | safe }}
