@@ -2,26 +2,19 @@
     <h3><span class="glyphicon glyphicon-leaf" aria-hidden="true"></span> CATEGORY</h3>
 </div>
 
-
-{#<div style="border-bottom:1px solid #DAD4D4;">#}
-{#					<h5><span class="glyphicon glyphicon-leaf" aria-hidden="true"></span>CATEGORY</h5>#}
-{#				</div>#}
-
-
-{#<li class="presentation" style="padding-top:0px;"><a href="/category/python爬虫"><p><span style="font-size:15px;">&gt; PYTHON爬虫</span><span class="badge text-right" style="float:right">7</span></p></a></li>#}
-<br>
 <div class="show-category">
-    <ul style="list-style-type: square">
+    <ul>
          {% for category in categories %}
 
       <li>
 
-        <a href="#" style="text-decoration:none;">
+        <a href="{{ url_for('main.show_category',id=category.id) }}" style="text-decoration:none;">
 
             <p style="width: 120px">
 
                <span style="font-size: 15px;">{{ category.category_name }}</span>
-               <span class="badge text-right" style="float:right">{{ Post.query.filter(Post.category_id==category.id).count()}}</span>
+               <span class="badge text-right" style="float:right">{{ Post.query.filter_by(category_id=category.id).count()}}
+               </span>
 
             </p>
 
