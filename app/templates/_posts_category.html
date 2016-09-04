@@ -1,9 +1,7 @@
 <div class="col-md-9">
 <ul class="posts">
     {% for post in posts %}
-
     <li class="post">
-
 
        <!--author is a foreign key, which is a left image-->
         <div class="post-thumbnail">
@@ -19,21 +17,20 @@
                 {{ post.author.username }}</a></div>
 {#            <a href="{{ url_for('main.post',id=post.id) }}">{{ post.title }}</a>#}
             <div class="post-title">
-                <a href="{{ url_for('main.post', id=post.id) }}" style="text-decoration:none;">
+                <a href="{{ url_for('.post', id=post.id) }}" style="text-decoration:none;">
                     {{ post.title }}
                 </a>
             </div>
 
             <div class="post-footer">
                 <span class="label label-default">{{ post.comments.count() }} Comments</span>
-                <span class="label label-info">{{ post.category.category_name }}</span>
+
             </div>
 
         </div>
 
     </li>
     {% endfor %}
-
 </ul>
 </div>
 
