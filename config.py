@@ -13,7 +13,7 @@ class Config:
     YUORA_MAIL_SUBJECT_PREFIX = '[Welcome to Yuora]'
     YUORA_MAIL_SENDER = 'Yuora Admin <yuora@example.com>'
     YUORA_ADMIN = os.environ.get('Yuora_ADMIN')
-    YUORA_POSTS_PER_PAGE = 10
+    YUORA_POSTS_PER_PAGE = 2
     YUORA_COMMENTS_PER_PAGE = 10
     YUORA_FOLLOWERS_PER_PAGE = 10
 
