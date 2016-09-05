@@ -22,11 +22,11 @@
 
 </div>
 
-{% include '_show_categories.html' %}
+{% include '_show_category.html' %}
 
 {% if pagination %}
 <div class="pagination">
-    {{ macros.pagination_widget(pagination, 'main.index') }}
+    {{ macros.pagination_widget(pagination, 'main.category_post',id=category_id) }}
 </div>
 {% endif %}
 

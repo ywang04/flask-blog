@@ -273,15 +273,18 @@ def ckupload():
     response.headers["Content-Type"] = "text/html"
     return response
 
-@main.route('/show-category/<int:id>')
-def show_category(id):
+@main.route('/category-post/<int:id>')
+def category_post(id):
     #difference between filter and filter_by,both are fine.
-    posts = Post.query.filter(Post.category_id==id)
-    # posts = Post.query.filter_by(category_id=id)
+    # posts = Post.query.filter(Post.category_id==id)
+    post = Post.query.filter_by(category_id=id)
     categories = Category.query.order_by(Category.category_name).all()
     page = request.args.get('page', 1, type=int)
-    return render_template('category.html',posts=posts,categories=categories,Post=Post)
-
+    pagination = post.order_by(Post.timestamp.desc()).paginate(
+        page,per_page=current_app.config['YUORA_POSTS_PER_PAGE'],error_out=False)
+    posts = pagination.items
+    return render_template('category.html',posts=posts,categories=categories,Post=Post,category_id=id,
+                           pagination = pagination)
 
 @main.route('/add-category',methods=['GET','POST'])
 @admin_required
