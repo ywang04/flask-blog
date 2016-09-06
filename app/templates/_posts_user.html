@@ -24,13 +24,10 @@
 
         </div>
         <!--The permanent links are added at the bottom of each post in the generic _posts.html template.-->
-            <div class="post-footer">
-                    <span class="label label-default">
-                    {{ post.comments.count() }} Comments
-                    </span>
-                </a>
-            </div>
-
+        <div class="post-footer">
+                <span class="label label-default">{{ post.comments.count() }} Comments</span>
+                <span class="label label-info">{{ post.category.category_name }}</span>
+        </div>
         </div>
     </li>
     {% endfor %}
