@@ -30,7 +30,6 @@ div.post-date {
 }
 
 div.post-author {
-    font-weight: bold;
     float:left;
     margin-right: 6px;
 }
@@ -69,7 +68,8 @@ div.flask-pagedown-preview h3 {
 
 div.tag {
 
-margin-bottom: 12px;
+margin-top: 15px;
+margin-bottom: 23px;
 
 }
 

@@ -7,7 +7,7 @@
 {% block page_content %}
 
 <div class="col-md-9">
- <div class="page-header">
+ <div class="page-header" style="margin-top: 25px">
 
      <h2>{{ post.title }}</h2>
 
@@ -18,21 +18,22 @@
       </a>
   </div>
 
-<a href="{{ url_for('main.show_category',id=post.category.id) }}">
-    {{ post.category.category_name }}</a>
-    - Posted {{ moment(post.timestamp).fromNow() }}
-
-
+<a href="{{ url_for('main.category_post',id=post.category.id) }}">
+    {{ post.category.category_name }}
+</a>
+{#   <a href=""><img src="{{ url_for('static', filename='Like.png') }}"></a>#}
 
       {% if current_user == post.author %}
         <a href="{{ url_for('main.edit_post', id=post.id) }}">
-            <span class="label label-default">Edit</span>
+            <span>Edit</span>
         </a>
         {% elif current_user.is_administrator() %}
         <a href="{{ url_for('main.edit_post', id=post.id) }}">
-            <span class="label label-danger">Edit [Admin]</span>
+            <span class="label label-default">Edit [Admin]</span>
         </a>
         {% endif %}
+
+
 </div>
 
 <div class="post-body">
@@ -45,7 +46,7 @@
 
 </div>
 
-<h4>Comments</h4>
+<h4 id="comments">Comments</h4>
 
 {% if current_user.can(Permission.COMMENT) %}
 
