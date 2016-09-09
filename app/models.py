@@ -98,6 +98,7 @@ class User(UserMixin,db.Model):
     avatar_hash = db.Column(db.String(32))
     posts = db.relationship('Post',backref='author',lazy='dynamic')
     comments = db.relationship('Comment',backref='author',lazy='dynamic')
+    likes = db.relationship('Like',backref='author',lazy='dynamic')
     #to see the user follows who
     followed = db.relationship('Follow',
                                foreign_keys=[Follow.follower_id],
@@ -256,6 +257,9 @@ class User(UserMixin,db.Model):
         return Post.query.join(Follow,Follow.followed_id == Post.author_id)\
             .filter(Follow.follower_id == self.id)
 
+    def is_like_post(self,post):
+        return self.likes.filter_by(post_id=post.id).first() is not None
+
     def __repr__(self):
         return '<User %r>' % self.username
 
@@ -285,6 +289,7 @@ class Post(db.Model):
     author_id = db.Column(db.Integer,db.ForeignKey('users.id'),nullable=False)
     category_id = db.Column(db.Integer,db.ForeignKey('categories.id'))
     comments = db.relationship('Comment',backref='post',lazy='dynamic')
+    likes = db.relationship('Like',backref='post',lazy='dynamic')
 
     @staticmethod
     def generate_fake(count=100):
@@ -353,6 +358,15 @@ registrations = db.Table('registrations',
         db.Column('student_id',db.Integer,db.ForeignKey('students.student_id')),
         db.Column('class_id',db.Integer,db.ForeignKey('classes.class_id'))
 )
+
+
+class Like(db.Model):
+    __tablename__ = "like"
+    id = db.Column(db.Integer,primary_key=True)
+    timestamp = db.Column(db.DateTime,index=True,default=datetime.utcnow)
+    author_id = db.Column(db.Integer,db.ForeignKey('users.id'))
+    post_id = db.Column(db.Integer,db.ForeignKey('posts.id'))
+
 
 class Student(db.Model):
     __tablename__ = "students"
