@@ -6,12 +6,13 @@
 
 {% block page_content %}
 
-<div class="col-md-9">
- <div class="page-header" style="margin-top: 15px">
+<div class="col-md-11">
+    <div class="page-header" style="margin-top: 15px">
 
      <h2>{{ post.title }}</h2>
+    </div>
 
-<div class="tag">
+    <div class="tag">
     <div class="post-author">
       <a href="{{ url_for('main.user', username=post.author.username) }}">
           {{ post.author.username }}
@@ -19,34 +20,37 @@
     </div>
 
 
-    <a href="{{ url_for('main.category_post',id=post.category.id) }}" style="margin: 3px;">
-        {{ post.category.category_name }}
+    <a href="{{ url_for('main.category_post',id=post.category.id) }}" style="margin: 4px;">
+       <span>- {{ post.category.category_name }}</span>
     </a>
 
     {#   <a href=""><img src="{{ url_for('static', filename='Like.png') }}"></a>#}
 
+    {% if current_user.is_authenticated %}
+        {% if current_user.is_like_post(post) %}
 
-          {% if current_user == post.author %}
-            <a href="{{ url_for('main.edit_post', id=post.id) }}" style="margin: 3px;">
-                <span>Edit</span>
-            </a>
-            {% elif current_user.is_administrator() %}
-            <a href="{{ url_for('main.edit_post', id=post.id) }}" style="margin: 3px;">
-                <span>Edit</span>
-            </a>
-          {% endif %}
+        <a href="" class="unlike" id="" style="margin: 6px"><span class="label label-default">Unlike</span></a>
+            {% else %}
+        <a href="" class="like" id="" style="margin: 6px"><span class="label label-info">Like</span></a>
+            {% endif %}
 
+    {% endif %}
 
 
-        {% if current_user.is_authenticated %}
-            <a href="#" style="margin: 2px;">Like</a>
-        {% endif %}
-
+    {% if current_user == post.author %}
+    <a href="{{ url_for('main.edit_post', id=post.id) }}" style="margin: 6px;">
+        <span class="label label-default">Edit</span>
+    </a>
+    {% elif current_user.is_administrator() %}
+    <a href="{{ url_for('main.edit_post', id=post.id) }}" style="margin: 6px;">
+        <span class="label label-danger">Edit</span>
+    </a>
+    {% endif %}
 
 </div>
 
 
-<div class="post-body">
+    <div class="post-body">
     {% if post.body_html %}
         {{ post.body_html | safe }}
     {% else %}
@@ -54,19 +58,24 @@
     {% endif %}
 </div>
 
-<h4 id="comments">Comments</h4>
-
-{% if current_user.can(Permission.COMMENT) %}
-
-<div class="comment-form">
-    {{ wtf.quick_form(form) }}
 </div>
 
-{% endif %}
+<div class="col-md-9">
+    <h4 id="comments">Comments</h4>
+
+    {% if current_user.can(Permission.COMMENT) %}
+
+        <div class="comment-form">
+            {{ wtf.quick_form(form) }}
+        </div>
+
+    {% endif %}
+
 
 
 {% include '_comments.html' %}
 
+</div>
 
 {% if pagination %}
 <div class="pagination">
@@ -74,6 +83,7 @@
 </div>
 {% endif %}
 
-</div>
 {% endblock %}
+
+
 

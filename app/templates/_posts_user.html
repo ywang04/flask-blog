@@ -25,8 +25,13 @@
         </div>
         <!--The permanent links are added at the bottom of each post in the generic _posts.html template.-->
         <div class="post-footer">
+
+               <a href="{{ url_for('main.post',id=post.id) }}#comments">
                 <span class="label label-default">{{ post.comments.count() }} Comments</span>
-                <span class="label label-info">{{ post.category.category_name }}</span>
+               </a>
+               <a href="{{ url_for('main.category_post',id=post.category.id) }}">
+                   <span class="label label-info">{{ post.category.category_name }}</span>
+               </a>
         </div>
         </div>
     </li>
