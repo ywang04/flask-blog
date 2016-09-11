@@ -20,7 +20,7 @@
     </div>
 
 
-    <a href="{{ url_for('main.category_post',id=post.category.id) }}" style="margin: 4px;">
+    <a href="{{ url_for('main.category_post',id=post.category.id) }}">
        <span>- {{ post.category.category_name }}</span>
     </a>
 
@@ -28,22 +28,25 @@
 
     {% if current_user.is_authenticated %}
         {% if current_user.is_like_post(post) %}
+            <a href="" class="unlike" style="margin: 8px">
+                <span class="label label-info">Liked  {{ post.likes.count() }}</span>
+            </a>
+        {% else %}
 
-        <a href="" class="unlike" id="" style="margin: 6px"><span class="label label-default">Unlike</span></a>
-            {% else %}
-        <a href="" class="like" id="" style="margin: 6px"><span class="label label-info">Like</span></a>
-            {% endif %}
-
+        <a href="" class="like" style="margin: 8px">
+            <span class="label label-default">Like  {{ post.likes.count() }}</span>
+        </a>
+        {% endif %}
     {% endif %}
 
 
     {% if current_user == post.author %}
-    <a href="{{ url_for('main.edit_post', id=post.id) }}" style="margin: 6px;">
+    <a href="{{ url_for('main.edit_post', id=post.id) }}" style="margin: 5px;">
         <span class="label label-default">Edit</span>
     </a>
     {% elif current_user.is_administrator() %}
-    <a href="{{ url_for('main.edit_post', id=post.id) }}" style="margin: 6px;">
-        <span class="label label-danger">Edit</span>
+    <a href="{{ url_for('main.edit_post', id=post.id) }}" style="margin: 5px;">
+        <span class="label label-default">Edit</span>
     </a>
     {% endif %}
 
@@ -82,6 +85,36 @@
     {{ macros.pagination_widget(pagination, 'main.post',fragment='#comments',id=post.id) }}
 </div>
 {% endif %}
+
+
+<script type=text/javascript src="{{ url_for('static', filename='jquery.min.js') }}"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+
+        $('.like').click(function () {
+
+            $.ajax({
+                url: '{{ url_for('main.post_like',id=post.id) }}',
+                type: 'POST',
+                async: false,
+                success: function () {
+                }
+
+            });
+        });
+
+        $('.unlike').click(function() {
+
+            $.ajax({
+                url: '{{ url_for('main.post_like',id=post.id) }}',
+                type: 'POST',
+                async: false,
+                success: function () {
+                }
+            });
+        });
+    });
+</script>
 
 {% endblock %}
 

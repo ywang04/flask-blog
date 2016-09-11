@@ -258,7 +258,7 @@ class User(UserMixin,db.Model):
             .filter(Follow.follower_id == self.id)
 
     def is_like_post(self,post):
-        return self.likes.filter_by(post_id=post.id).first() is not None
+        return self.likes.filter_by(post_id = post.id).filter_by(author_id =self.id).first() is not None
 
     def __repr__(self):
         return '<User %r>' % self.username
@@ -361,7 +361,7 @@ registrations = db.Table('registrations',
 
 
 class Like(db.Model):
-    __tablename__ = "like"
+    __tablename__ = "likes"
     id = db.Column(db.Integer,primary_key=True)
     timestamp = db.Column(db.DateTime,index=True,default=datetime.utcnow)
     author_id = db.Column(db.Integer,db.ForeignKey('users.id'))

@@ -12,7 +12,7 @@ import os,random,datetime
 from flask import render_template,abort,redirect,url_for,flash,request,current_app,make_response
 from flask.ext.login import current_user,login_required
 from . import main
-from ..models import User,Role,Permission,Post,Category,Comment
+from ..models import User,Role,Permission,Post,Category,Comment,Like
 from .forms import EditProfile,EditProfileAdminForm,PostForm,AddCategory,CommentForm
 from .. import db
 from ..decorators import admin_required,permission_required
@@ -285,6 +285,20 @@ def category_post(id):
     posts = pagination.items
     return render_template('category.html',posts=posts,categories=categories,Post=Post,category_id=id,
                            pagination = pagination)
+
+@main.route('/post/like/<int:id>',methods=['GET','POST'])
+@login_required
+def post_like(id):
+    post = Post.query.get_or_404(id)
+    if request.method == 'POST':
+        if current_user.is_like_post(post):
+            like = Like.query.filter_by(post_id=post.id).filter_by(author_id = current_user.id).first()
+            db.session.delete(like)
+        else:
+            like = Like(post=post, author=current_user._get_current_object())
+            db.session.add(like)
+        db.session.commit()
+    return True
 
 @main.route('/add-category',methods=['GET','POST'])
 @admin_required
