@@ -17,12 +17,14 @@ from .forms import EditProfile,EditProfileAdminForm,PostForm,AddCategory,Comment
 from .. import db
 from ..decorators import admin_required,permission_required
 from sqlalchemy.exc import IntegrityError
+from sqlalchemy.sql import func
 
 @main.route('/',methods=['GET','POST'])
 def index():
     #http://localhost:5000/?page=2,to get the value of page, which is 2
     page = request.args.get('page',1,type=int)
     show_followed = False
+    # post_top = True
     if current_user.is_authenticated:
         show_followed = bool(request.cookies.get('show_followed',''))
     if show_followed:
@@ -31,6 +33,14 @@ def index():
         query = Post.query
     #pagination is a <flask_sqlalchemy.Pagination object at 0x10e50cf10> object, class Pagination
 
+    # if post_top:
+    #     pagination = Like.query(sum(Like.post_id)).group_by(Like.post_id).paginate(
+    #             page, per_page=current_app.config['YUORA_POSTS_PER_PAGE'],
+    #             error_out=False)
+    #     posts = pagination.items
+    #     categories = Category.query.order_by(Category.category_name).all()
+
+    print query
     pagination = query.order_by(Post.timestamp.desc()).paginate(
             page, per_page=current_app.config['YUORA_POSTS_PER_PAGE'],
             error_out=False)
@@ -298,7 +308,23 @@ def post_like(id):
             like = Like(post=post, author=current_user._get_current_object())
             db.session.add(like)
         db.session.commit()
-    return True
+    return redirect(url_for('main.index'))
+
+
+@main.route('/post/top',methods=['GET','POST'])
+def post_top():
+    page = request.args.get('page', 1, type=int)
+
+    query = Post.query.join(Like,Like.post_id==Post.id).add_columns(func.count(Like.post_id)).group_by(Post.id).order_by(func.count(Like.post_id).desc())
+
+    pagination = query.paginate(
+    page, per_page=current_app.config['YUORA_POSTS_PER_PAGE'],
+    error_out=False)
+    posts = pagination.items
+    categories = Category.query.order_by(Category.category_name).all()
+    return render_template('post_top.html', posts=posts, pagination=pagination,
+                           categories=categories, Post=Post)
+
 
 @main.route('/add-category',methods=['GET','POST'])
 @admin_required
