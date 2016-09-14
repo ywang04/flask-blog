@@ -13,9 +13,9 @@ class Config:
     YUORA_MAIL_SUBJECT_PREFIX = '[Welcome to Yuora]'
     YUORA_MAIL_SENDER = 'Yuora Admin <yuora@example.com>'
     YUORA_ADMIN = os.environ.get('Yuora_ADMIN')
-    YUORA_POSTS_PER_PAGE = 2
-    YUORA_COMMENTS_PER_PAGE = 10
-    YUORA_FOLLOWERS_PER_PAGE = 10
+    YUORA_POSTS_PER_PAGE = 5
+    YUORA_COMMENTS_PER_PAGE = 5
+    YUORA_FOLLOWERS_PER_PAGE = 5
 
     @staticmethod
     def init_app(app):
@@ -25,7 +25,7 @@ class Config:
 class DevelopmentConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = os.environ.get('DEV_DATABASE_URL') or \
-        'mysql://root:mysql@localhost/Flasky'
+        'mysql://root:mysql@localhost/Yuora'
 
 
 class TestingConfig(Config):
