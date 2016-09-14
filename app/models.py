@@ -288,8 +288,8 @@ class Post(db.Model):
     #author_id is replaced by author, which defines in table users.
     author_id = db.Column(db.Integer,db.ForeignKey('users.id'),nullable=False)
     category_id = db.Column(db.Integer,db.ForeignKey('categories.id'))
-    comments = db.relationship('Comment',backref='post',lazy='dynamic')
-    likes = db.relationship('Like',backref='post',lazy='dynamic')
+    comments = db.relationship('Comment',backref='post',passive_deletes=True,lazy='dynamic')
+    likes = db.relationship('Like',backref='post',passive_deletes=True,lazy='dynamic')
 
     @staticmethod
     def generate_fake(count=100):
@@ -322,6 +322,7 @@ class Post(db.Model):
             markdown(value,output_format='html'),
             tags=allowed_tags,attributes=attrs,strip=True))
 
+
 db.event.listen(Post.body,'set',Post.on_changed_body)
 
 class Category(db.Model):
@@ -339,7 +340,7 @@ class Comment(db.Model):
     timestamp = db.Column(db.DateTime,index=True,default=datetime.utcnow)
     disabled = db.Column(db.BOOLEAN)
     author_id = db.Column(db.Integer,db.ForeignKey('users.id'))
-    post_id = db.Column(db.Integer,db.ForeignKey('posts.id'))
+    post_id = db.Column(db.Integer,db.ForeignKey('posts.id',ondelete='CASCADE'))
 
 
     @staticmethod
@@ -365,7 +366,7 @@ class Like(db.Model):
     id = db.Column(db.Integer,primary_key=True)
     timestamp = db.Column(db.DateTime,index=True,default=datetime.utcnow)
     author_id = db.Column(db.Integer,db.ForeignKey('users.id'))
-    post_id = db.Column(db.Integer,db.ForeignKey('posts.id'))
+    post_id = db.Column(db.Integer,db.ForeignKey('posts.id',ondelete='CASCADE'))
 
 
 class Student(db.Model):

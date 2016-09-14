@@ -33,14 +33,6 @@ def index():
         query = Post.query
     #pagination is a <flask_sqlalchemy.Pagination object at 0x10e50cf10> object, class Pagination
 
-    # if post_top:
-    #     pagination = Like.query(sum(Like.post_id)).group_by(Like.post_id).paginate(
-    #             page, per_page=current_app.config['YUORA_POSTS_PER_PAGE'],
-    #             error_out=False)
-    #     posts = pagination.items
-    #     categories = Category.query.order_by(Category.category_name).all()
-
-    print query
     pagination = query.order_by(Post.timestamp.desc()).paginate(
             page, per_page=current_app.config['YUORA_POSTS_PER_PAGE'],
             error_out=False)
@@ -49,7 +41,6 @@ def index():
     categories = Category.query.order_by(Category.category_name).all()
     return render_template('index.html',posts=posts,show_followed=show_followed,pagination=pagination,
                            categories=categories,Post=Post)
-
 
 @main.route('/user/<username>')
 @login_required
@@ -170,6 +161,17 @@ def edit_post(id):
     form.category.data = post.category_id
     form.body.data = post.body
     return render_template('edit_post.html',form=form,post=post)
+
+@main.route('/delete-post/<int:id>')
+@login_required
+def delete_post(id):
+    post = Post.query.get_or_404(id)
+    if current_user != post.author and \
+          not current_user.is_administrator:
+        abort(403)
+    db.session.delete(post)
+    return redirect(url_for('main.index'))
+
 
 @main.route('/follow/<username>')
 @login_required
@@ -314,6 +316,8 @@ def post_like(id):
 @main.route('/post/top',methods=['GET','POST'])
 def post_top():
     page = request.args.get('page', 1, type=int)
+
+#select * from posts ps join (SELECT ls.post_id,count(ls.post_id) as c FROM likes ls GROUP BY ls.post_id) ls on ps.id = ls.post_id order by c desc;
 
     query = Post.query.join(Like,Like.post_id==Post.id).add_columns(func.count(Like.post_id)).group_by(Post.id).order_by(func.count(Like.post_id).desc())
 
