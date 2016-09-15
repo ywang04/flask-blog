@@ -28,25 +28,34 @@
 
     {% if current_user.is_authenticated %}
         {% if current_user.is_like_post(post) %}
-            <a href="" class="unlike" style="margin: 8px">
-                <span class="label label-info">Liked  {{ post.likes.count() }}</span>
+            <a href="" class="unlike" style="margin: 5px">
+                <span class="label label-info">Liked  {{ post.likes.filter_by(liked=True).count() }}</span>
             </a>
         {% else %}
 
-        <a href="" class="like" style="margin: 8px">
-            <span class="label label-default">Like  {{ post.likes.count() }}</span>
+        <a href="" class="like" style="margin: 5px">
+            <span class="label label-default">Like  {{ post.likes.filter_by(liked=True).count() }}</span>
         </a>
         {% endif %}
     {% endif %}
 
 
     {% if current_user == post.author %}
-    <a href="{{ url_for('main.edit_post', id=post.id) }}" style="margin: 5px;">
+    <a href="{{ url_for('main.edit_post', id=post.id) }}" style="margin: 4px;">
         <span class="label label-default">Edit</span>
     </a>
+
+     <a href="{{ url_for('main.delete_post', id=post.id) }}" onclick="return del()" style="margin: 4px;">
+        <span class="label label-default">Delete</span>
+    </a>
+
     {% elif current_user.is_administrator() %}
-    <a href="{{ url_for('main.edit_post', id=post.id) }}" style="margin: 5px;">
+    <a href="{{ url_for('main.edit_post', id=post.id) }}" style="margin: 4px;">
         <span class="label label-default">Edit</span>
+    </a>
+
+    <a href="{{ url_for('main.delete_post', id=post.id) }} " onclick="return del()" style="margin: 4px;">
+        <span class="label label-default">Delete</span>
     </a>
     {% endif %}
 
@@ -99,7 +108,6 @@
                 async: false,
                 success: function () {
                 }
-
             });
         });
 
@@ -113,7 +121,23 @@
                 }
             });
         });
+
     });
+
+    function del()
+
+    {
+
+        var msg = "Are you sure you want to delete?";
+        if (confirm(msg)==true){
+            return true;
+        }
+
+        else {
+                return false;
+        }
+
+    }
 </script>
 
 {% endblock %}
