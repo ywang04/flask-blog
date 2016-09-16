@@ -17,7 +17,7 @@ from flaskckeditor import CKEditor
 
 class EditProfile(Form):
     #db has the length limit
-    name = StringField('Real name',validators=[Length(0,64)])
+    name = StringField('Real name',validators=[Required(),Length(0,64)])
     location = StringField('Location',validators=[Length(0,64)])
     about_me = TextAreaField('About me')
     submit = SubmitField('Submit')
@@ -32,7 +32,7 @@ class EditProfileAdminForm(Form):
                                           'numbers, dots or underscores')])
 
     confirmed = BooleanField('Confirmed')
-    #SelectField is a dropdown list in the form
+    #SelectField is a drop down list in the form
     role = SelectField('Role',coerce=int)
     name = StringField('Real name', validators=[Length(0,64)])
     location = StringField('Location',validators=[Length(0,64)])
@@ -61,7 +61,7 @@ class PostForm(Form,CKEditor):
     title = StringField('Enter Title',validators=[Required()])
     category = SelectField('Select Category',coerce=int)
     body = TextAreaField("What's on your mind?",validators=[Required()])
-    submit = SubmitField('Post')
+    submit = SubmitField("Post")
 
     def __init__(self,*args,**kwargs):
         super(PostForm,self).__init__(*args,**kwargs)
