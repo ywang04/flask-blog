@@ -130,7 +130,8 @@ def new_post():
         #category is an object(<app.models.Category object at 0x10faded90>)
         post = Post(title=form.title.data,category=Category.query.get(form.category.data),body=form.body.data,
                     author=current_user._get_current_object())
-        db.session.add(post)
+        res = Like(post=post, user=current_user._get_current_object(), liked=False)
+        db.session.add(post,res)
         db.session.commit()
         flash('Your post has been published.')
         return redirect(url_for('main.post',id=post.id))
@@ -141,9 +142,6 @@ def new_post():
 def edit_post(id):
     #check the id and permission for the post
     post = Post.query.get_or_404(id)
-    # if current_user != post.author and \
-    #     not current_user.is_administrator:
-    #     abort(403)
     if current_user != post.author and \
           not current_user.is_administrator:
         abort(403)
@@ -170,6 +168,7 @@ def delete_post(id):
           not current_user.is_administrator:
         abort(403)
     db.session.delete(post)
+    db.session.commit()
     return redirect(url_for('main.index'))
 
 
@@ -250,6 +249,7 @@ def show_followed():
     resp.set_cookie('show_followed','1',max_age=30*24*60*60)
     return resp
 
+#CKEDITOR function
 def gen_rnd_filename():
     filename_prefix = datetime.datetime.now().strftime('%Y%m%d%H%M%S')
     return '%s%s' % (filename_prefix, str(random.randrange(1000, 10000)))
@@ -304,11 +304,18 @@ def post_like(id):
     post = Post.query.get_or_404(id)
     if request.method == 'POST':
         if current_user.is_like_post(post):
-            like = Like.query.filter_by(post_id=post.id).filter_by(author_id = current_user.id).first()
-            db.session.delete(like)
+            res = Like.query.filter_by(post_id=post.id).filter_by(user_id = current_user.id).first()
+            if res:
+                res.liked = False
+                db.session.add(res)
         else:
-            like = Like(post=post, author=current_user._get_current_object())
-            db.session.add(like)
+            res = Like.query.filter_by(post_id=post.id).filter_by(user_id = current_user.id).first()
+            if res:
+                res.liked = True
+                db.session.add(res)
+            else:
+                res = Like(post=post, user=current_user._get_current_object(),liked=True)
+                db.session.add(res)
         db.session.commit()
     return redirect(url_for('main.index'))
 
@@ -318,9 +325,8 @@ def post_top():
     page = request.args.get('page', 1, type=int)
 
 #select * from posts ps join (SELECT ls.post_id,count(ls.post_id) as c FROM likes ls GROUP BY ls.post_id) ls on ps.id = ls.post_id order by c desc;
-
-    query = Post.query.join(Like,Like.post_id==Post.id).add_columns(func.count(Like.post_id)).group_by(Post.id).order_by(func.count(Like.post_id).desc())
-
+    query = Post.query.join(Like,Like.post_id==Post.id).add_columns(func.sum(Like.liked)).group_by(Post.id).order_by(func.sum(Like.liked).desc())
+    print query
     pagination = query.paginate(
     page, per_page=current_app.config['YUORA_POSTS_PER_PAGE'],
     error_out=False)
