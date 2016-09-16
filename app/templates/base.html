@@ -4,10 +4,15 @@
 
 {% block head %}
 {{ super() }}
-<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
-<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
-<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+<script type=text/javascript src="{{ url_for('static', filename='jquery.min.js') }}"></script>
 <script src="{{ url_for('static', filename='ckeditor/ckeditor.js') }}"></script>
+<script src="{{ url_for('static', filename='alertify/js/alertify.min.js') }}"></script>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='alertify/css/alertify.core.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='alertify/css/alertify.default.css') }}">
+
+
 {% endblock %}
 
 {% block navbar %}
@@ -141,4 +146,5 @@
 {% block scripts %}
 {{ super() }}
 {{ moment.include_moment() }}
+
 {% endblock %}
