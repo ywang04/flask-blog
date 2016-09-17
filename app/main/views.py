@@ -347,9 +347,9 @@ def add_category():
             db.session.commit()
         except IntegrityError as e:
             db.session.rollback()
-            flash('Category already exists.')
+            flash('%s already exists.' % category.category_name )
             return redirect(url_for('main.add_category'))
-        flash('Category has been added.')
+        flash('%s has been added.' % category.category_name)
         return redirect(url_for('main.add_category'))
     categories = Category.query.order_by(Category.category_name).all()
     return render_template('add_category.html',form=form,categories=categories)
