@@ -28,12 +28,12 @@
 
     {% if current_user.is_authenticated %}
         {% if current_user.is_like_post(post) %}
-            <a href="" class="unlike" style="margin: 5px">
+            <a href="#" class="unlike" style="margin: 5px">
                 <span class="label label-info">Liked  {{ post.likes.filter_by(liked=True).count() }}</span>
             </a>
         {% else %}
 
-        <a href="" class="like" style="margin: 5px">
+        <a href="#" class="like" style="margin: 5px">
             <span class="label label-default">Like  {{ post.likes.filter_by(liked=True).count() }}</span>
         </a>
         {% endif %}
@@ -146,21 +146,6 @@
                 });
     });
 });
-
-{##}
-{#    function del()#}
-{##}
-{#    {#}
-{#        var msg = "Are you sure you want to delete?";#}
-{#        if (confirm(msg)==true){#}
-{#            return true;#}
-{#        }#}
-{##}
-{#        else {#}
-{#            return false;#}
-{#        }#}
-{##}
-{#    }#}
 
 </script>
 
