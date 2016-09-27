@@ -6,29 +6,29 @@
 
 {% block page_content %}
 
-<div class="post-tabs">
+    <div class="main-wrap">
 
-<ul class="nav nav-tabs">
-    <!--点赞最多的就是Top-->
-    <li{% if not show_followed %} class="active"{% endif %}><a href="{{ url_for('main.show_all') }}">All</a></li>
-    <li class="active"><a href="{{ url_for('main.index') }}">Top</a></li>
-    {% if current_user.is_authenticated %}
-        <li{% if show_followed %} class="active"{% endif %}><a href="{{ url_for('main.show_followed') }}">Followers</a>
-    </li>
-    {% endif %}
-</ul>
+        <div class="content">
 
-{% include '_posts_all.html' %}
 
-</div>
+                {% include '_posts_all.html' %}
 
-{% include '_show_categories.html' %}
 
-{% if pagination %}
-<div class="pagination">
-    {{ macros.pagination_widget(pagination, 'main.index') }}
-</div>
-{% endif %}
+
+            <div class="right-bar">
+
+                {% include '_show_category.html' %}
+            </div>
+
+        </div>
+
+        {% if pagination %}
+            <div class="pagination">
+                {{ macros.pagination_widget(pagination, 'main.index') }}
+            </div>
+        {% endif %}
+
+    </div>
 
 {% endblock %}
 

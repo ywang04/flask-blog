@@ -12,13 +12,10 @@
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='alertify/css/alertify.core.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='alertify/css/alertify.default.css') }}">
-
-
 {% endblock %}
 
 {% block navbar %}
-
-<div class="navbar navbar-inverse" role="navigation">
+    <div class="navbar navbar-inverse" role="navigation">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="sr-only">Toggle navigation</span>
@@ -59,13 +56,12 @@
             </ul>
         </div>
 </div>
-
 {% endblock %}
 
 
 {% block content %}
 
-<div class="container">
+<div id="container">
 
     {% for message in get_flashed_messages() %}
     <div class="alert alert-warning">
@@ -75,11 +71,20 @@
     {% endfor %}
 
    {% block page_content %}
+
    {% endblock %}
 
 </div>
 
 {% endblock %}
+
+
+
+<div class="foot">
+{% block footer %}
+&copy; Copyright 2016 by Yang Wang.
+{% endblock %}
+</div>
 
 {% block scripts %}
 {{ super() }}
