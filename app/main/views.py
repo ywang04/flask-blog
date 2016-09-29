@@ -289,14 +289,29 @@ def ckupload():
 def category_post(id):
     #difference between filter and filter_by,both are fine.
     # posts = Post.query.filter(Post.category_id==id)
+    page = request.args.get('page', 1, type=int)
     post = Post.query.filter_by(category_id=id)
     categories = Category.query.order_by(Category.category_name).all()
-    page = request.args.get('page', 1, type=int)
     pagination = post.order_by(Post.timestamp.desc()).paginate(
         page,per_page=current_app.config['YUORA_POSTS_PER_PAGE'],error_out=False)
     posts = pagination.items
-    return render_template('category.html',posts=posts,categories=categories,Post=Post,category_id=id,
+    return render_template('category_post.html',posts=posts,categories=categories,Post=Post,category_id=id,
                            pagination = pagination)
+
+
+@main.route('/category/top/<int:id>')
+def category_top(id):
+    page = request.args.get('page', 1, type=int)
+    query = Post.query.filter_by(category_id=id).join(Like, Like.post_id == Post.id).add_columns(func.sum(Like.liked)).group_by(Post.id).order_by(
+        func.sum(Like.liked).desc())
+    print query
+    pagination = query.paginate(
+        page, per_page=current_app.config['YUORA_POSTS_PER_PAGE'],
+        error_out=False)
+    posts = pagination.items
+    categories = Category.query.order_by(Category.category_name).all()
+    return render_template('category_top.html', posts=posts, pagination=pagination,
+                           categories=categories, Post=Post,category_id=id)
 
 @main.route('/post/like/<int:id>',methods=['GET','POST'])
 @login_required
@@ -320,8 +335,8 @@ def post_like(id):
     return redirect(url_for('main.index'))
 
 
-@main.route('/post/top',methods=['GET','POST'])
-def post_top():
+@main.route('/all/top')
+def all_top():
     page = request.args.get('page', 1, type=int)
 
 #select * from posts ps join (SELECT ls.post_id,count(ls.post_id) as c FROM likes ls GROUP BY ls.post_id) ls on ps.id = ls.post_id order by c desc;
@@ -332,7 +347,7 @@ def post_top():
     error_out=False)
     posts = pagination.items
     categories = Category.query.order_by(Category.category_name).all()
-    return render_template('post_top.html', posts=posts, pagination=pagination,
+    return render_template('post_all_top.html', posts=posts, pagination=pagination,
                            categories=categories, Post=Post)
 
 
