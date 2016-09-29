@@ -4,64 +4,76 @@
 
 {% block head %}
 {{ super() }}
-<script type=text/javascript src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script src="{{ url_for('static', filename='ckeditor/ckeditor.js') }}"></script>
 <script src="{{ url_for('static', filename='alertify/js/alertify.min.js') }}"></script>
-
 <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='alertify/css/alertify.core.css') }}">
 <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='alertify/css/alertify.default.css') }}">
+<script src="{{ url_for('static',filename='jquery.min.js') }}"></script>
+
 {% endblock %}
 
 {% block navbar %}
-    <div class="navbar navbar-inverse" role="navigation">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{{ url_for('main.index') }}">Yuora</a>
+
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+
+        <div class="container">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="{{ url_for('main.index') }}"><span class="brand brand-size">Yuora</span></a>
+            </div>
+
+
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href={{ url_for('main.new_post') }}><span class="brand">New Post</span></a></li>
+                    {% if current_user.is_administrator() %}
+                    <li><a href="{{ url_for('main.add_category') }}"><span class="brand">Add Category</span></a></li>
+                    {% endif %}
+                    <li><a href={{ url_for('main.about') }}><span class="brand">About Me</span></a></li>
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+
+                    {% if current_user.is_authenticated %}
+
+                     <li>
+                        <a href="{{ url_for('main.user',username=current_user.username) }}">
+                            <img src="{{ current_user.gravatar(size=18) }}">
+                          <span class="brand">{{ current_user.username }}</span>
+                        </a>
+                         <li><a href="#"><span class="brand">Settings</span></a></li>
+{#                         <li><a href="{{ url_for('auth.change_password') }}">Change Password</a></li>#}
+{#                         <li><a href="{{ url_for('auth.change_email_request') }}">Change Email</a></li>#}
+                         <li><a href="{{ url_for('auth.logout') }}"><span class="brand">Log Out</span></a></li>
+
+                     </li>
+                    {% else %}
+
+                    <li><a href="{{ url_for('auth.register') }}"><span class="brand">Sign Up</span></a></li>
+                    <li><a href="{{ url_for('auth.login') }}"><span class="brand">Log In</span></a></li>
+                    {% endif %}
+                </ul>
+            </div>
+
         </div>
-        <div class="navbar-collapse collapse">
-            <ul class="nav navbar-nav">
-                <li><a href={{ url_for('main.new_post') }}>New Post</a></li>
-                {% if current_user.is_administrator() %}
-                <li><a href="{{ url_for('main.add_category') }}">Add Category</a></li>
-                {% endif %}
-                <li><a href={{ url_for('main.about') }}>About Me</a></li>
-            </ul>
 
-            <ul class="nav navbar-nav navbar-right">
+    </nav>
 
-                {% if current_user.is_authenticated %}
 
-                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <img src="{{ current_user.gravatar(size=18) }}">
-                        {{ current_user.username }}<b class="caret"></b></a>
-                    <ul class="dropdown-menu">
-                         <li><a href="{{ url_for('main.user',username=current_user.username) }}">My Homepage</a></li>
-                         <li><a href="{{ url_for('auth.change_password') }}">Change Password</a></li>
-                         <li><a href="{{ url_for('auth.change_email_request') }}">Change Email</a></li>
-                         <li><a href="{{ url_for('auth.logout') }}">Log Out</a></li>
-                    </ul>
-                 </li>
-                {% else %}
 
-                <li><a href="{{ url_for('auth.register') }}">Register</a></li>
-                <li><a href="{{ url_for('auth.login') }}">Log In</a></li>
-                {% endif %}
-            </ul>
-        </div>
-</div>
 {% endblock %}
 
 
 {% block content %}
-
-<div id="container">
+    <div id="pop">
 
     {% for message in get_flashed_messages() %}
     <div class="alert alert-warning">
@@ -69,22 +81,14 @@
         {{ message }}
     </div>
     {% endfor %}
+    </div>
 
    {% block page_content %}
 
    {% endblock %}
 
-</div>
-
 {% endblock %}
 
-
-
-<div class="foot">
-{% block footer %}
-&copy; Copyright 2016 by Yang Wang.
-{% endblock %}
-</div>
 
 {% block scripts %}
 {{ super() }}
