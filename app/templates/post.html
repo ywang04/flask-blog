@@ -6,95 +6,103 @@
 
 {% block page_content %}
 
-<div class="col-md-11">
-    <div class="page-header" style="margin-top: 15px">
+<div class="edit-post-wrap">
 
-     <h2>{{ post.title }}</h2>
-    </div>
+    <a href="/">Yuora</a>
 
-    <div class="tag">
-    <div class="post-author">
-      <a href="{{ url_for('main.user', username=post.author.username) }}">
-          {{ post.author.username }}
-      </a>
-    </div>
-
-
-    <a href="{{ url_for('main.category_post',id=post.category.id) }}">
-       <span>- {{ post.category.category_name }}</span>
+    <a href="{{ url_for('main.category_post',id=post.category_id) }}">
+    <span class="chevron">&nbsp;›&nbsp;{{ post.category.category_name}}</span>
     </a>
 
-    {#   <a href=""><img src="{{ url_for('static', filename='Like.png') }}"></a>#}
+    <div class="page-header" style="margin-top: 10px">
 
-    {% if current_user.is_authenticated %}
+        <h1>{{ post.title }}</h1>
+
+    <div class="post-tags">
+
+        <div class="post-author">
+              <a href="{{ url_for('main.user', username=post.author.username) }}">
+                  {{ post.author.username }}
+              </a>
+        </div>
+
+        {% if current_user == post.author %}
+        <a href="{{ url_for('main.edit_post', id=post.id) }}" style="margin: 3px;">
+            <span class="label label-default">Edit</span>
+        </a>
+
+        <a href="#" id="simple_alert" style="margin: 3px;">
+            <span class="label label-default">Delete</span>
+        </a>
+
+        {% elif current_user.is_administrator() %}
+        <a href="{{ url_for('main.edit_post', id=post.id) }}" style="margin: 3px;">
+            <span class="label label-default">Edit</span>
+        </a>
+
+        <a href="#" id="simple_alert" style="margin: 3px;">
+            <span class="label label-default">Delete</span>
+        </a>
+        {% endif %}
+
+      {% if current_user.is_authenticated %}
         {% if current_user.is_like_post(post) %}
-            <a href="" class="unlike">
-                <span class="label label-info">Liked  {{ post.likes.filter_by(liked=True).count() }}</span>
+            <a href="" class="unlike" style="color: #46b8da">
+                <span class="glyphicon glyphicon-thumbs-up"></span> {{ post.likes.filter_by(liked=True).count() }}
             </a>
         {% else %}
 
         <a href="" class="like">
-            <span class="label label-default">Like  {{ post.likes.filter_by(liked=True).count() }}</span>
+            <span class="glyphicon glyphicon-thumbs-up"></span> {{ post.likes.filter_by(liked=True).count() }}
         </a>
         {% endif %}
-    {% endif %}
+      {% endif %}
 
+    </div>
 
-    {% if current_user == post.author %}
-    <a href="{{ url_for('main.edit_post', id=post.id) }}" style="margin: 4px;">
-        <span class="label label-default">Edit</span>
-    </a>
-
-{#     <a href="{{ url_for('main.delete_post', id=post.id) }}" id="simple_alert" style="margin: 4px;">#}
-     <a href="#" id="simple_alert" style="margin: 4px;">
-        <span class="label label-default">Delete</span>
-    </a>
-
-    {% elif current_user.is_administrator() %}
-    <a href="{{ url_for('main.edit_post', id=post.id) }}" style="margin: 4px;">
-        <span class="label label-default">Edit</span>
-    </a>
-
-    <a href="#" id="simple_alert" style="margin: 4px;">
-        <span class="label label-default">Delete</span>
-    </a>
-    {% endif %}
-
-</div>
-
+    </div>
 
     <div class="post-body">
-    {% if post.body_html %}
-        {{ post.body_html | safe }}
-    {% else %}
-        {{ post.body }}
-    {% endif %}
-</div>
+        {% if post.body_html %}
+            {{ post.body_html | safe }}
+        {% else %}
+            {{ post.body }}
+        {% endif %}
+    </div>
 
 </div>
 
-<div class="col-md-9">
+<div class="comment-wrap">
+    {% include '_comments.html' %}
 
-    <h4 id="comments">Comments</h4>
+</div>
+
+
+<div class="post-wrap">
 
     {% if current_user.can(Permission.COMMENT) %}
 
-        <div class="comment-form">
-            {{ wtf.quick_form(form) }}
-        </div>
+        <span id="comment-font">Add a Comment</span>
+        <a class="to-top" href="" onclick="goTop()"><strong>↑</strong> Back to Top</a>
 
+            <form method="post">
+                {{ form.csrf_token() }}
+               <div class="form-group">{{form.body(class='comment-form')|safe}}</div>
+                <input type="submit" class="btn btn-primary" value="Post">
+            </form>
+
+
+{#        {{ wtf.quick_form(form) }}#}
     {% endif %}
-
-
-{% include '_comments.html' %}
-
 </div>
+
 
 {% if pagination %}
 <div class="pagination">
     {{ macros.pagination_widget(pagination, 'main.post',fragment='#comments',id=post.id) }}
 </div>
 {% endif %}
+
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -157,6 +165,5 @@
 </script>
 
 {% endblock %}
-
 
 
