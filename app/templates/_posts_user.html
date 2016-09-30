@@ -32,6 +32,7 @@
                <a href="{{ url_for('main.category_post',id=post.category.id) }}">
                    <span class="label label-info">{{ post.category.category_name }}</span>
                </a>
+               <span class="label label-info">{{post.likes.filter_by(liked=True).count()}} Like</span>
         </div>
         </div>
     </li>

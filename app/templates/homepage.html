@@ -51,6 +51,8 @@
             {% endif %}
 
         </p>
+
+{#    will put them into settings#}
         <p>
             {% if user == current_user %}
             <a class="btn btn-primary" href="{{ url_for('main.edit_profile') }}">Edit Profile</a>
@@ -72,7 +74,7 @@
 {% endif %}
 {% endblock %}
 
-{% block scripts %}
-{{ super() }}
-{{ pagedown.include_pagedown() }}
-{% endblock %}
+{#{% block scripts %}#}
+{#{{ super() }}#}
+{#{{ pagedown.include_pagedown() }}#}
+{#{% endblock %}#}

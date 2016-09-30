@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list id="1abe30d1-7743-40f4-8c69-773a5c924c12" name="Default" comment="Add comments and count on post page">
+    <list id="1abe30d1-7743-40f4-8c69-773a5c924c12" name="Default" comment="Add comments and count on post page" />
+    <list default="true" id="52e93d44-0a62-44b3-b11d-924ca6797159" name="Failed commit: Default" comment="Pop up alert message to delete post">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/CSS/2/10.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/Test2/borgar.png" />
       <change type="NEW" beforePath="" afterPath="$USER_HOME$/Desktop/九章JAVA基础班/第六次课/Java_Chap6_20160206/hello6_20160206/src/com/guojing/Test.java" />
@@ -92,6 +93,7 @@
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Udacity/Programming Foundations with Python/Moive Website/media.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Udacity/Programming Foundations with Python/Profanity Editor/movie_quotes" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Udacity/Programming Foundations with Python/Take a break.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/templates/auth/login1.html" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../imooc/closure_1.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../imooc/closure_2.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../imooc/decorator_1.py" />
@@ -100,15 +102,27 @@
       <change type="NEW" beforePath="" afterPath="$USER_HOME$/Library/Preferences/IntelliJIdea2016.1/options/window.manager.xml" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../Calculator" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../Dictionary" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/static/jquery.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/_posts_category.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/_posts_top.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/_show_categories.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/category.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/templates/post_top.html" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/../flask_blog" afterPath="" />
-    </list>
-    <list default="true" id="52e93d44-0a62-44b3-b11d-924ca6797159" name="Failed commit: Default" comment="Add comments and count on post page">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Tango" afterPath="$PROJECT_DIR$/../Tango" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/main/forms.py" afterPath="$PROJECT_DIR$/app/main/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/models.py" afterPath="$PROJECT_DIR$/app/models.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/styles.css" afterPath="$PROJECT_DIR$/app/static/styles.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/_posts_user.html" afterPath="$PROJECT_DIR$/app/templates/_posts_user.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/add_category.html" afterPath="$PROJECT_DIR$/app/templates/add_category.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/auth/login.html" afterPath="$PROJECT_DIR$/app/templates/auth/login.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/edit_post.html" afterPath="$PROJECT_DIR$/app/templates/edit_post.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/homepage.html" afterPath="$PROJECT_DIR$/app/templates/homepage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/post.html" afterPath="$PROJECT_DIR$/app/templates/post.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/index.html" afterPath="$PROJECT_DIR$/app/templates/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/new_post.html" afterPath="$PROJECT_DIR$/app/templates/new_post.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.py" afterPath="$PROJECT_DIR$/config.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tests/test_user_model.py" afterPath="$PROJECT_DIR$/tests/test_user_model.py" />
     </list>
     <ignored path="flask-blog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -125,8 +139,9 @@
     <SUITE FILE_PATH="coverage/flask-blog$__init____1_.coverage" NAME="__init__ (1) Coverage Results" MODIFIED="1469244036782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/main" />
     <SUITE FILE_PATH="coverage/flask-blog$views__1_.coverage" NAME="views (1) Coverage Results" MODIFIED="1469683441769" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/auth" />
     <SUITE FILE_PATH="coverage/flask-blog$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1469242051532" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
-    <SUITE FILE_PATH="coverage/flask-blog$models.coverage" NAME="models Coverage Results" MODIFIED="1470272707335" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
+    <SUITE FILE_PATH="coverage/flask-blog$models.coverage" NAME="models Coverage Results" MODIFIED="1475215270031" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app" />
     <SUITE FILE_PATH="coverage/flask-blog$views.coverage" NAME="views Coverage Results" MODIFIED="1469488702671" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/app/main" />
+    <SUITE FILE_PATH="coverage/flask-blog$test_user_model.coverage" NAME="test_user_model Coverage Results" MODIFIED="1474175686687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="$PROJECT_DIR$" />
@@ -137,64 +152,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_posts_all.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/_posts_all.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit_profile.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/edit_profile.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="homepage.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/homepage.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="77" selection-start-line="9" selection-start-column="77" selection-end-line="9" selection-end-column="77" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="styles.css" pinned="false" current-in-tab="true">
+      <file leaf-file-name="styles.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/static/styles.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="81">
+              <caret line="265" column="1" selection-start-line="265" selection-start-column="1" selection-end-line="265" selection-end-column="1" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="edit_post.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/edit_post.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -202,38 +165,88 @@
       <file leaf-file-name="post.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/post.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
+            <state relative-caret-position="272">
+              <caret line="58" column="6" selection-start-line="58" selection-start-column="6" selection-end-line="58" selection-end-column="6" />
+              <folding>
+                <element signature="n#style#0;n#a#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="category_post.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/category_post.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_macros.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/_macros.html">
+      <file leaf-file-name="_show_category.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/_show_category.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="525">
-              <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+            <state relative-caret-position="240">
+              <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
+              <folding>
+                <element signature="n#style#0;n#p#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#1;n#p#1;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_posts_all.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/templates/_posts_all.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="615">
+              <caret line="41" column="31" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="59" />
+              <folding>
+                <element signature="n#style#0;n#a#0;n#div#2;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#a#1;n#div#2;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#a#2;n#div#2;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#3;n#div#2;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="post_all_top.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/post_all_top.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="165">
+              <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new_post.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/new_post.html">
+      <file leaf-file-name="category_top.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/category_top.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
+            <state relative-caret-position="240">
+              <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_comments.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/_comments.html">
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="11" column="82" selection-start-line="11" selection-start-column="82" selection-end-line="11" selection-end-column="82" />
+            <state relative-caret-position="-343">
+              <caret line="327" column="10" selection-start-line="327" selection-start-column="0" selection-end-line="327" selection-end-column="10" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -256,25 +269,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/templates/my_blog.html" />
-        <option value="$PROJECT_DIR$/app/templates/post_blog.html" />
-        <option value="$PROJECT_DIR$/app/templates/_categorys.html" />
-        <option value="$PROJECT_DIR$/app/templates/user.html" />
-        <option value="$PROJECT_DIR$/app/templates/_categories.html" />
-        <option value="$PROJECT_DIR$/app/templates/_posts.html" />
-        <option value="$PROJECT_DIR$/app/templates/_posts_index.html" />
-        <option value="$PROJECT_DIR$/app/templates/_post.user.html" />
-        <option value="$PROJECT_DIR$/app/templates/_category.html" />
-        <option value="$PROJECT_DIR$/app/templates/my_post.html" />
-        <option value="$PROJECT_DIR$/app/templates/profile.html" />
-        <option value="$PROJECT_DIR$/app/templates/403.html" />
-        <option value="$PROJECT_DIR$/app/templates/404.html" />
-        <option value="$PROJECT_DIR$/app/templates/500.html" />
         <option value="$PROJECT_DIR$/app/templates/about.html" />
         <option value="$PROJECT_DIR$/app/templates/edit_profile.html" />
         <option value="$PROJECT_DIR$/app/templates/auth/change_email.html" />
         <option value="$PROJECT_DIR$/app/templates/auth/change_password.html" />
-        <option value="$PROJECT_DIR$/app/templates/auth/login.html" />
         <option value="$PROJECT_DIR$/app/templates/auth/register.html" />
         <option value="$PROJECT_DIR$/app/templates/auth/reset_password.html" />
         <option value="$PROJECT_DIR$/app/templates/auth/unconfirmed.html" />
@@ -286,27 +284,42 @@
         <option value="$PROJECT_DIR$/app/templates/auth/email/change_email.txt" />
         <option value="$PROJECT_DIR$/app/templates/auth/email/change_email.html" />
         <option value="$PROJECT_DIR$/requirements/common.txt" />
-        <option value="$PROJECT_DIR$/app/static/ckeditor/config.js" />
-        <option value="$PROJECT_DIR$/app/templates/base.html" />
         <option value="$PROJECT_DIR$/app/templates/followers.html" />
-        <option value="$PROJECT_DIR$/app/main/forms.py" />
-        <option value="$PROJECT_DIR$/app/templates/index.html" />
-        <option value="$PROJECT_DIR$/app/models.py" />
-        <option value="$PROJECT_DIR$/app/templates/add_category.html" />
-        <option value="$PROJECT_DIR$/app/templates/test.html" />
-        <option value="$PROJECT_DIR$/app/templates/new_post.html" />
-        <option value="$PROJECT_DIR$/config.py" />
-        <option value="$PROJECT_DIR$/app/main/views.py" />
-        <option value="$PROJECT_DIR$/app/templates/category.html" />
         <option value="$PROJECT_DIR$/app/templates/_show_categories.html" />
-        <option value="$PROJECT_DIR$/app/templates/_posts_user.html" />
         <option value="$PROJECT_DIR$/app/templates/_posts_category.html" />
-        <option value="$PROJECT_DIR$/app/templates/_comments.html" />
+        <option value="$PROJECT_DIR$/app/templates/_post_top.html" />
+        <option value="$PROJECT_DIR$/app/models.py" />
+        <option value="$PROJECT_DIR$/app/templates/_posts_user.html" />
+        <option value="$PROJECT_DIR$/app/templates/test.html" />
         <option value="$PROJECT_DIR$/app/templates/edit_post.html" />
-        <option value="$PROJECT_DIR$/app/templates/post.html" />
-        <option value="$PROJECT_DIR$/app/templates/_posts_all.html" />
+        <option value="$PROJECT_DIR$/tests/test_user_model.py" />
+        <option value="$PROJECT_DIR$/app/templates/add_category.html" />
+        <option value="$PROJECT_DIR$/app/templates/auth/email/login.html" />
+        <option value="$PROJECT_DIR$/app/templates/auth/login.html" />
+        <option value="$PROJECT_DIR$/app/templates/_posts_top.html" />
+        <option value="$PROJECT_DIR$/app/templates/post_top.html" />
+        <option value="$PROJECT_DIR$/app/static/ckeditor/config.js" />
+        <option value="$PROJECT_DIR$/app/templates/index.html" />
+        <option value="$PROJECT_DIR$/app/templates/_posts_category_top.html" />
+        <option value="$PROJECT_DIR$/app/templates/post_category_top.html" />
+        <option value="$PROJECT_DIR$/app/templates/category.html" />
+        <option value="$PROJECT_DIR$/app/templates/_posts_category_all_top.html" />
+        <option value="$PROJECT_DIR$/app/templates/post_all_top.html" />
+        <option value="$PROJECT_DIR$/app/templates/category_post.html" />
+        <option value="$PROJECT_DIR$/app/templates/_category_top.html" />
         <option value="$PROJECT_DIR$/app/templates/homepage.html" />
+        <option value="$PROJECT_DIR$/app/templates/base.html" />
+        <option value="$PROJECT_DIR$/app/templates/category_top.html" />
+        <option value="$PROJECT_DIR$/app/main/views.py" />
+        <option value="$PROJECT_DIR$/app/templates/new_post.html" />
+        <option value="$PROJECT_DIR$/app/templates/_comments.html" />
+        <option value="$PROJECT_DIR$/app/main/forms.py" />
+        <option value="$PROJECT_DIR$/app/templates/_show_category.html" />
         <option value="$PROJECT_DIR$/app/static/styles.css" />
+        <option value="$PROJECT_DIR$/app/templates/_posts_all_top.html" />
+        <option value="$PROJECT_DIR$/app/templates/_posts_all.html" />
+        <option value="$PROJECT_DIR$/app/templates/post.html" />
+        <option value="$PROJECT_DIR$/config.py" />
       </list>
     </option>
   </component>
@@ -317,10 +330,9 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1280" />
-    <option name="y" value="-49" />
+    <option name="y" value="23" />
     <option name="width" value="1280" />
-    <option name="height" value="954" />
+    <option name="height" value="731" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -347,7 +359,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -363,6 +375,34 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="flask-blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flask-blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flask-blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tests" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flask-blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flask-blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="requirements" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -412,6 +452,28 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="templates" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flask-blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flask-blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="static" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -434,9 +496,27 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flask-blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flask-blog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="auth" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -452,29 +532,14 @@
       <recent name="$PROJECT_DIR$/app/static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/requirements" />
       <recent name="$PROJECT_DIR$/app/templates/auth" />
+      <recent name="$PROJECT_DIR$/app/static/alertify/css" />
+      <recent name="$PROJECT_DIR$/app/static/alertify/js" />
+      <recent name="$PROJECT_DIR$/app/static" />
+      <recent name="$PROJECT_DIR$/app/static/ckeditor" />
     </key>
   </component>
-  <component name="RunManager" selected="JavaScript Debug.test.html">
-    <configuration default="false" name="__init__ (1)" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/app/main" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="flask-blog" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/app/main/__init__.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
+  <component name="RunManager" selected="Python.models">
     <configuration default="false" name="views" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -530,6 +595,24 @@
       <method />
     </configuration>
     <configuration default="false" name="test.html" type="JavascriptDebugType" factoryName="JavaScript Debug" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/flask-blog/app/templates/test.html">
+      <method />
+    </configuration>
+    <configuration default="false" name="test_user_model" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="flask-blog" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/tests/test_user_model.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
@@ -760,19 +843,19 @@
     </configuration>
     <list size="6">
       <item index="0" class="java.lang.String" itemvalue="Python.flask-blog" />
-      <item index="1" class="java.lang.String" itemvalue="Python.__init__ (1)" />
-      <item index="2" class="java.lang.String" itemvalue="Python.views" />
-      <item index="3" class="java.lang.String" itemvalue="Python.models" />
-      <item index="4" class="java.lang.String" itemvalue="Python.views (1)" />
-      <item index="5" class="java.lang.String" itemvalue="JavaScript Debug.test.html" />
+      <item index="1" class="java.lang.String" itemvalue="Python.views" />
+      <item index="2" class="java.lang.String" itemvalue="Python.models" />
+      <item index="3" class="java.lang.String" itemvalue="Python.views (1)" />
+      <item index="4" class="java.lang.String" itemvalue="JavaScript Debug.test.html" />
+      <item index="5" class="java.lang.String" itemvalue="Python.test_user_model" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JavaScript Debug.test.html" />
-        <item index="1" class="java.lang.String" itemvalue="Python.models" />
-        <item index="2" class="java.lang.String" itemvalue="Python.views (1)" />
-        <item index="3" class="java.lang.String" itemvalue="Python.views" />
-        <item index="4" class="java.lang.String" itemvalue="Python.__init__ (1)" />
+        <item index="0" class="java.lang.String" itemvalue="Python.models" />
+        <item index="1" class="java.lang.String" itemvalue="Python.test_user_model" />
+        <item index="2" class="java.lang.String" itemvalue="JavaScript Debug.test.html" />
+        <item index="3" class="java.lang.String" itemvalue="Python.views (1)" />
+        <item index="4" class="java.lang.String" itemvalue="Python.views" />
       </list>
     </recent_temporary>
   </component>
@@ -792,195 +875,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1467419683927</updated>
-    </task>
-    <task id="LOCAL-00102" summary="Implement Edit Post function">
-      <created>1471312956598</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1471312956598</updated>
-    </task>
-    <task id="LOCAL-00103" summary="Hide My Post link for Anonymous user">
-      <created>1471331100748</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1471331100748</updated>
-    </task>
-    <task id="LOCAL-00104" summary="Add decorator log_required for New Post">
-      <created>1471331225259</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1471331225259</updated>
-    </task>
-    <task id="LOCAL-00105" summary="Change email html part">
-      <created>1471435397228</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1471435397228</updated>
-    </task>
-    <task id="LOCAL-00106" summary="Change user.html to profile.html">
-      <created>1471487427207</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1471487427207</updated>
-    </task>
-    <task id="LOCAL-00107" summary="Add Category on index page">
-      <created>1471502842132</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1471502842132</updated>
-    </task>
-    <task id="LOCAL-00108" summary="Change Contact to About Me">
-      <created>1471515694336</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1471515694336</updated>
-    </task>
-    <task id="LOCAL-00109" summary="Change logic of index and my post">
-      <created>1471515762381</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1471515762381</updated>
-    </task>
-    <task id="LOCAL-00110" summary="Change alert message when publishing new post">
-      <created>1471517917694</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1471517917694</updated>
-    </task>
-    <task id="LOCAL-00111" summary="Re-implement edit post function for normal user and admin">
-      <created>1471576302399</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1471576302399</updated>
-    </task>
-    <task id="LOCAL-00112" summary="Change blog name to Yuora">
-      <created>1471581406354</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1471581406354</updated>
-    </task>
-    <task id="LOCAL-00113" summary="Install Flask-CKEditor and change body to TextAreaField">
-      <created>1471690695430</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1471690695431</updated>
-    </task>
-    <task id="LOCAL-00114" summary="Add flask-ckeditor into template">
-      <created>1471786296259</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1471786296259</updated>
-    </task>
-    <task id="LOCAL-00115" summary="Add Cancel link on edit post page">
-      <created>1471825809776</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1471825809776</updated>
-    </task>
-    <task id="LOCAL-00116" summary="Add selector post-author to clear both">
-      <created>1471849983988</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1471849983988</updated>
-    </task>
-    <task id="LOCAL-00117" summary="Change css and Hand Rich Text on the Server&#10;">
-      <created>1471850221604</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1471850221604</updated>
-    </task>
-    <task id="LOCAL-00118" summary="Create model for Comment">
-      <created>1471865326292</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1471865326292</updated>
-    </task>
-    <task id="LOCAL-00119" summary="Create a form for comments">
-      <created>1471866417262</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1471866417263</updated>
-    </task>
-    <task id="LOCAL-00120" summary="Implement Comment function">
-      <created>1471913493219</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1471913493219</updated>
-    </task>
-    <task id="LOCAL-00121" summary="Change style for my homepage">
-      <created>1471931431864</created>
-      <option name="number" value="00121" />
-      <option name="presentableId" value="LOCAL-00121" />
-      <option name="project" value="LOCAL" />
-      <updated>1471931431864</updated>
-    </task>
-    <task id="LOCAL-00122" summary="Implement Comment function">
-      <created>1471931513235</created>
-      <option name="number" value="00122" />
-      <option name="presentableId" value="LOCAL-00122" />
-      <option name="project" value="LOCAL" />
-      <updated>1471931513235</updated>
-    </task>
-    <task id="LOCAL-00123" summary="Modify new_post.html and edit_post.html">
-      <created>1471935741124</created>
-      <option name="number" value="00123" />
-      <option name="presentableId" value="LOCAL-00123" />
-      <option name="project" value="LOCAL" />
-      <updated>1471935741124</updated>
-    </task>
-    <task id="LOCAL-00124" summary="Add comments and count on post page">
-      <created>1472012293069</created>
-      <option name="number" value="00124" />
-      <option name="presentableId" value="LOCAL-00124" />
-      <option name="project" value="LOCAL" />
-      <updated>1472012293071</updated>
-    </task>
-    <task id="LOCAL-00125" summary="Add Edit button on post page">
-      <created>1472016190481</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
-      <option name="project" value="LOCAL" />
-      <updated>1472016190481</updated>
-    </task>
-    <task id="LOCAL-00126" summary="Load username after login">
-      <created>1472017415148</created>
-      <option name="number" value="00126" />
-      <option name="presentableId" value="LOCAL-00126" />
-      <option name="project" value="LOCAL" />
-      <updated>1472017415148</updated>
-    </task>
-    <task id="LOCAL-00127" summary="Config changes">
-      <created>1472017498422</created>
-      <option name="number" value="00127" />
-      <option name="presentableId" value="LOCAL-00127" />
-      <option name="project" value="LOCAL" />
-      <updated>1472017498422</updated>
-    </task>
-    <task id="LOCAL-00128" summary="Change back to use standard ckeditor">
-      <created>1472017584695</created>
-      <option name="number" value="00128" />
-      <option name="presentableId" value="LOCAL-00128" />
-      <option name="project" value="LOCAL" />
-      <updated>1472017584695</updated>
     </task>
     <task id="LOCAL-00129" summary="Create Follow model">
       <created>1472188103060</created>
@@ -1136,7 +1030,196 @@
       <option name="project" value="LOCAL" />
       <updated>1472992671303</updated>
     </task>
-    <option name="localTasksCounter" value="151" />
+    <task id="LOCAL-00151" summary="Modify style on profile page">
+      <created>1473034205580</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1473034205580</updated>
+    </task>
+    <task id="LOCAL-00152" summary="Implement pagination on category_post page">
+      <created>1473038509422</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1473038509422</updated>
+    </task>
+    <task id="LOCAL-00153" summary="Add category on home page">
+      <created>1473128615527</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1473128615527</updated>
+    </task>
+    <task id="LOCAL-00154" summary="Add url to point to the Comments part on index page">
+      <created>1473221967707</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1473221967708</updated>
+    </task>
+    <task id="LOCAL-00155" summary="Remove time stamp on post page">
+      <created>1473398013000</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1473398013000</updated>
+    </task>
+    <task id="LOCAL-00156" summary="Modify the style a little bit">
+      <created>1473402864510</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1473402864510</updated>
+    </task>
+    <task id="LOCAL-00157" summary="Implement like module">
+      <created>1473407814233</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1473407814233</updated>
+    </task>
+    <task id="LOCAL-00158" summary="Add links to category and modify style">
+      <created>1473478609625</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1473478609626</updated>
+    </task>
+    <task id="LOCAL-00159" summary="Implement like and unlike function">
+      <created>1473577688019</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1473577688020</updated>
+    </task>
+    <task id="LOCAL-00160" summary="Implement Like sort function">
+      <created>1473662739210</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1473662739210</updated>
+    </task>
+    <task id="LOCAL-00161" summary="Delete post with associated comments and likes">
+      <created>1473812465534</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1473812465534</updated>
+    </task>
+    <task id="LOCAL-00162" summary="Change number to paginate to from 10 to 5">
+      <created>1473825212065</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1473825212065</updated>
+    </task>
+    <task id="LOCAL-00163" summary="Pop up alert message to delete post">
+      <created>1473901664288</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1473901664289</updated>
+    </task>
+    <task id="LOCAL-00164" summary="Pop up alert message to delete post using alertify plugin">
+      <created>1473943297556</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1473943297557</updated>
+    </task>
+    <task id="LOCAL-00165" summary="Add alertify plugin into Yuora project">
+      <created>1474021789531</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1474021789533</updated>
+    </task>
+    <task id="LOCAL-00166" summary="Add alertify plugin into Yuora project">
+      <created>1474021835886</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1474021835888</updated>
+    </task>
+    <task id="LOCAL-00167" summary="Implement validation on new post form">
+      <created>1474021903528</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1474021903528</updated>
+    </task>
+    <task id="LOCAL-00168" summary="Host jQuery into Yuora project">
+      <created>1474022330959</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1474022330959</updated>
+    </task>
+    <task id="LOCAL-00169" summary="Point out category name when creating a new category name">
+      <created>1474092596959</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1474092596959</updated>
+    </task>
+    <task id="LOCAL-00170" summary="small change for href">
+      <created>1474372853288</created>
+      <option name="number" value="00170" />
+      <option name="presentableId" value="LOCAL-00170" />
+      <option name="project" value="LOCAL" />
+      <updated>1474372853289</updated>
+    </task>
+    <task id="LOCAL-00171" summary="Change style">
+      <created>1474549794946</created>
+      <option name="number" value="00171" />
+      <option name="presentableId" value="LOCAL-00171" />
+      <option name="project" value="LOCAL" />
+      <updated>1474549794947</updated>
+    </task>
+    <task id="LOCAL-00172" summary="Change style on index page">
+      <created>1474978669062</created>
+      <option name="number" value="00172" />
+      <option name="presentableId" value="LOCAL-00172" />
+      <option name="project" value="LOCAL" />
+      <updated>1474978669063</updated>
+    </task>
+    <task id="LOCAL-00173" summary="Resize checkeditor on new post page">
+      <created>1475130182921</created>
+      <option name="number" value="00173" />
+      <option name="presentableId" value="LOCAL-00173" />
+      <option name="project" value="LOCAL" />
+      <updated>1475130182922</updated>
+    </task>
+    <task id="LOCAL-00174" summary="Fix like function by removing #">
+      <created>1475191270233</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
+      <option name="project" value="LOCAL" />
+      <updated>1475191270233</updated>
+    </task>
+    <task id="LOCAL-00175" summary="Fix top issue when selecting certain category">
+      <created>1475191739577</created>
+      <option name="number" value="00175" />
+      <option name="presentableId" value="LOCAL-00175" />
+      <option name="project" value="LOCAL" />
+      <updated>1475191739577</updated>
+    </task>
+    <task id="LOCAL-00176" summary="Change like style">
+      <created>1475238184499</created>
+      <option name="number" value="00176" />
+      <option name="presentableId" value="LOCAL-00176" />
+      <option name="project" value="LOCAL" />
+      <updated>1475238184499</updated>
+    </task>
+    <task id="LOCAL-00177" summary="Change style for post part">
+      <created>1475238352204</created>
+      <option name="number" value="00177" />
+      <option name="presentableId" value="LOCAL-00177" />
+      <option name="project" value="LOCAL" />
+      <updated>1475238352204</updated>
+    </task>
+    <option name="localTasksCounter" value="178" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1149,27 +1232,27 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="-49" width="1280" height="954" extended-state="0" />
+    <frame x="0" y="23" width="1280" height="731" extended-state="6" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2253635" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21082391" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.49676898" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31484503" sideWeight="0.503231" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.24842767" sideWeight="0.515625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41856676" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.41788617" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32894737" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20334928" sideWeight="0.49676898" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32682925" sideWeight="0.484375" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42808607" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.42439026" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26865673" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39869282" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.398568" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1184,32 +1267,32 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Load username after login" />
-    <MESSAGE value="Config changes" />
-    <MESSAGE value="Change back to use standard ckeditor" />
-    <MESSAGE value="Create Follow model" />
-    <MESSAGE value="A many-to-many relationship implemented as two one-to-many relationships" />
-    <MESSAGE value="Fix Follow module to add primary_key" />
-    <MESSAGE value="Create Followers helper methods" />
-    <MESSAGE value="Follower enhancements to the user profile header" />
-    <MESSAGE value="Remove underline for tab a" />
-    <MESSAGE value="Implement Followers route and view function" />
-    <MESSAGE value="Implement Following function" />
-    <MESSAGE value="Add FUORA_FOLLOWERS_PER_PAGE in config.py" />
-    <MESSAGE value="Obtain followed posts" />
-    <MESSAGE value="Selection of all or followed posts" />
-    <MESSAGE value="Remove underline on post page" />
-    <MESSAGE value="Remove login required for anonymous user" />
-    <MESSAGE value="Fix duplicated category issue" />
-    <MESSAGE value="Implement show category function on main page" />
-    <MESSAGE value="Modify style on new_post page" />
-    <MESSAGE value="Remove some of log_required decorators" />
-    <MESSAGE value="Add category under footer" />
-    <MESSAGE value="Change filter to filter_by" />
-    <MESSAGE value="Remove underline for links" />
-    <MESSAGE value="Add style for edit post" />
-    <MESSAGE value="Modify style on profile page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Modify style on profile page" />
+    <MESSAGE value="Implement pagination on category_post page" />
+    <MESSAGE value="Add category on home page" />
+    <MESSAGE value="Add url to point to the Comments part on index page" />
+    <MESSAGE value="Remove time stamp on post page" />
+    <MESSAGE value="Modify the style a little bit" />
+    <MESSAGE value="Implement like module" />
+    <MESSAGE value="Add links to category and modify style" />
+    <MESSAGE value="Implement like and unlike function" />
+    <MESSAGE value="Implement Like sort function" />
+    <MESSAGE value="Delete post with associated comments and likes" />
+    <MESSAGE value="Change number to paginate to from 10 to 5" />
+    <MESSAGE value="Pop up alert message to delete post" />
+    <MESSAGE value="Pop up alert message to delete post using alertify plugin" />
+    <MESSAGE value="Add alertify plugin into Yuora project" />
+    <MESSAGE value="Implement validation on new post form" />
+    <MESSAGE value="Host jQuery into Yuora project" />
+    <MESSAGE value="Point out category name when creating a new category name" />
+    <MESSAGE value="small change for href" />
+    <MESSAGE value="Change style" />
+    <MESSAGE value="Change style on index page" />
+    <MESSAGE value="Resize checkeditor on new post page" />
+    <MESSAGE value="Fix like function by removing #" />
+    <MESSAGE value="Fix top issue when selecting certain category" />
+    <MESSAGE value="Change like style" />
+    <MESSAGE value="Change style for post part" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change style for post part" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1221,7 +1304,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/app/models.py</url>
-          <line>171</line>
+          <line>172</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="jinja2-line">
@@ -1229,123 +1312,22 @@
           <line>20</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="jinja2-line">
+          <url>file://$PROJECT_DIR$/app/templates/_posts_all_top.html</url>
+          <line>10</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="jinja2-line">
+          <url>file://$PROJECT_DIR$/app/templates/post.html</url>
+          <line>18</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="6" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/templates/auth/reset_password.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="22" selection-start-line="4" selection-start-column="22" selection-end-line="4" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/auth/unconfirmed.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="17" column="8" selection-start-line="17" selection-start-column="8" selection-end-line="17" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/403.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/404.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/500.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/email.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="23" column="44" selection-start-line="23" selection-start-column="44" selection-end-line="23" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/auth/email/reset_password.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/auth/email/reset_password.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="7" selection-start-line="7" selection-start-column="7" selection-end-line="7" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/auth/email/confirm.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="4" selection-start-line="10" selection-start-column="4" selection-end-line="10" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/auth/email/confirm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/auth/email/change_email.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/auth/email/change_email.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/requirements/common.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/ckeditor/lang/af.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/ckeditor/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="38" column="47" selection-start-line="38" selection-start-column="47" selection-end-line="38" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/upload/201608231934356782.jpeg" />
-    <entry file="file://$PROJECT_DIR$/app/static/upload/201608231941479744.jpeg" />
-    <entry file="file://$PROJECT_DIR$/app/static/upload/201608231955535840.jpg" />
-    <entry file="file://$PROJECT_DIR$/app/static/upload/201608231956215088.jpeg" />
-    <entry file="file://$PROJECT_DIR$/app/static/upload/201608232118227275.png" />
-    <entry file="file://$PROJECT_DIR$/app/static/upload/201608232119196976.jpeg" />
     <entry file="file://$PROJECT_DIR$/app/static/upload/201608232120465739.jpeg" />
     <entry file="file://$PROJECT_DIR$/app/decorators.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -1354,25 +1336,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/.pyenv/versions/2.7.11/lib/python2.7/site-packages/flask_login.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="786" column="22" selection-start-line="786" selection-start-column="8" selection-end-line="786" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.pyenv/versions/2.7.11/lib/python2.7/site-packages/flask/blueprints.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="87">
           <caret line="152" column="27" selection-start-line="152" selection-start-column="27" selection-end-line="152" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/auth/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="17" column="69" selection-start-line="17" selection-start-column="69" selection-end-line="17" selection-end-column="69" />
         </state>
       </provider>
     </entry>
@@ -1383,123 +1350,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/auth/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="735">
-          <caret line="57" column="48" selection-start-line="57" selection-start-column="21" selection-end-line="57" selection-end-column="48" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/main/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1065">
-          <caret line="77" column="4" selection-start-line="77" selection-start-column="4" selection-end-line="77" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" column="7" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="28" selection-start-line="15" selection-start-column="28" selection-end-line="15" selection-end-column="28" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/main/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="280" column="70" selection-start-line="280" selection-start-column="70" selection-end-line="280" selection-end-column="70" />
-          <folding>
-            <element signature="e#108#133#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="77" column="9" selection-start-line="77" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding>
-            <element signature="e#107#136#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/followers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-210">
-          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="19" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/category.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1454">
-          <caret line="27" column="37" selection-start-line="27" selection-start-column="37" selection-end-line="27" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/add_category.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="20" selection-start-line="13" selection-start-column="20" selection-end-line="13" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/about.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/_show_categories.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="10" selection-start-line="8" selection-start-column="10" selection-end-line="8" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#p#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#1;n#p#0;n#a#0;n#li#0;n#ul#0;n#div#1;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/_posts_user.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-15">
-          <caret line="22" column="59" selection-start-line="22" selection-start-column="59" selection-end-line="22" selection-end-column="59" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/_posts_category.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-75">
-          <caret line="15" column="104" selection-start-line="15" selection-start-column="104" selection-end-line="15" selection-end-column="104" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1507,49 +1361,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="525">
           <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/_comments.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="11" column="82" selection-start-line="11" selection-start-column="82" selection-end-line="11" selection-end-column="82" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/edit_post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="0" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/new_post.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="11" selection-start-line="23" selection-start-column="11" selection-end-line="23" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="6" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1557,31 +1368,306 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="22" selection-start-line="3" selection-start-column="22" selection-end-line="3" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/favicon.ico">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/manage.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/Like.png" />
+    <entry file="file://$PROJECT_DIR$/app/static/jquery.min.js" />
+    <entry file="file://$PROJECT_DIR$/app/templates/_posts_user.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="34" column="74" selection-start-line="34" selection-start-column="74" selection-end-line="34" selection-end-column="74" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/jquery.alerts.css" />
+    <entry file="file://$PROJECT_DIR$/app/static/jquery.alerts.js" />
+    <entry file="file://$PROJECT_DIR$/app/templates/edit_post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.pyenv/versions/2.7.11/lib/python2.7/site-packages/flask_bootstrap/static/jquery.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="3959" column="4" selection-start-line="3959" selection-start-column="4" selection-end-line="3959" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="8" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/test_user_model.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.pyenv/versions/2.7.11/lib/python2.7/site-packages/flask_wtf/form.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2115">
+          <caret line="150" column="8" selection-start-line="150" selection-start-column="8" selection-end-line="150" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/_posts_all.html">
+    <entry file="file://$PROJECT_DIR$/app/main/errors.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="34" selection-start-line="15" selection-start-column="34" selection-end-line="15" selection-end-column="34" />
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/add_category.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="0" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.pyenv/versions/2.7.11/lib/python2.7/site-packages/flask_login.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1307">
+          <caret line="758" column="4" selection-start-line="758" selection-start-column="4" selection-end-line="758" selection-end-column="4" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/auth/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/auth/login1.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="50" column="22" selection-start-line="50" selection-start-column="22" selection-end-line="50" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/followers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-160">
+          <caret line="14" column="1" selection-start-line="14" selection-start-column="1" selection-end-line="19" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/ckeditor/ckeditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/ckeditor/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="40" column="21" selection-start-line="40" selection-start-column="21" selection-end-line="40" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/category_top.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="14" column="78" selection-start-line="14" selection-start-column="78" selection-end-line="14" selection-end-column="78" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/_posts_category_top.html" />
+    <entry file="file://$PROJECT_DIR$/app/templates/_posts_category.html" />
+    <entry file="file://$PROJECT_DIR$/app/templates/_category_top.html" />
+    <entry file="file://$PROJECT_DIR$/app/static/jquery.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/homepage.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="77" selection-start-line="9" selection-start-column="77" selection-end-line="9" selection-end-column="77" />
+        <state relative-caret-position="825">
+          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="62" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="80" selection-start-line="6" selection-start-column="80" selection-end-line="6" selection-end-column="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/auth/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="16" selection-end-line="31" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/auth/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-646">
+          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/new_post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="24" column="24" selection-start-line="20" selection-start-column="0" selection-end-line="28" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/main/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4185">
+          <caret line="288" column="17" selection-start-line="288" selection-start-column="3" selection-end-line="288" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/_comments.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="34" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/main/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="56">
+          <caret line="72" column="41" selection-start-line="72" selection-start-column="41" selection-end-line="72" selection-end-column="41" />
+          <folding>
+            <element signature="e#108#138#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-343">
+          <caret line="327" column="10" selection-start-line="327" selection-start-column="0" selection-end-line="327" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/post_all_top.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/static/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+        <state relative-caret-position="81">
+          <caret line="265" column="1" selection-start-line="265" selection-start-column="1" selection-end-line="265" selection-end-column="1" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/_posts_all_top.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#2;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#1;n#div#2;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#2;n#div#2;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#div#2;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="58" column="6" selection-start-line="58" selection-start-column="6" selection-end-line="58" selection-end-column="6" />
+          <folding>
+            <element signature="n#style#0;n#a#4;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="17" column="33" selection-start-line="17" selection-start-column="33" selection-end-line="17" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/_show_category.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="17" column="53" selection-start-line="17" selection-start-column="53" selection-end-line="17" selection-end-column="53" />
+          <folding>
+            <element signature="n#style#0;n#p#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#1;n#p#1;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/category_top.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/category_post.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" column="17" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="23" column="34" selection-start-line="23" selection-start-column="34" selection-end-line="23" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/_posts_all.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="31" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="59" />
+          <folding>
+            <element signature="n#style#0;n#a#0;n#div#2;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#1;n#div#2;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#2;n#div#2;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#3;n#div#2;n#div#1;n#li#0;n#ul#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

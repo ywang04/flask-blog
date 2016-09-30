@@ -58,7 +58,7 @@ class EditProfileAdminForm(Form):
 
 
 class PostForm(Form,CKEditor):
-    title = StringField('Enter Title',validators=[Required()])
+    title = StringField('Enter Title',validators=[Required(),Length(0,64)])
     category = SelectField('Select Category',coerce=int)
     body = TextAreaField("What's on your mind?",validators=[Required()])
     submit = SubmitField("Post")
@@ -70,7 +70,7 @@ class PostForm(Form,CKEditor):
                                  for category in Category.query.order_by(Category.category_name).all()]
 
 class CommentForm(Form):
-    body = StringField('Add a comment',validators=[Required()])
+    body = TextAreaField('Add a comment',validators=[Required()])
     submit = SubmitField('Comment')
 
 
