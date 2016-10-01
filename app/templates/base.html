@@ -33,9 +33,9 @@
 
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li><a href={{ url_for('main.new_post') }}><span class="brand">New Post</span></a></li>
+                    <li><a href={{ url_for('main.post_new') }}><span class="brand">New Post</span></a></li>
                     {% if current_user.is_administrator() %}
-                    <li><a href="{{ url_for('main.add_category') }}"><span class="brand">Add Category</span></a></li>
+                    <li><a href="{{ url_for('main.category_add') }}"><span class="brand">Add Category</span></a></li>
                     {% endif %}
                     <li><a href={{ url_for('main.about') }}><span class="brand">About Me</span></a></li>
                 </ul>

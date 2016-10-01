@@ -13,7 +13,7 @@
             <!--点赞最多的就是Top-->
             <li{% if not show_followed %} class="active"{% endif %}><a href="{{ url_for('main.show_all') }}">
                All</a></li>
-            <li><a href="{{ url_for('main.all_top') }}">Top</a></li>
+            <li><a href="{{ url_for('main.post_top') }}">Top</a></li>
             {% if current_user.is_authenticated %}
                 <li{% if show_followed %} class="active" {% endif %}><a href="{{ url_for('main.show_followed') }}">Followers</a>
             </li>
@@ -26,7 +26,7 @@
 
             <div class="right-bar">
 
-                {% include '_show_category.html' %}
+                {% include '_category_show.html' %}
 
 
             </div>

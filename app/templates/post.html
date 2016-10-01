@@ -10,7 +10,7 @@
 
     <a href="/">Yuora</a>
 
-    <a href="{{ url_for('main.category_post',id=post.category_id) }}">
+    <a href="{{ url_for('main.post_category',id=post.category_id) }}">
     <span class="chevron">&nbsp;›&nbsp;{{ post.category.category_name}}</span>
     </a>
 
@@ -27,7 +27,7 @@
         </div>
 
         {% if current_user == post.author %}
-        <a href="{{ url_for('main.edit_post', id=post.id) }}" style="margin: 3px;">
+        <a href="{{ url_for('main.post_edit', id=post.id) }}" style="margin: 3px;">
             <span class="label label-default">Edit</span>
         </a>
 
@@ -144,7 +144,7 @@
                 function(e) {
                     if (e) {
                         $.ajax({
-                            url: '{{ url_for('main.delete_post',id=post.id) }}',
+                            url: '{{ url_for('main.post_delete',id=post.id) }}',
                             type: 'GET',
                             async: false,
                             success: function () {

@@ -98,7 +98,7 @@ class User(UserMixin,db.Model):
     avatar_hash = db.Column(db.String(32))
     posts = db.relationship('Post',backref='author',lazy='dynamic')
     comments = db.relationship('Comment',backref='author',lazy='dynamic')
-    likes = db.relationship('Like',backref='author',lazy='dynamic')
+    likes = db.relationship('Like',backref='user',lazy='dynamic')
     #to see the user follows who
     followed = db.relationship('Follow',
                                foreign_keys=[Follow.follower_id],
@@ -258,7 +258,7 @@ class User(UserMixin,db.Model):
             .filter(Follow.follower_id == self.id)
 
     def is_like_post(self,post):
-        return self.likes.filter_by(post_id = post.id).filter_by(author_id =self.id).first() is not None
+        return self.likes.filter_by(post_id = post.id).filter_by(user_id =self.id).filter_by(liked=True).first() is not None
 
     def __repr__(self):
         return '<User %r>' % self.username
@@ -364,9 +364,10 @@ registrations = db.Table('registrations',
 class Like(db.Model):
     __tablename__ = "likes"
     id = db.Column(db.Integer,primary_key=True)
-    timestamp = db.Column(db.DateTime,index=True,default=datetime.utcnow)
-    author_id = db.Column(db.Integer,db.ForeignKey('users.id'))
+    # timestamp = db.Column(db.DateTime,index=True,default=datetime.utcnow)
+    user_id = db.Column(db.Integer,db.ForeignKey('users.id'))
     post_id = db.Column(db.Integer,db.ForeignKey('posts.id',ondelete='CASCADE'))
+    liked = db.Column(db.Integer,default=False)
 
 
 class Student(db.Model):

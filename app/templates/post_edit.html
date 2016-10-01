@@ -10,7 +10,7 @@
     <h2>Edit Post</h2>
     </div>
 
-<div class="col-md-9" >
+
    <form method="post">
        {{ form.csrf_token() }}
        <div class="form-group"> {{ form.title(class="form-control",placeholder="Enter Title",type='text') }}</div>
@@ -20,7 +20,7 @@
     <a href="{{ url_for('main.post',id=post.id) }}"><button type="button" class="btn btn-primary">Cancel</button></a>
    </form>
 
-</div>
+
 
 {% endblock %}
 

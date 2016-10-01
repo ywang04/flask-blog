@@ -57,9 +57,9 @@ def user(username):
     posts = pagination.items
     return render_template('homepage.html',user=user,posts=posts,pagination=pagination)
 
-@main.route('/edit-profile',methods=['GET','POST'])
+@main.route('/profile-edit',methods=['GET','POST'])
 @login_required
-def edit_profile():
+def profile_edit():
     form = EditProfile()
     if form.validate_on_submit():
         current_user.name = form.name.data
@@ -72,13 +72,13 @@ def edit_profile():
     form.name.data = current_user.name
     form.location.data = current_user.location
     form.about_me.data = current_user.about_me
-    return render_template('edit_profile.html',form=form)
+    return render_template('profile_edit.html',form=form)
 
 
-@main.route('/edit-profile/<int:id>',methods=['GET','POST'])
+@main.route('/profile-edit/<int:id>',methods=['GET','POST'])
 @login_required
 @admin_required
-def edit_profile_admin(id):
+def profile_edit_admin(id):
     user = User.query.get_or_404(id)
     form = EditProfileAdminForm(user)
     if form.validate_on_submit():
@@ -100,7 +100,7 @@ def edit_profile_admin(id):
     form.name.data = user.name
     form.location.data = user.location
     form.about_me.data = user.about_me
-    return render_template('edit_profile.html',form=form,user=user)
+    return render_template('profile_edit.html',form=form,user=user)
 
 @main.route('/post/<int:id>',methods=['GET','POST'])
 def post(id):
@@ -122,9 +122,9 @@ def post(id):
     comments = pagination.items
     return render_template('post.html',post=post,form=form,comments=comments,pagination=pagination)
 
-@main.route('/new-post',methods=['GET','POST'])
+@main.route('/post-new',methods=['GET','POST'])
 @login_required
-def new_post():
+def post_new():
     form = PostForm()
     if form.validate_on_submit():
         #category is an object(<app.models.Category object at 0x10faded90>)
@@ -135,11 +135,11 @@ def new_post():
         db.session.commit()
         flash('Your post has been published.')
         return redirect(url_for('main.post',id=post.id))
-    return render_template('new_post.html',form=form)
+    return render_template('post_new.html',form=form)
 
-@main.route('/edit-post/<int:id>',methods=['GET','POST'])
+@main.route('/post-edit/<int:id>',methods=['GET','POST'])
 @login_required
-def edit_post(id):
+def post_edit(id):
     #check the id and permission for the post
     post = Post.query.get_or_404(id)
     if current_user != post.author and \
@@ -158,11 +158,11 @@ def edit_post(id):
     form.title.data = post.title
     form.category.data = post.category_id
     form.body.data = post.body
-    return render_template('edit_post.html',form=form,post=post)
+    return render_template('post_edit.html',form=form,post=post)
 
-@main.route('/delete-post/<int:id>')
+@main.route('/post-delete/<int:id>')
 @login_required
-def delete_post(id):
+def post_delete(id):
     post = Post.query.get_or_404(id)
     if current_user != post.author and \
           not current_user.is_administrator:
@@ -285,8 +285,8 @@ def ckupload():
     response.headers["Content-Type"] = "text/html"
     return response
 
-@main.route('/category-post/<int:id>')
-def category_post(id):
+@main.route('/post-category/<int:id>')
+def post_category(id):
     #difference between filter and filter_by,both are fine.
     # posts = Post.query.filter(Post.category_id==id)
     page = request.args.get('page', 1, type=int)
@@ -295,7 +295,7 @@ def category_post(id):
     pagination = post.order_by(Post.timestamp.desc()).paginate(
         page,per_page=current_app.config['YUORA_POSTS_PER_PAGE'],error_out=False)
     posts = pagination.items
-    return render_template('category_post.html',posts=posts,categories=categories,Post=Post,category_id=id,
+    return render_template('post_category.html',posts=posts,categories=categories,Post=Post,category_id=id,
                            pagination = pagination)
 
 
@@ -335,8 +335,8 @@ def post_like(id):
     return redirect(url_for('main.index'))
 
 
-@main.route('/all/top')
-def all_top():
+@main.route('/post/top')
+def post_top():
     page = request.args.get('page', 1, type=int)
 
 #select * from posts ps join (SELECT ls.post_id,count(ls.post_id) as c FROM likes ls GROUP BY ls.post_id) ls on ps.id = ls.post_id order by c desc;
@@ -351,9 +351,9 @@ def all_top():
                            categories=categories, Post=Post)
 
 
-@main.route('/add-category',methods=['GET','POST'])
+@main.route('/category-add',methods=['GET','POST'])
 @admin_required
-def add_category():
+def category_add():
     form = AddCategory()
     if form.validate_on_submit():
         category = Category(category_name=form.category.data)
@@ -363,11 +363,11 @@ def add_category():
         except IntegrityError as e:
             db.session.rollback()
             flash('%s already exists.' % category.category_name )
-            return redirect(url_for('main.add_category'))
+            return redirect(url_for('main.category_add'))
         flash('%s has been added.' % category.category_name)
-        return redirect(url_for('main.add_category'))
+        return redirect(url_for('main.category_add'))
     categories = Category.query.order_by(Category.category_name).all()
-    return render_template('add_category.html',form=form,categories=categories)
+    return render_template('category_add.html',form=form,categories=categories)
 
 @main.route('/about')
 def about():
