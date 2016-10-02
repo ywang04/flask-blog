@@ -36,7 +36,7 @@
         </a>
 
         {% elif current_user.is_administrator() %}
-        <a href="{{ url_for('main.edit_post', id=post.id) }}" style="margin: 3px;">
+        <a href="{{ url_for('main.post_edit', id=post.id) }}" style="margin: 3px;">
             <span class="label label-default">Edit</span>
         </a>
 
