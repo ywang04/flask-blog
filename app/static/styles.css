@@ -1,11 +1,25 @@
 .profile-thumbnail {
     position: absolute;
+
 }
 
 .profile-header {
-    min-height: 100px;
-    margin-left: 250px;
+    /*min-height: 100px;*/
+    margin-left: 240px;
+
 }
+
+.profile-wrap{
+
+    width: 1120px;
+    margin: 15px auto;
+    background: #FFFFFF;
+    padding: 25px 40px;
+
+}
+
+
+
 
 /*注意和派生选择器的区别*/
 /*这里以此区分有相同名字的class_name*/
@@ -22,7 +36,8 @@ ul.posts {
 }
 
 ul.posts li.post {
-    padding: 8px;
+    padding: 10px;
+    padding-left: 15px;
     border-bottom: 1px solid #e0e0e0;
 }
 
@@ -252,7 +267,7 @@ ul li{
 .comment-wrap{
 
     width: 1120px;
-    margin: 0 auto;
+    margin: 30px auto;
     background: #FFFFFF;
 }
 
@@ -294,4 +309,15 @@ h1 {
 .to-top{
 
     float:right;
+}
+
+
+.followers-wrap{
+
+    width: 1190px;
+    margin: 0 auto;
+    background: #FFFFFF;
+    padding: 20px 30px;
+
+
 }
