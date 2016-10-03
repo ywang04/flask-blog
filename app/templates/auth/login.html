@@ -1,27 +1,30 @@
 {% extends "base.html" %}
+
 {% import "bootstrap/wtf.html" as wtf %}
 
 {% block title %}Yuora - Login{% endblock %}
 
-
 {% block page_content %}
+
 <div class="page-header">
-    <h1>Login</h1>
+    <span class="login-header">Yuora</span>
 </div>
-<div class="col-md-4">
+
+<div class="auth-login">
     {{ wtf.quick_form(form) }}
     <br>
     <p>
-        Forgot your password?
+        Having trouble logging in?
         <a href="{{ url_for('auth.password_reset_request') }}">Click here to reset it</a>
     </p>
 
     <p>
         New user?
         <a href="{{ url_for('auth.register') }}">
-            Click here to register
+            Click here to sign up
         </a>
     </p>
 
 </div>
+
 {% endblock %}

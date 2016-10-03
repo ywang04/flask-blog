@@ -143,30 +143,6 @@ a:hover,a:visited,a:link,a:active
 
 }
 
-
-#login-wrap{
-
-    width: 400px;
-    margin: 100px auto;
-
-}
-
-
-.header{
-
-    font-size: 65px;
-    padding-left: 85px;
-    width: 100%;
-
-}
-
-.login-form {
-
-    padding-left: 85px;
-    width: 100%;
-
-}
-
 .content {
     width: 1170px;
     margin: 20px auto;
@@ -331,11 +307,48 @@ h1 {
 
 }
 
-.auth-header{
+.register-header{
 
-    font-size: 50px;
-    margin-left: 500px;
+    font-size: 70px;
+    margin-left: 480px;
     font-family: "Microsoft YaHei";
     font-weight: bolder;
+    color: #EE9A00;
+}
+
+.auth-login{
+
+
+    width: 520px;
+    margin: 0 auto;
+    padding: 80px 30px;
+
+}
+
+.login-header{
+
+    font-size: 70px;
+    margin-left: 480px;
+    font-family: "Microsoft YaHei";
+    font-weight: bolder;
+    color: #EE9A00;
+
+}
+
+.reset-password{
+
+    width: 300px;
+    margin-left: 40px;
+
+}
+
+.reset-header{
+
+    margin-left: 38px;
+    font-family: "Microsoft YaHei";
+    font-weight: bolder;
+    font-size: 30px;
+
+
 
 }
