@@ -11,19 +11,23 @@
 </div>
 
 <div class="auth-login">
-    {{ wtf.quick_form(form) }}
-    <br>
-    <p>
-        Having trouble logging in?
-        <a href="{{ url_for('auth.password_reset_request') }}">Click here to reset it</a>
-    </p>
 
-    <p>
-        New user?
-        <a href="{{ url_for('auth.register') }}">
-            Click here to sign up
-        </a>
-    </p>
+    <div class="col-md-11">
+        {{ wtf.quick_form(form) }}
+        <br>
+        <p>
+            Having trouble logging in?
+            <a href="{{ url_for('auth.password_reset_request') }}">Click here to reset it</a>
+        </p>
+
+        <p>
+            New user?
+            <a href="{{ url_for('auth.register') }}">
+                Click here to sign up
+            </a>
+        </p>
+
+    </div>
 
 </div>
 

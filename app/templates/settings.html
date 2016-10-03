@@ -1,16 +1,17 @@
 {% extends "base.html" %}
 {% import "_macros.html" as macros %}
+{% import "bootstrap/wtf.html" as wtf %}
 
-{% block title %}Yuora - {{ user.username }}{% endblock %}
+{% block title %}Yuora - Settings{% endblock %}
 
 {% block page_content %}
 
 
 <div class="profile-form">
 
-     <img class="img-rounded profile-thumbnail" src="{{ user.gravatar(size=180) }}">
+    <img class="img-rounded profile-thumbnail" src="{{ user.gravatar(size=180) }}">
 
-     <div class="profile-header">
+    <div class="profile-header">
 
             <h2>{{ user.username }}</h2>
             {% if user.name or user.location %}
@@ -53,30 +54,26 @@
                 {% endif %}
 
             </p>
-        </div>
+
+            <p>
+            {% if current_user.is_administrator() %}
+            <a class="btn btn-danger" href="{{ url_for('main.profile_edit_admin', id=user.id) }}">Edit Profile [Admin]</a>
+            {% endif %}
+            </p>
+
+         </div>
+</div>
+
+
+<div class="col-md-5" style="margin-left: 100px">
+
+    {{ wtf.quick_form(form) }}
+
 
 </div>
 
 
-{#    will put them into settings#}
-{#        <p>#}
-{#            {% if user == current_user %}#}
-{#            <a class="btn btn-primary" href="{{ url_for('main.profile_edit') }}">Edit Profile</a>#}
-{#            {% endif %}#}
-{#            {% if current_user.is_administrator() %}#}
-{#            <a class="btn btn-danger" href="{{ url_for('main.profile_edit_admin', id=user.id) }}">Edit Profile [Admin]</a>#}
-{#            {% endif %}#}
-{#        </p>#}
 
 
-<div class="profile-wrap">
-{% include '_posts_user.html' %}
-</div>
-
-{% if pagination %}
-<div class="pagination">
-    {{ macros.pagination_widget(pagination, 'main.user',username=user.username) }}
-</div>
-{% endif %}
 {% endblock %}
 

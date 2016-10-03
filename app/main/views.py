@@ -18,6 +18,7 @@ from .. import db
 from ..decorators import admin_required,permission_required
 from sqlalchemy.exc import IntegrityError
 from sqlalchemy.sql import func
+from ..auth.forms import ChangeProfileForm
 
 @main.route('/',methods=['GET','POST'])
 def index():
@@ -75,6 +76,7 @@ def profile_edit():
     return render_template('profile_edit.html',form=form)
 
 
+
 @main.route('/profile-edit/<int:id>',methods=['GET','POST'])
 @login_required
 @admin_required
@@ -122,7 +124,7 @@ def post(id):
     comments = pagination.items
     return render_template('post.html',post=post,form=form,comments=comments,pagination=pagination)
 
-@main.route('/post-new',methods=['GET','POST'])
+@main.route('/post-new/',methods=['GET','POST'])
 @login_required
 def post_new():
     form = PostForm()
@@ -368,6 +370,30 @@ def category_add():
         return redirect(url_for('main.category_add'))
     categories = Category.query.order_by(Category.category_name).all()
     return render_template('category_add.html',form=form,categories=categories)
+
+
+@main.route('/settings/<username>',methods=['GET','POST'])
+def settings(username):
+    form = ChangeProfileForm()
+    if form.validate_on_submit():
+        if current_user.verify_password(form.old_password.data):
+            current_user.password = form.password.data
+            db.session.add(current_user)
+            flash('Your profile has been updated.')
+            return redirect(url_for('main.settings',username=current_user.username))
+        else:
+            flash('Old password is wrong. Please try again.')
+        current_user.name = form.name.data
+        current_user.location = form.location.data
+        current_user.about_me = form.about_me.data
+        form.name.data = current_user.name
+        form.location.data = current_user.location
+        form.about_me.data = current_user.about_me
+
+    return render_template('settings.html',form=form,user=current_user._get_current_object())
+
+
+
 
 @main.route('/about')
 def about():

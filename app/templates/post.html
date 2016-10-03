@@ -21,13 +21,13 @@
     <div class="post-tags">
 
         <div class="post-author">
-              <a href="{{ url_for('main.user', username=post.author.username) }}">
-                  {{ post.author.username }}
-              </a>
+          <a href="{{ url_for('main.user', username=post.author.username) }}" style="margin-right: 3px">
+              <strong>{{ post.author.username }}</strong>
+          </a>
         </div>
 
         {% if current_user == post.author %}
-        <a href="{{ url_for('main.post_edit', id=post.id) }}" style="margin: 3px;">
+        <a href="{{ url_for('main.post_edit', id=post.id) }}" style="margin: 4px">
             <span class="label label-default">Edit</span>
         </a>
 
@@ -36,7 +36,7 @@
         </a>
 
         {% elif current_user.is_administrator() %}
-        <a href="{{ url_for('main.post_edit', id=post.id) }}" style="margin: 3px;">
+        <a href="{{ url_for('main.post_edit', id=post.id) }}" style="margin: 4px;">
             <span class="label label-default">Edit</span>
         </a>
 

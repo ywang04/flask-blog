@@ -6,20 +6,28 @@
 .profile-header {
     /*min-height: 100px;*/
     margin-left: 240px;
+    margin-top: -22px;
 
 }
 
 .profile-wrap{
 
-    width: 1120px;
-    margin: 15px auto;
+    width: 1020px;
+    /*margin: 30px 78px;*/
     background: #FFFFFF;
-    padding: 25px 40px;
+    /*padding: 2px 40px 40px 40px;*/
+    margin: 0 auto;
+    padding: 0;
 
 }
 
+.post-self-wrap{
 
-
+    width: 1010px;
+    margin: -50px auto;
+    background: #FFFFFF;
+    margin-bottom: 20px;
+}
 
 /*注意和派生选择器的区别*/
 /*这里以此区分有相同名字的class_name*/
@@ -92,7 +100,7 @@ div.comment-content {
 .comment-form {
 
     margin-top:10px;
-    width: 1120px;
+    width: 1000px;
     height: 100px;
 
 }
@@ -144,7 +152,7 @@ a:hover,a:visited,a:link,a:active
 }
 
 .content {
-    width: 1170px;
+    width: 1050px;
     margin: 20px auto;
     overflow: hidden;
     /*background: #EEE;*/
@@ -152,7 +160,7 @@ a:hover,a:visited,a:link,a:active
 }
 
 .left-bar {
-    width: 850px;
+    width: 700px;
     margin: 0 20px 10px;
     background: #FFFFFF;
     float: left;
@@ -210,8 +218,8 @@ ul li{
 }
 
 .new-post-wrap{
-    width: 1180px;
-    margin:0 auto;
+    width: 1010px;
+    margin: 30px auto;
 }
 
 .like{
@@ -226,8 +234,8 @@ ul li{
 
 .edit-post-wrap{
 
-    width: 1120px;
-    margin: 15px auto;
+    width: 1010px;
+    margin: 30px auto;
     background: #FFFFFF;
     padding: 5px 25px 15px;
 
@@ -235,16 +243,17 @@ ul li{
 
 .post-wrap{
 
-    width: 1120px;
-    margin: 50px auto;
+    width: 1015px;
+    margin: 30px auto;
 
 }
 
 .comment-wrap{
 
-    width: 1120px;
+    width: 1010px;
     margin: 30px auto;
     background: #FFFFFF;
+
 }
 
 h1 {
@@ -292,10 +301,10 @@ h1 {
 
 .followers-wrap{
 
-    width: 1190px;
+    width: 1010px;
     margin: 0 auto;
     background: #FFFFFF;
-    padding: 20px 30px;
+    padding: 5px 30px;
 
 }
 
@@ -310,7 +319,7 @@ h1 {
 .register-header{
 
     font-size: 70px;
-    margin-left: 480px;
+    margin-left: 478px;
     font-family: "Microsoft YaHei";
     font-weight: bolder;
     color: #EE9A00;
@@ -328,7 +337,7 @@ h1 {
 .login-header{
 
     font-size: 70px;
-    margin-left: 480px;
+    margin-left: 476px;
     font-family: "Microsoft YaHei";
     font-weight: bolder;
     color: #EE9A00;
@@ -348,7 +357,13 @@ h1 {
     font-family: "Microsoft YaHei";
     font-weight: bolder;
     font-size: 30px;
-
-
-
 }
+
+.profile-form{
+
+
+    margin-left: 80px;
+    /*background: #FFFFFF;*/
+    padding: 31px 40px;
+}
+

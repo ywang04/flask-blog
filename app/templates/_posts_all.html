@@ -29,9 +29,10 @@
                            <strong>{{ post.author.username }}</strong>
                         </a>
 
-                        <a href="{{ url_for('main.post_category',id=post.category.id) }}"><span class="label label-default" style="margin-right: 4px">{{ post.category.category_name }}</span></a>
-{#                          <span class="glyphicon glyphicon-thumbs-up">{{post.likes.filter_by(liked=True).count()}}</span>#}
+                        <a href="{{ url_for('main.post_category',id=post.category.id) }}">
 
+                            <span class="label label-default" style="margin-right: 2px">{{ post.category.category_name }}</span>
+                        </a>
 
                         <a href="{{ url_for('main.post',id=post.id) }}#comment-font">
 
@@ -45,11 +46,7 @@
 
                     </div>
 
-
-
                 </div>
-
-
 
             </li>
             {% endfor %}
