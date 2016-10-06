@@ -373,26 +373,26 @@ def category_add():
 
 
 @main.route('/settings/<username>',methods=['GET','POST'])
+@login_required
 def settings(username):
     form = ChangeProfileForm()
     if form.validate_on_submit():
-        if current_user.verify_password(form.old_password.data):
-            current_user.password = form.password.data
-            db.session.add(current_user)
-            flash('Your profile has been updated.')
-            return redirect(url_for('main.settings',username=current_user.username))
-        else:
-            flash('Old password is wrong. Please try again.')
+        # if current_user.verify_password(form.old_password.data):
+        #     current_user.password = form.password.data
+        #     db.session.add(current_user)
+        #     flash('Your profile has been updated.')
+        #     return redirect(url_for('main.settings',username=current_user.username))
+        # else:
+        #     flash('Old password is wrong. Please try again.')
         current_user.name = form.name.data
         current_user.location = form.location.data
         current_user.about_me = form.about_me.data
         form.name.data = current_user.name
         form.location.data = current_user.location
         form.about_me.data = current_user.about_me
+        flash('Your profile has been updated.')
 
     return render_template('settings.html',form=form,user=current_user._get_current_object())
-
-
 
 
 @main.route('/about')
