@@ -17,7 +17,7 @@ from ..models import User
 class LoginForm(Form):
     email = StringField('Email address',validators=[Required(),Length(1,64),Email()])
     password = PasswordField('Password',validators=[Required()])
-    remember_me = BooleanField('Keep me logged in')
+    remember_me = BooleanField('Stay signed in')
     submit = SubmitField('Log In')
 
 
@@ -43,10 +43,6 @@ class ChangeProfileForm(Form):
     name = StringField('Real name',render_kw={'cols':'700px','rows':'500px'},validators=[DataRequired(), Length(0, 64)],)
     location = StringField('Location', validators=[Length(0, 64)])
     about_me = TextAreaField('About me')
-    old_password = PasswordField('Old_password',validators=[DataRequired()])
-    password = PasswordField('New password', validators=[
-        Required(),EqualTo('password2', message='Passwords must match.')])
-    password2 = PasswordField('Confirm new password', validators=[DataRequired()])
     submit = SubmitField('Update Profile',render_kw={'class': "btn btn-primary btn-block"})
 
 
@@ -79,3 +75,10 @@ class ChangeEmailForm(Form):
         if User.query.filter_by(email=field.data).first():
             raise ValidationError('Email already registered.')
 
+
+class ChangePasswordForm(Form):
+    old_password = PasswordField('Old_password',validators=[DataRequired()])
+    password = PasswordField('New password', validators=[
+        DataRequired(),EqualTo('password2', message='Passwords must match.')])
+    password2 = PasswordField('Confirm new password', validators=[DataRequired()])
+    submit = submit = SubmitField('Change Password')

@@ -5,8 +5,7 @@ from . import auth
 from .. import db
 from ..models import User
 from ..email import send_email
-from .forms import LoginForm, RegistrationForm,PasswordResetForm,PasswordResetRequestForm,ChangeEmailForm
-
+from .forms import LoginForm, RegistrationForm,PasswordResetForm,PasswordResetRequestForm,ChangePasswordForm,ChangeEmailForm
 
 
 @auth.before_app_request
@@ -85,24 +84,6 @@ def resend_confirmation():
     return redirect(url_for('main.index'))
 
 
-@auth.route('/change-password',methods=['GET','POST'])
-@login_required
-def change_password():
-    form = ChangePasswordForm()
-    if form.validate_on_submit():
-        if current_user.verify_password(form.old_password.data):
-            # current_user is an python object instance from python side while it is a row on db side.
-            # "current.password" is to update instance attribute
-            # form is a Form instance. But "form.password.data" is to get the data from class Form attribute
-            current_user.password = form.password.data
-            db.session.add(current_user)
-            flash('Your password has been updated.')
-            return redirect(url_for('main.index'))
-        else:
-            flash('Old password is wrong. Please try again.')
-    return render_template('auth/change_password.html',form=form)
-
-
 @auth.route('/reset',methods=['GET','POST'])
 def password_reset_request():
     #if the user is login
@@ -136,6 +117,22 @@ def password_reset(token):
             return redirect(url_for('main.index'))
     return render_template('auth/reset_password.html',form=form)
 
+@auth.route('/change-password/<username>',methods=['GET','POST'])
+@login_required
+def change_password(username):
+    form = ChangePasswordForm()
+    if form.validate_on_submit():
+        if current_user.verify_password(form.old_password.data):
+            # current_user is an python object instance from python side while it is a row on db side.
+            # "current.password" is to update instance attribute
+            # form is a Form instance. But "form.password.data" is to get the data from class Form attribute
+            current_user.password = form.password.data
+            db.session.add(current_user)
+            flash('Your password has been updated.')
+            return redirect(url_for('main.settings',username=username))
+        else:
+            flash('Old password is wrong. Please try again.')
+    return render_template('auth/change_password.html',form=form,user=current_user._get_current_object())
 
 # @auth.route('/change-email',methods=['GET','POST'])
 # @login_required
