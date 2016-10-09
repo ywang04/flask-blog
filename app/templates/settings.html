@@ -56,16 +56,16 @@
             </p>
 
             <p>
-            {% if current_user.is_administrator() %}
-            <a class="btn btn-danger" href="{{ url_for('main.profile_edit_admin', id=user.id) }}">Edit Profile [Admin]</a>
-            {% endif %}
+
+            <a class="btn btn-default" href="{{ url_for('auth.change_password',username=user) }}">Change Password</a>
+
             </p>
 
          </div>
 </div>
 
 
-<div class="col-md-5" style="margin-left: 100px">
+<div class="col-md-5" style="margin: 8px 100px">
 
     {{ wtf.quick_form(form) }}
 
