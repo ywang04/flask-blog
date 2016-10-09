@@ -58,10 +58,9 @@ class EditProfileAdminForm(Form):
 
 
 class PostForm(Form,CKEditor):
-    title = StringField('Enter Title',validators=[Required(),Length(0,64)])
+    title = StringField('Enter Title',validators=[Required(),Length(1,64)])
     category = SelectField('Select Category',coerce=int)
     body = TextAreaField("What's on your mind?",validators=[Required()])
-    submit = SubmitField("Post")
 
     def __init__(self,*args,**kwargs):
         super(PostForm,self).__init__(*args,**kwargs)
