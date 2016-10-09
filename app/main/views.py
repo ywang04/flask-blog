@@ -155,6 +155,7 @@ def post_edit(id):
         post.category = Category.query.get(form.category.data)
         post.body = form.body.data
         db.session.add(post)
+        db.session.commit()
         flash('The post has been updated.')
         return redirect(url_for('main.post',id=post.id))
     form.title.data = post.title
