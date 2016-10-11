@@ -8,9 +8,17 @@ __version__= '1.0'
 
 """
 
-import unittest
-from app.models import User
+# try:
+#     a = [1,2,3]
+#     print a[1]
+#
+# except IndexError as e:
+#     print "Catch Error:", e
+#
+# else:
+#     print "ppt"
+#
+# finally:
+#     print "exec over"
 
-class UserModelTestCase(unittest.TestCase):
-    def test_password_setter(self):
-        pass
+

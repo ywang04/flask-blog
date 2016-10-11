@@ -152,7 +152,7 @@ a:hover,a:visited,a:link,a:active
 }
 
 .content {
-    width: 1050px;
+    width: 1100px;
     margin: 20px auto;
     overflow: hidden;
     /*background: #EEE;*/
@@ -160,7 +160,7 @@ a:hover,a:visited,a:link,a:active
 }
 
 .left-bar {
-    width: 700px;
+    width: 750px;
     margin: 0 20px 10px;
     background: #FFFFFF;
     float: left;
@@ -218,7 +218,7 @@ ul li{
 }
 
 .new-post-wrap{
-    width: 1010px;
+    width: 1070px;
     margin: 30px auto;
 }
 
@@ -337,7 +337,7 @@ h1 {
 .login-header{
 
     font-size: 70px;
-    margin-left: 476px;
+    margin-left: 478px;
     font-family: "Microsoft YaHei";
     font-weight: bolder;
     color: #EE9A00;
@@ -367,3 +367,7 @@ h1 {
     padding: 31px 40px;
 }
 
+.unconfirmed-header{
+
+    margin-left: 60px;
+}
