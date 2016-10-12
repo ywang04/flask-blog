@@ -1,0 +1,53 @@
+<div class="left-bar">
+
+        <ul class="posts">
+            {% for post in posts %}
+
+            <li class="post">
+
+
+               <!--author is a foreign key, which is a left image-->
+                <div class="post-thumbnail">
+                    <a href="{{ url_for('main.user', username=post[0].author.username) }}">
+                        <img class="img-rounded profile-thumbnail" src="{{ post[0].author.gravatar(size=40) }}">
+                    </a>
+                </div>
+
+                <!--the post content part-->
+                <div class="post-content">
+                    <div class="post-date">{{ moment(post[0].timestamp).fromNow() }}</div>
+                    <div class="post-title">
+                        <a href="{{ url_for('main.post', id=post[0].id) }}">
+                            {{ post[0].title }}
+                        </a>
+                    </div>
+
+
+                    <div class="post-footer">
+                        <a style="color:#778087;font-size: small;margin-right: 2px" href="{{ url_for('main.user', username=post[0].author.username) }}">
+                        <strong>{{ post[0].author.username }}</strong>
+                        </a>
+
+                        <a href="{{ url_for('main.post_category',id=post[0].category.id) }}"><span class="label label-default" style="margin-right: 2px">{{ post[0].category.category_name }}</span>
+                        </a>
+
+                        <a href="{{ url_for('main.post',id=post[0].id) }}#comment-font">
+                        <span class="label label-default" style="margin-right: 2px">{{ post[0].comments.count() }} Comments</span>
+                        </a>
+
+                        <a href="#" style="color: #46b8da">
+                           <span class="glyphicon glyphicon-thumbs-up"></span> {{post[0].likes.filter_by(liked=True).count()}}
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </li>
+            {% endfor %}
+
+        </ul>
+</div>
+
+
+

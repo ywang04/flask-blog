@@ -1,0 +1,29 @@
+<span class="glyphicon glyphicon-leaf category" style="margin-left: 20px">CATEGORY</span>
+
+
+<p class="category-content">
+
+    <ul>
+         {% for category in categories %}
+
+      <li>
+
+        <a href="{{ url_for('main.post_category',id=category.id) }}">
+
+
+            <p style="margin-left:-15px;margin-right: 40px">
+
+{#               <span style="font-size: 15px;">{{ category.category_name }}</span>#}
+               <span class="chevron" style="padding-left: 0;margin: 0;">&nbsp;›&nbsp;{{ category.category_name}}</span>
+               <span class="badge text-right" style="float:right">{{ Post.query.filter_by(category_id=category.id).count()}}
+               </span>
+            </p>
+        </a>
+
+        {% endfor %}
+
+      </li>
+
+    </ul>
+
+</div>

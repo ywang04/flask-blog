@@ -1,0 +1,7 @@
+{% extends '/auth/auth_base.html' %}
+{% from '/auth/macros.html' import render_form %}
+{% block content %}
+    <div class="your-form">
+        {{ render_form(your_form, action_url='/submit_url', action_text='Submit Form') }}
+    </div>
+{% endblock content %}
