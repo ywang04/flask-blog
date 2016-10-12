@@ -172,6 +172,7 @@ class User(UserMixin,db.Model):
             return False
         self.confirmed = True
         db.session.add(self)
+        db.session.commit()
         return True
 
     def generate_reset_token(self,expiration=3600):
@@ -188,6 +189,7 @@ class User(UserMixin,db.Model):
             return False
         self.password = new_password
         db.session.add(self)
+        db.session.commit()
         return True
 
     def generate_email_change_token(self,new_email,expiration=3600):
