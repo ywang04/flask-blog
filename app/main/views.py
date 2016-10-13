@@ -67,6 +67,7 @@ def profile_edit():
         current_user.location = form.location.data
         current_user.about_me = form.about_me.data
         db.session.add(current_user)
+        db.session.commit()
         flash('Your profile has been updated.')
         return redirect(url_for('main.user',username=current_user.username))
     #to load data from db and shown on page
@@ -92,6 +93,7 @@ def profile_edit_admin(id):
         user.location = form.location.data
         user.about_me = form.about_me.data
         db.session.add(user)
+        db.session.commit()
         flash('The profile has been updated.')
         return redirect(url_for('main.user',username=user.username))
     form.email.data = user.email
@@ -113,6 +115,7 @@ def post(id):
                           post=post,
                           author=current_user._get_current_object())
         db.session.add(comment)
+        db.session.commit()
         flash('Your comment has been published.')
         return redirect(url_for('main.post',id=post.id,page=-1))
     page = request.args.get('page',1,type=int)

@@ -128,6 +128,7 @@ def change_password(username):
             # form is a Form instance. But "form.password.data" is to get the data from class Form attribute
             current_user.password = form.password.data
             db.session.add(current_user)
+            db.session.commit()
             flash('Your password has been updated.')
             return redirect(url_for('main.settings',username=username))
         else:
