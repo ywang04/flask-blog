@@ -15,8 +15,8 @@ from wtforms import ValidationError
 from ..models import User
 
 class LoginForm(Form):
-    email = StringField('Email address',validators=[Required(),Length(1,64),Email()])
-    password = PasswordField('Password',validators=[Required()])
+    email = StringField('Email address',validators=[DataRequired(),Length(1,64),Email()])
+    password = PasswordField('Password',validators=[DataRequired()])
     remember_me = BooleanField('Stay signed in')
     submit = SubmitField('Log In')
 
@@ -47,7 +47,7 @@ class ChangeProfileForm(Form):
 
 
 class PasswordResetRequestForm(Form):
-    email = StringField('Email',validators=[Required(),Length(1,64),Email()])
+    email = StringField('Email',validators=[DataRequired(),Length(1,64),Email()])
     submit = SubmitField('Reset Password')
     def validate_email(self,field):
         if User.query.filter_by(email=field.data).first() is None:
@@ -55,10 +55,10 @@ class PasswordResetRequestForm(Form):
 
 
 class PasswordResetForm(Form):
-    email = StringField('Email',validators=[Required(),Length(1,64),Email()])
+    email = StringField('Email',validators=[DataRequired(),Length(1,64),Email()])
     password = PasswordField('New password', validators=[
         Required(), EqualTo('password2', message='Passwords must match.')])
-    password2 = PasswordField('Confirm password', validators=[Required()])
+    password2 = PasswordField('Confirm password', validators=[DataRequired()])
     submit = SubmitField('Reset Password')
 
     def validate_email(self,field):
@@ -67,8 +67,8 @@ class PasswordResetForm(Form):
 
 
 class ChangeEmailForm(Form):
-    email = StringField('Email',validators=[Required(),Length(1,64),Email()])
-    password = PasswordField('Password', validators=[Required()])
+    email = StringField('Email',validators=[DataRequired(),Length(1,64),Email()])
+    password = PasswordField('Password', validators=[DataRequired()])
     submit = SubmitField('Update Email')
 
     def validate_email(self, field):

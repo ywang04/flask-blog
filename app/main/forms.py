@@ -11,20 +11,20 @@ __version__= '1.0'
 from flask.ext.wtf import Form
 from flask.ext.pagedown.fields import PageDownField
 from wtforms import StringField,SubmitField,TextAreaField,BooleanField,SelectField,ValidationError
-from wtforms.validators import Required,Length,Email,Regexp
+from wtforms.validators import Required,Length,Email,Regexp,DataRequired
 from ..models import Role,User,Category
 from flaskckeditor import CKEditor
 
 class EditProfile(Form):
     #db has the length limit
-    name = StringField('Real name',validators=[Required(),Length(0,64)])
+    name = StringField('Real name',validators=[DataRequired(),Length(0,64)])
     location = StringField('Location',validators=[Length(0,64)])
     about_me = TextAreaField('About me')
     submit = SubmitField('Submit')
 
 
 class EditProfileAdminForm(Form):
-    email = StringField('Email',validators=[Required(),Length(1,64),
+    email = StringField('Email',validators=[DataRequired(),Length(1,64),
                                             Email()])
     username = StringField('Username',validators=[
         Required(), Length(1, 64), Regexp('^[A-Za-z][A-Za-z0-9_.]*$', 0,
@@ -58,9 +58,9 @@ class EditProfileAdminForm(Form):
 
 
 class PostForm(Form,CKEditor):
-    title = StringField('Enter Title',validators=[Required(),Length(1,64)])
+    title = StringField('Enter Title',validators=[DataRequired(),Length(1,64)])
     category = SelectField('Select Category',coerce=int)
-    body = TextAreaField("What's on your mind?",validators=[Required()])
+    body = TextAreaField("What's on your mind?",validators=[DataRequired()])
 
     def __init__(self,*args,**kwargs):
         super(PostForm,self).__init__(*args,**kwargs)
@@ -69,12 +69,12 @@ class PostForm(Form,CKEditor):
                                  for category in Category.query.order_by(Category.category_name).all()]
 
 class CommentForm(Form):
-    body = TextAreaField('Add a comment',validators=[Required()])
+    body = TextAreaField('Add a comment',validators=[DataRequired()])
     submit = SubmitField('Comment')
 
 
 class AddCategory(Form):
-    category = StringField('Please enter category name',validators=[Required(),Length(0,128)])
+    category = StringField('Please enter category name',validators=[DataRequired(),Length(0,128)])
     submit = SubmitField('Create Category')
 
 
