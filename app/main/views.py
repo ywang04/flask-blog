@@ -394,6 +394,8 @@ def settings(username):
         form.name.data = current_user.name
         form.location.data = current_user.location
         form.about_me.data = current_user.about_me
+        db.session.add(current_user)
+        db.session.commit()
         flash('Your profile has been updated.')
 
     return render_template('settings.html',form=form,user=current_user._get_current_object())
