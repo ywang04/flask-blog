@@ -213,6 +213,7 @@ class User(UserMixin,db.Model):
         self.email = new_email
         self.avatar_hash = hashlib.md5(self.email.encode('utf-8')).hexdigest()
         db.session.add(self)
+        db.session.commit()
         return True
 
     def can(self,permissions):
@@ -225,6 +226,7 @@ class User(UserMixin,db.Model):
     def ping(self):
         self.last_seen = datetime.utcnow()
         db.session.add(self)
+        db.session.commit()
 
     def gravatar(self,size=100,default='wavatar',rating='g'):
         if request.is_secure:
@@ -241,11 +243,13 @@ class User(UserMixin,db.Model):
         if not self.is_following(user):
             f = Follow(follower=self,followed=user)
             db.session.add(f)
+            db.session.commit()
 
     def unfollow(self,user):
         f = self.followed.filter_by(followed_id=user.id).first()
         if f:
             db.session.delete(f)
+            db.session.commit()
 
     #is_following and is_followed_by are status
     def is_following(self,user):
