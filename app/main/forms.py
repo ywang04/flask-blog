@@ -15,6 +15,7 @@ from wtforms.validators import Required,Length,Email,Regexp,DataRequired
 from ..models import Role,User,Category
 from flaskckeditor import CKEditor
 
+
 class EditProfile(Form):
     #db has the length limit
     name = StringField('Real name',validators=[DataRequired(),Length(0,64)])
@@ -59,7 +60,7 @@ class EditProfileAdminForm(Form):
 
 class PostForm(Form,CKEditor):
     title = StringField('Enter Title',validators=[DataRequired(),Length(1,64)])
-    category = SelectField('Select Category',coerce=int)
+    category = SelectField('Select Category:',coerce=int,default=8,render_kw={"placeholder":"Select Category"})
     body = TextAreaField("What's on your mind?",validators=[DataRequired()])
 
     def __init__(self,*args,**kwargs):
