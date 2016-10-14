@@ -12,7 +12,7 @@
 
 .profile-wrap{
 
-    width: 1020px;
+    width: 1005px;
     /*margin: 30px 78px;*/
     background: #FFFFFF;
     /*padding: 2px 40px 40px 40px;*/
@@ -378,4 +378,18 @@ h1 {
 .unconfirmed-header{
 
     margin-left: 60px;
+}
+
+.profile-info-wrap {
+
+    width: 1020px;
+
+    margin: 0 auto;
+
+}
+
+.profile-info{
+
+    width: 500px;
+
 }
