@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% import "_macros.html" as macros %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Yuora - Settings{% endblock %}
+
+{% block page_content %}
+
+
+<div class="col-md-5" style="margin: 8px 100px">
+
+<form method="POST" enctype="multipart/form-data">
+
+  {{ form.csrf_token() }}
+
+    {{ form.photo }}
+
+    {{ form.submit }}
+
+</form>
+
+</div>
+
+{% endblock %}
+

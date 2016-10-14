@@ -10,6 +10,7 @@
 <div class="profile-form">
 
     <img class="img-rounded profile-thumbnail" src="{{ user.gravatar(size=180) }}">
+{#    <a href="{{ url_for('auth.upload') }}"><img class="img-rounded profile-thumbnail" src="{{ user.gravatar(size=180) }}"></a>#}
 
     <div class="profile-header">
 
@@ -65,14 +66,12 @@
 </div>
 
 
-<div class="col-md-5" style="margin: 8px 100px">
+<div class="col-md-5" style="margin: 8px 105px">
 
     {{ wtf.quick_form(form) }}
 
 
 </div>
-
-
 
 
 {% endblock %}

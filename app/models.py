@@ -230,9 +230,9 @@ class User(UserMixin,db.Model):
 
     def gravatar(self,size=100,default='wavatar',rating='g'):
         if request.is_secure:
-            url = 'https://secure.gravatar.com/avatar'
+            url = 'https://cn.gravatar.com/avatar'
         else:
-            url = 'http://www.gravatar.com/avatar'
+            url = 'http://cn.gravatar.com/avatar'
         #returns a string of hexadecimal digits 'd4c74594d841139328695756648b6bd6'
         hash = self.avatar_hash or hashlib.md5(self.email.encode('utf-8')).hexdigest()
         return '{url}/{hash}?s={size}&d={default}&r={rating}'.format(

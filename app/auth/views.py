@@ -1,3 +1,4 @@
+import os
 from flask import render_template, redirect, request, url_for, flash
 from flask.ext.login import login_user, logout_user, login_required, \
     current_user
@@ -5,7 +6,10 @@ from . import auth
 from .. import db
 from ..models import User
 from ..email import send_email
-from .forms import LoginForm, RegistrationForm,PasswordResetForm,PasswordResetRequestForm,ChangePasswordForm,ChangeEmailForm
+from .forms import LoginForm, RegistrationForm,PasswordResetForm,PasswordResetRequestForm,ChangePasswordForm,\
+    ChangeEmailForm
+from werkzeug.utils import secure_filename
+from flask import current_app
 
 
 @auth.before_app_request
@@ -134,6 +138,18 @@ def change_password(username):
         else:
             flash('Old password is wrong. Please try again.')
     return render_template('auth/change_password.html',form=form,user=current_user._get_current_object())
+
+
+# @auth.route('/change-image/', methods=('GET', 'POST'))
+# def upload():
+#     form = PhotoForm()
+#     if form.validate_on_submit():
+#         filename = secure_filename(form.photo.data.filename)
+#         file_path = os.path.join(current_app.config['UPLOADED_IMAGES_DEST'],filename)
+#         form.photo.data.save(file_path)
+#     else:
+#         filename = None
+#     return render_template('upload.html', form=form, filename=filename)
 
 # @auth.route('/change-email',methods=['GET','POST'])
 # @login_required

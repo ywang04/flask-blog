@@ -3,7 +3,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 
 
 class Config:
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'hard to guess string'
+    SECRET_KEY = os.environ.get('SECRET_KEY')
     SQLALCHEMY_COMMIT_ON_TEARDOWN = True
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
@@ -16,6 +16,8 @@ class Config:
     YUORA_POSTS_PER_PAGE = 10
     YUORA_COMMENTS_PER_PAGE = 5
     YUORA_FOLLOWERS_PER_PAGE = 10
+    # UPLOADED_IMAGES_DEST = '/Users/Yang/Documents/workspace/flask-blog/app/static'
+
 
     @staticmethod
     def init_app(app):

@@ -9,10 +9,14 @@ __version__= '1.0'
 """
 
 from flask.ext.wtf import Form
+# from flask.ext.uploads import UploadSet, IMAGES
+# from flask_wtf.file import FileField, FileAllowed, FileRequired
 from wtforms import StringField,PasswordField,BooleanField,SubmitField,TextAreaField
 from wtforms.validators import Required,Email,Length,Regexp,EqualTo,DataRequired
 from wtforms import ValidationError
 from ..models import User
+
+# images = UploadSet('images', IMAGES)
 
 class LoginForm(Form):
     email = StringField('Email address',validators=[DataRequired(),Length(1,64),Email()])
@@ -57,7 +61,7 @@ class PasswordResetRequestForm(Form):
 class PasswordResetForm(Form):
     email = StringField('Email',validators=[DataRequired(),Length(1,64),Email()])
     password = PasswordField('New password', validators=[
-        Required(), EqualTo('password2', message='Passwords must match.')])
+        DataRequired(), EqualTo('password2', message='Passwords must match.')])
     password2 = PasswordField('Confirm password', validators=[DataRequired()])
     submit = SubmitField('Reset Password')
 
@@ -81,4 +85,13 @@ class ChangePasswordForm(Form):
     password = PasswordField('New password', validators=[
         DataRequired(),EqualTo('password2', message='Passwords must match.')])
     password2 = PasswordField('Confirm new password', validators=[DataRequired()])
-    submit = submit = SubmitField('Change Password')
+    submit = SubmitField('Change Password')
+
+# class PhotoForm(Form):
+#     photo = FileField('Image', validators=[
+#         FileRequired(),
+#         FileAllowed(images, 'Images only!')
+#     ])
+#
+#     # photo = FileField('Your photo')
+#     submit = SubmitField('Update Image')
