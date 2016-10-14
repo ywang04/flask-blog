@@ -105,7 +105,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../Tango" afterPath="$PROJECT_DIR$/../Tango" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/styles.css" afterPath="$PROJECT_DIR$/app/static/styles.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/auth/change_password.html" afterPath="$PROJECT_DIR$/app/templates/auth/change_password.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/auth/reset_password.html" afterPath="$PROJECT_DIR$/app/templates/auth/reset_password.html" />
     </list>
     <ignored path="flask-blog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -138,8 +138,28 @@
       <file leaf-file-name="styles.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/static/styles.css">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="356" column="0" selection-start-line="356" selection-start-column="0" selection-end-line="356" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/auth/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reset_password.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/templates/auth/reset_password.html">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="180">
-              <caret line="224" column="6" selection-start-line="224" selection-start-column="6" selection-end-line="224" selection-end-column="6" />
+              <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -208,7 +228,6 @@
         <option value="$PROJECT_DIR$/app/templates/auth/email/reset_password.txt" />
         <option value="$PROJECT_DIR$/app/templates/auth/email/reset_password.html" />
         <option value="$PROJECT_DIR$/app/templates/post_edit.html" />
-        <option value="$PROJECT_DIR$/app/templates/auth/reset_password.html" />
         <option value="$PROJECT_DIR$/app/templates/upload.html" />
         <option value="$PROJECT_DIR$/config.py" />
         <option value="$PROJECT_DIR$/app/auth/forms.py" />
@@ -222,6 +241,7 @@
         <option value="$PROJECT_DIR$/app/templates/settings.html" />
         <option value="$PROJECT_DIR$/app/templates/homepage.html" />
         <option value="$PROJECT_DIR$/app/templates/auth/change_password.html" />
+        <option value="$PROJECT_DIR$/app/templates/auth/reset_password.html" />
         <option value="$PROJECT_DIR$/app/static/styles.css" />
       </list>
     </option>
@@ -722,13 +742,6 @@
       <option name="presentableId" value="Default" />
       <updated>1467419683927</updated>
     </task>
-    <task id="LOCAL-00173" summary="Resize checkeditor on new post page">
-      <created>1475130182921</created>
-      <option name="number" value="00173" />
-      <option name="presentableId" value="LOCAL-00173" />
-      <option name="project" value="LOCAL" />
-      <updated>1475130182922</updated>
-    </task>
     <task id="LOCAL-00174" summary="Fix like function by removing #">
       <created>1475191270233</created>
       <option name="number" value="00174" />
@@ -1065,7 +1078,14 @@
       <option name="project" value="LOCAL" />
       <updated>1476429109671</updated>
     </task>
-    <option name="localTasksCounter" value="222" />
+    <task id="LOCAL-00222" summary="Change style of changing password page">
+      <created>1476430028850</created>
+      <option name="number" value="00222" />
+      <option name="presentableId" value="LOCAL-00222" />
+      <option name="project" value="LOCAL" />
+      <updated>1476430028850</updated>
+    </task>
+    <option name="localTasksCounter" value="223" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1081,7 +1101,7 @@
     <frame x="0" y="23" width="1280" height="728" extended-state="0" />
     <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21243942" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21243942" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32952693" sideWeight="0.49676898" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.24842767" sideWeight="0.515625" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1131,7 +1151,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Commit for missing files" />
     <MESSAGE value="Rename blog name to flask-blog" />
     <MESSAGE value="Recreate requirements.txt" />
     <MESSAGE value="Add missing templates files" />
@@ -1156,7 +1175,8 @@
     <MESSAGE value="Fix settings to load user information" />
     <MESSAGE value="Change width of profile-form on settings page" />
     <MESSAGE value="Change style of homepage and settings page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change style of homepage and settings page" />
+    <MESSAGE value="Change style of changing password page" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change style of changing password page" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1437,13 +1457,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/static/images.jpeg" />
-    <entry file="file://$PROJECT_DIR$/app/templates/auth/reset_password.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/upload.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="135">
@@ -1541,6 +1554,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/auth/reset_password.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="15" column="22" selection-start-line="15" selection-start-column="22" selection-end-line="15" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/auth/change_password.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="89">
@@ -1551,8 +1572,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/static/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="224" column="6" selection-start-line="224" selection-start-column="6" selection-end-line="224" selection-end-column="6" />
+        <state relative-caret-position="120">
+          <caret line="356" column="0" selection-start-line="356" selection-start-column="0" selection-end-line="356" selection-end-column="0" />
           <folding />
         </state>
       </provider>
