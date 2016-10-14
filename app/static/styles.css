@@ -323,9 +323,7 @@ h1 {
     font-family: "Microsoft YaHei";
     font-weight: bolder;
     color: #EE9A00;
-
-
-    width: 350px;
+    width: 330px;
     margin: 0 auto;
 
 }
@@ -338,8 +336,7 @@ h1 {
     font-family: "Microsoft YaHei";
     font-weight: bolder;
     color: #EE9A00;
-
-    width: 350px;
+    width: 330px;
     margin: 0 auto;
 }
 
@@ -370,9 +367,12 @@ h1 {
 .profile-form{
 
 
-    margin-left: 80px;
+    margin: 0 auto;
     /*background: #FFFFFF;*/
     padding: 31px 40px;
+
+    width: 1105px;
+
 }
 
 .unconfirmed-header{
