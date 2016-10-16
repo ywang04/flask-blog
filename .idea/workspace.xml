@@ -5,6 +5,7 @@
     <list default="true" id="52e93d44-0a62-44b3-b11d-924ca6797159" name="Failed commit: Default" comment="Change environment">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/CSS/2/10.png" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Shiyanlou/Test2/borgar.png" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/data-dev.sqlite" />
       <change type="NEW" beforePath="" afterPath="$USER_HOME$/Desktop/九章JAVA基础班/第六次课/Java_Chap6_20160206/hello6_20160206/src/com/guojing/Test.java" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/.idea/Checkio.iml" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../Checkio/.idea/encodings.xml" />
@@ -107,8 +108,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/auth/forms.py" afterPath="$PROJECT_DIR$/app/auth/forms.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/static/styles.css" afterPath="$PROJECT_DIR$/app/static/styles.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/templates/homepage.html" afterPath="$PROJECT_DIR$/app/templates/homepage.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config.py" afterPath="$PROJECT_DIR$/config.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/manage.py" afterPath="$PROJECT_DIR$/manage.py" />
     </list>
     <ignored path="flask-blog.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -788,13 +787,6 @@
       <option name="presentableId" value="Default" />
       <updated>1467419683927</updated>
     </task>
-    <task id="LOCAL-00176" summary="Change like style">
-      <created>1475238184499</created>
-      <option name="number" value="00176" />
-      <option name="presentableId" value="LOCAL-00176" />
-      <option name="project" value="LOCAL" />
-      <updated>1475238184499</updated>
-    </task>
     <task id="LOCAL-00177" summary="Change style for post part">
       <created>1475238352204</created>
       <option name="number" value="00177" />
@@ -1131,7 +1123,14 @@
       <option name="project" value="LOCAL" />
       <updated>1476589071744</updated>
     </task>
-    <option name="localTasksCounter" value="225" />
+    <task id="LOCAL-00225" summary="Change configure name from Yuora_ADMIN to YUORA_ADMIN">
+      <created>1476590421545</created>
+      <option name="number" value="00225" />
+      <option name="presentableId" value="LOCAL-00225" />
+      <option name="project" value="LOCAL" />
+      <updated>1476590421546</updated>
+    </task>
+    <option name="localTasksCounter" value="226" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
@@ -1197,7 +1196,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Add missing templates files" />
     <MESSAGE value="Remove pygame from common.txt" />
     <MESSAGE value="Add db.session.commit() for confirmation email function" />
     <MESSAGE value="Change  YUORA_MAIL_SUBJECT_PREFIX to  'Welcome to Yuora!'" />
@@ -1222,7 +1220,8 @@
     <MESSAGE value="Change style of changing password page" />
     <MESSAGE value="Change style of reset_password form" />
     <MESSAGE value="Change Log In to Sign In on login page" />
-    <option name="LAST_COMMIT_MESSAGE" value="Change Log In to Sign In on login page" />
+    <MESSAGE value="Change configure name from Yuora_ADMIN to YUORA_ADMIN" />
+    <option name="LAST_COMMIT_MESSAGE" value="Change configure name from Yuora_ADMIN to YUORA_ADMIN" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
