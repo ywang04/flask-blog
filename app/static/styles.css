@@ -316,28 +316,18 @@ h1 {
 
 }
 
-.login-header{
+
+.logo{
 
     font-size: 70px;
     /*margin-left: 40%;*/
     font-family: "Microsoft YaHei";
     font-weight: bolder;
     color: #EE9A00;
-    width: 305px;
-    margin: 0 auto;
+    /*width: 305px;*/
+    text-align: center;
+    margin: 0;
 
-}
-
-
-.register-header{
-
-    font-size: 70px;
-    /*margin-left: 40%;*/
-    font-family: "Microsoft YaHei";
-    font-weight: bolder;
-    color: #EE9A00;
-    width: 305px;
-    margin: 0 auto;
 }
 
 .auth-login{
