@@ -5,9 +5,9 @@
 {% block head %}
 {{ super() }}
     <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='alertify/css/alertify.core.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='alertify/css/alertify.default.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
     <script src="{{ url_for('static',filename='jquery.min.js') }}"></script>
     <script src="{{ url_for('static', filename='ckeditor/ckeditor.js') }}"></script>
     <script src="{{ url_for('static', filename='alertify/js/alertify.min.js') }}"></script>
@@ -50,20 +50,30 @@
                      <li>
                         <a href="{{ url_for('main.user',username=current_user.username) }}">
                             <img src="{{ current_user.gravatar(size=18) }}">
-                          <span class="brand">{{ current_user.username }}</span>
+                            <span class="brand">{{ current_user.username }}</span>
                         </a>
-                         <li><a href="{{ url_for('main.settings',username=current_user.username) }}"><span class="brand">Settings</span></a></li>
+                    </li>
+
+                    <li>
+                        <a href="{{ url_for('main.settings',username=current_user.username) }}">
+                            <span class="brand">Settings</span>
+                        </a>
+                    </li>
 {#                         <li><a href="{{ url_for('auth.change_password') }}">Change Password</a></li>#}
 {#                         <li><a href="{{ url_for('auth.change_email_request') }}">Change Email</a></li>#}
-                         <li><a href="{{ url_for('auth.logout') }}"><span class="brand">Log Out</span></a></li>
+                    <li>
+                        <a href="{{ url_for('auth.logout') }}">
+                            <span class="brand">Log Out</span>
+                        </a>
+                    </li>
 
-                     </li>
                     {% else %}
 
                     <li><a href="{{ url_for('auth.register') }}"><span class="brand">Sign Up</span></a></li>
                     <li><a href="{{ url_for('auth.login') }}"><span class="brand">Sign In</span></a></li>
                     {% endif %}
                 </ul>
+
             </div>
 
         </div>
