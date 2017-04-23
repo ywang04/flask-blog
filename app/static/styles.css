@@ -1,3 +1,6 @@
+@import "alertify/css/alertify.core.css";
+@import "alertify/css/alertify.default.css";
+
 .profile-thumbnail {
     position: absolute;
 
