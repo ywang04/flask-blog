@@ -20,7 +20,7 @@
        <div class="form-group"> {{ form.title(class="form-control",placeholder="Enter Title",type='text',id='title-alert') }}</div>
        <div class="form-group">{{ form.category(class="form-control") }} </div>
        <div class="form-group">{{ form.body(class="ckeditor",id='content_alert') }}</div>
-        <input type="submit" class="btn btn-primary" value="Post" style="margin-right: 10px">
+        <button type="submit" class="btn btn-primary" style="margin-right: 10px">Post</button>
        <a href="{{ url_for('main.index') }}"><button type="button" class="btn btn-primary">Cancel</button></a>
     </form>
 
