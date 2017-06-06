@@ -157,4 +157,4 @@ Restart nginx:
 ```
 The second way is to run command at the background. 
 
-Finally, you can access your website using realm name.
+Finally, you can access your website using real name.
