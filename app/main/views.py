@@ -338,6 +338,7 @@ def post_like(id):
                 res = Like(post=post, user=current_user._get_current_object(),liked=True)
                 db.session.add(res)
         db.session.commit()
+        return "ok"
     return redirect(url_for('main.index'))
 
 
