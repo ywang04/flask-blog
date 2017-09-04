@@ -166,7 +166,7 @@ def post_edit(id):
     form.body.data = post.body
     return render_template('post_edit.html',form=form,post=post)
 
-@main.route('/post-delete/<int:id>')
+@main.route('/post-delete/<int:id>',methods=['GET','POST'])
 @login_required
 def post_delete(id):
     post = Post.query.get_or_404(id)
@@ -175,7 +175,7 @@ def post_delete(id):
         abort(403)
     db.session.delete(post)
     db.session.commit()
-    return redirect(url_for('main.index'))
+    return 'post deleted.'
 
 
 @main.route('/follow/<username>')
@@ -338,8 +338,8 @@ def post_like(id):
                 res = Like(post=post, user=current_user._get_current_object(),liked=True)
                 db.session.add(res)
         db.session.commit()
-        return "ok"
-    return redirect(url_for('main.index'))
+        return '{"status": "ok"}'
+    # return redirect(url_for('main.index'))
 
 
 @main.route('/post/top')
