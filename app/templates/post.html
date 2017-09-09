@@ -71,6 +71,7 @@
 
 </div>
 
+
 <div class="comment-wrap">
     {% include '_comments.html' %}
 
@@ -87,7 +88,7 @@
             <form method="post">
                 {{ form.csrf_token() }}
                <div class="form-group">{{form.body(class='comment-form')|safe}}</div>
-                <button type="submit" class="btn btn-primary">Post</button>
+                <input type="submit" class="btn btn-primary">
             </form>
 
     {% endif %}
@@ -101,13 +102,13 @@
 {% endif %}
 
 
-<script type="text/javascript">
+<script>
     $(document).ready(function() {
 
         $('.like').on('click', function() {
             var url = "{{ url_for('main.post_like',id=post.id) }}";
             $.post(url,function(response){
-                console.log(typeof response);
+                console.log(response);
             });
         });
 
@@ -125,7 +126,7 @@
                         $.ajax(url,{
                             type: 'POST',
                             success: function(response) {
-                            window.location = '/';
+                                window.location = '/';
                             }
                         });
                     } else {
