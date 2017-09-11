@@ -1,43 +1,40 @@
 @import "alertify/css/alertify.core.css";
 @import "alertify/css/alertify.default.css";
 
+body {
+    padding-top: 70px;
+    background: #e2e2e2;
+    font-family: 'Lato', sans-serif;
+    font-size: 1.5em;
+}
+
 .profile-thumbnail {
     position: absolute;
-
 }
 
 .profile-header {
     /*min-height: 100px;*/
     margin-left: 240px;
     margin-top: -22px;
-
 }
 
-.profile-wrap{
-
+.profile-wrap {
     width: 1005px;
     background: #FFFFFF;
     margin: 45px auto;
     padding: 0;
-
 }
 
-
-
-.post-self-wrap{
-
+.post-self-wrap {
     width: 1010px;
     margin: -50px auto;
     background: #FFFFFF;
     margin-bottom: 20px;
 }
 
-/*注意和派生选择器的区别*/
-/*这里以此区分有相同名字的class_name*/
 div.post-tabs {
   margin-top: 16px;
 }
-
 
 ul.posts {
     list-style-type: none;
@@ -88,24 +85,20 @@ ul.comments li.comment:hover {
     background-color: #f0f0f0;
 }
 
-
 div.comment-thumbnail {
     padding-top: 15px;
     margin-left: 15px;
-
-
 }
+
 div.comment-content {
     margin-left: 65px;
 
 }
 
 .comment-form {
-
     margin-top:10px;
     width: 1010px;
     height: 100px;
-
 }
 
 div.pagination {
@@ -120,17 +113,20 @@ div.flask-pagedown-preview {
     border: 1px solid #e0e0e0;
     padding: 4px;
 }
+
 div.flask-pagedown-preview h1 {
     font-size: 140%;
 }
+
 div.flask-pagedown-preview h2 {
     font-size: 130%;
 }
+
 div.flask-pagedown-preview h3 {
     font-size: 120%;
 }
 
-.post-author{
+.post-author {
 
     float: left;
     margin-right: 3px;
@@ -138,28 +134,20 @@ div.flask-pagedown-preview h3 {
 
 
 .post-title {
-
     margin-bottom: 8px;
-
 }
 
-
-a:hover,a:visited,a:link,a:active
-{
+a:hover,a:visited,a:link,a:active {
     text-decoration:none;
     color: #000000;
     word-break: break-all;
-    font-family: "Microsoft YaHei";
     font-size:14px;
-
 }
 
 .content {
     width: 1100px;
     margin: 20px auto;
     overflow: hidden;
-    /*background: #EEE;*/
-
 }
 
 .left-bar {
@@ -170,93 +158,70 @@ a:hover,a:visited,a:link,a:active
     padding: 0;
 }
 
-.right-bar{
-
+.right-bar {
     float:right;
     width: 220px;
     margin: 0 20px;
    background: #FFFFFF;
 }
 
-
-.category{
-
+.category {
     font-size: 25px;
     padding-top: 10px;
 }
 
 
-.category-content{
+.category-content {
 
     margin-top: 18px;
     padding: 0;
 }
 
-body{
-    padding-top: 70px;
-    background: #e2e2e2;
-}
-
-.brand{
-
-    font-family: "Microsoft Yahei";
-
-}
-
-.brand-size{
-
+.brand-size {
     font-size:30px;
     color:#EE9A00;
 }
 
-ul li{
-    list-style-type:none;
 
+ul li {
+    list-style-type:none;
 }
 
 
-.tab{
+.tab {
     /*padding: 0;*/
     margin-left: 19px;
 }
 
-.new-post-wrap{
+.new-post-wrap {
     width: 1060px;
     margin: 30px auto;
 }
 
-.like{
-
+.like {
     margin: 5px;
 }
 
-.unlike{
-
+.unlike {
     margin: 5px;
 }
 
-.edit-post-wrap{
-
+.edit-post-wrap {
     width: 1010px;
     margin: 30px auto;
     background: #FFFFFF;
     padding: 5px 25px 15px;
-
 }
 
-.post-wrap{
-
+.post-wrap {
     width: 1015px;
     margin: 30px auto;
-
 }
 
-.comment-wrap{
-
+.comment-wrap {
     width: 1010px;
     margin: 30px auto;
     background: #FFFFFF;
-
 }
 
 h1 {
@@ -267,130 +232,99 @@ h1 {
     padding: 0px;
 }
 
-.post-tags{
-
+.post-tags {
     margin-top: 15px;
     padding-bottom: 18px;
-
 }
 
-#comment-font{
 
-    font-family: "Microsoft YaHei";
-    /*font-size:15px;*/
-
-}
 
 .comment-body {
     padding-top: 8px;
     padding-bottom: 10px;
     padding-right: 20px;
-
-
 }
 
-.comment-date{
-
+.comment-date {
     float:right;
     margin-right: 15px;
-
 }
 
-.to-top{
-
+.to-top {
     float:right;
 }
 
 
-.followers-wrap{
-
+.followers-wrap {
     width: 1010px;
     margin: 0 auto;
     background: #FFFFFF;
     padding: 5px 30px;
-
 }
 
-.auth-register{
-
+.auth-register {
     width: 520px;
     margin: 0 auto;
     padding: 80px 30px;
-
 }
 
-
-.logo{
+.logo {
     font-size: 70px;
-    font-family: "Microsoft YaHei";
     font-weight: bolder;
     color: #EE9A00;
     text-align: center;
 }
 
-
-.auth-login{
-
+.auth-login {
     width: 520px;
     margin: 0 auto;
     padding: 80px 30px;
-
 }
 
 
-.reset-password{
-
+.reset-password {
     width: 280px;
 }
 
 
-.reset-wrap{
+.reset-wrap {
 
     width:1100px;
     margin: 0 auto;
 }
 
-.profile-form{
-
+.profile-form {
 
     margin: 0 auto;
     /*background: #FFFFFF;*/
     padding: 31px 40px;
 
     width: 1105px;
-
 }
 
-.unconfirmed-header{
+.unconfirmed-header {
 
     margin-left: 60px;
 }
 
 .profile-info-wrap {
-
     width: 1020px;
 
     margin: 0 auto;
-
 }
 
-.profile-info{
-
+.profile-info {
     width: 500px;
 
 }
 
-.password-wrap{
-
+.password-wrap {
     width:1100px;
     margin: 0 auto;
 
 }
 
-.password-form{
-
+.password-form {
     width:430px;
     margin-top: 35px;
-
-
 }
