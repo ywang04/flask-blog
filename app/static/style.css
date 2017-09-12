@@ -1,11 +1,31 @@
 @import "alertify/css/alertify.core.css";
 @import "alertify/css/alertify.default.css";
 
+* {
+    box-sizing: border-box;
+}
+
 body {
     padding-top: 70px;
     background: #e2e2e2;
     font-family: 'Lato', sans-serif;
-    font-size: 1.5em;
+}
+
+/*-- Login/Register Layout --*/
+.auth-login,
+.auth-register {
+    margin: 0 auto;
+    padding: 80px 30px;
+    max-width: 350px;
+}
+
+.reset-password {
+    width: 240px;
+}
+
+.reset-wrap {
+    margin: 50px auto;
+    max-width: 400px;
 }
 
 .profile-thumbnail {
@@ -144,38 +164,45 @@ a:hover,a:visited,a:link,a:active {
     font-size:14px;
 }
 
-.content {
-    width: 1100px;
-    margin: 20px auto;
+.content-container {
+    width: 90%;
+    margin: 10px auto;
     overflow: hidden;
 }
 
-.left-bar {
-    width: 750px;
-    margin: 0 20px 10px;
+.left-container {
+    width: 100%;
+    max-width: 700px;
     background: #FFFFFF;
-    float: left;
-    padding: 0;
+    margin-bottom: 30px;
+    border-radius: 5px;
 }
 
-.right-bar {
-    float:right;
-    width: 220px;
-    margin: 0 20px;
-   background: #FFFFFF;
+.right-container {
+    width: 100%;
+    background: #FFFFFF;
+    padding-bottom: 15px;
+    border-radius: 5px;
 }
 
 .category {
-    font-size: 25px;
-    padding-top: 10px;
+    text-align: center;
+    padding-top: 5px;
 }
 
+.category-list {
+    padding-left: 20px;
 
-.category-content {
-
-    margin-top: 18px;
-    padding: 0;
 }
+
+.category-item {
+    padding-right: 15px;
+}
+
+ul li {
+    list-style-type:none;
+}
+
 
 .brand-size {
     font-size:30px;
@@ -183,14 +210,8 @@ a:hover,a:visited,a:link,a:active {
 }
 
 
-ul li {
-    list-style-type:none;
-}
-
-
 .tab {
-    /*padding: 0;*/
-    margin-left: 19px;
+    margin: 0 auto;
 }
 
 .new-post-wrap {
@@ -232,6 +253,8 @@ h1 {
     padding: 0px;
 }
 
+
+
 .post-tags {
     margin-top: 15px;
     padding-bottom: 18px;
@@ -262,36 +285,7 @@ h1 {
     padding: 5px 30px;
 }
 
-.auth-register {
-    width: 520px;
-    margin: 0 auto;
-    padding: 80px 30px;
-}
 
-.logo {
-    font-size: 70px;
-    font-weight: bolder;
-    color: #EE9A00;
-    text-align: center;
-}
-
-.auth-login {
-    width: 520px;
-    margin: 0 auto;
-    padding: 80px 30px;
-}
-
-
-.reset-password {
-    width: 280px;
-}
-
-
-.reset-wrap {
-
-    width:1100px;
-    margin: 0 auto;
-}
 
 .profile-form {
 
@@ -327,4 +321,63 @@ h1 {
 .password-form {
     width:430px;
     margin-top: 35px;
+}
+
+@media (min-width: 769px) {
+
+    /* ---- Layout Containers ---- */
+
+    .auth-login,
+    .auth-register {
+        width: 40%;
+        margin: 0 auto;
+        max-width: 400px;
+        padding: 80px 30px;
+    }
+
+    .reset-wrap {
+        width: 60%;
+        margin: 50px auto;
+        max-width: 400px;
+    }
+
+    .content-container {
+        width: 90%;
+        margin: 10px auto;
+        overflow: hidden;
+        max-width: 1100px;
+    }
+
+    .left-container {
+        width: 60%;
+        max-width: 650px;
+        margin: 0 20px 50px;
+        background: #FFFFFF;
+        padding: 0;
+        float: left;
+        border-bottom: 4px solid #ccc;
+        border-radius: 6px;
+        transition: all .5s;
+    }
+
+    .right-container {
+        width: 27%;
+        max-width: 220px;
+        margin: 0 20px;
+        background: #FFFFFF;
+        float:right;
+        border-bottom: 4px solid #ccc;
+        border-radius: 6px;
+        transition: all .5s;
+    }
+
+    .category {
+        font-size: 1em;
+        text-align: center;
+    }
+
+
+    .tab {
+        margin-left: 20px;
+    }
 }

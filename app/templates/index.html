@@ -6,29 +6,39 @@
 
 {% block page_content %}
 
-        <div class="content">
+        <div class="content-container">
 
         <div class="tab">
             <ul class="nav nav-tabs">
-            <!--点赞最多的就是Top-->
-            <li{% if not show_followed %} class="active"{% endif %}><a href="{{ url_for('main.show_all') }}">
-               All</a></li>
-            <li><a href="{{ url_for('main.post_top') }}">Top</a></li>
-            {% if current_user.is_authenticated %}
-                <li{% if show_followed %} class="active" {% endif %}><a href="{{ url_for('main.show_followed') }}">Followers</a>
-            </li>
-            {% endif %}
+
+                <li{% if not show_followed %} class="active"{% endif %}>
+                    <a href="{{ url_for('main.show_all') }}">
+                        All
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url_for('main.post_top') }}">
+                        Top
+                    </a>
+                </li>
+                {% if current_user.is_authenticated %}
+                    <li{% if show_followed %} class="active" {% endif %}>
+                        <a href="{{ url_for('main.show_followed') }}">
+                            Followers
+                        </a>
+                    </li>
+                {% endif %}
             </ul>
         </div>
 
-            {% include '_posts_all.html' %}
+        {% include '_posts_all.html' %}
 
 
-            <div class="right-bar">
+        <div class="right-container">
 
-                {% include '_category_show.html' %}
+            {% include '_category_show.html' %}
 
-            </div>
+        </div>
 
         </div>
 
@@ -38,12 +48,12 @@
             </div>
         {% endif %}
 
-    <script>
-     if(!!window.performance && window.performance.navigation.type === 2) {
-        console.log('Reloading');
-        window.location.reload();
-     }
-    </script>
+<script>
+ if(!!window.performance && window.performance.navigation.type === 2) {
+    console.log('Reloading');
+    window.location.reload();
+ }
+</script>
 
 {% endblock %}
 
