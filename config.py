@@ -13,9 +13,9 @@ class Config:
     YUORA_MAIL_SUBJECT_PREFIX = 'Welcome to Yuora!'
     YUORA_MAIL_SENDER = 'Yuora Admin <yuora@example.com>'
     YUORA_ADMIN = os.environ.get('YUORA_ADMIN')
-    YUORA_POSTS_PER_PAGE = 8
+    YUORA_POSTS_PER_PAGE = 5
     YUORA_COMMENTS_PER_PAGE = 5
-    YUORA_FOLLOWERS_PER_PAGE = 8
+    YUORA_FOLLOWERS_PER_PAGE = 5
     # UPLOADED_IMAGES_DEST = '/Users/Yang/Documents/workspace/flask-blog/app/static'
 
 
