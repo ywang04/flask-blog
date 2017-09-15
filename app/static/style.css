@@ -94,7 +94,6 @@ ul.comments {
     margin: 0;
     padding:0;
     border-top: 1px solid #e0e0e0;
-
 }
 
 ul.comments li.comment {
@@ -121,6 +120,7 @@ div.comment-content {
     height: 100px;
 }
 
+/*--pagination layout--*/
 div.pagination {
     width: 100%;
     text-align: center;
@@ -165,7 +165,7 @@ a:hover,a:visited,a:link,a:active {
 }
 
 .content-container {
-    width: 90%;
+    width: 80%;
     margin: 10px auto;
     overflow: hidden;
 }
@@ -214,9 +214,14 @@ ul li {
     margin: 0 auto;
 }
 
+/*-- post new page layout--*/
 .new-post-wrap {
-    width: 1060px;
+    width: 80%;
     margin: 30px auto;
+}
+
+.post-btn {
+    margin-right: 10px;
 }
 
 .like {
@@ -254,12 +259,10 @@ h1 {
 }
 
 
-
 .post-tags {
     margin-top: 15px;
     padding-bottom: 18px;
 }
-
 
 
 .comment-body {
@@ -284,7 +287,6 @@ h1 {
     background: #FFFFFF;
     padding: 5px 30px;
 }
-
 
 
 .profile-form {
@@ -325,8 +327,6 @@ h1 {
 
 @media (min-width: 769px) {
 
-    /* ---- Layout Containers ---- */
-
     .auth-login,
     .auth-register {
         width: 40%;
@@ -345,7 +345,7 @@ h1 {
         width: 90%;
         margin: 10px auto;
         overflow: hidden;
-        max-width: 1100px;
+        max-width: 1050px;
     }
 
     .left-container {
@@ -372,12 +372,17 @@ h1 {
     }
 
     .category {
-        font-size: 1em;
         text-align: center;
     }
 
 
     .tab {
         margin-left: 20px;
+    }
+
+    .new-post-wrap {
+        width: 90%;
+        max-width: 1050px;
+        margin: 30px auto;
     }
 }

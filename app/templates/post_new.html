@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% import "bootstrap/wtf.html" as wtf %}
 
-{% block title %}Yuora - New Post{% endblock %}
+{% block title %}Yuora | New Post{% endblock %}
 
 {% block page_content %}
 
@@ -17,10 +17,10 @@
 
     <form method="post" id="post-form">
         {{ form.csrf_token() }}
-       <div class="form-group"> {{ form.title(class="form-control",placeholder="Enter Title",type='text',id='title-alert') }}</div>
-       <div class="form-group">{{ form.category(class="form-control") }} </div>
-       <div class="form-group">{{ form.body(class="ckeditor",id='content_alert') }}</div>
-        <button type="submit" class="btn btn-primary" style="margin-right: 10px">Post</button>
+       <div class="form-group">{{ form.title(class="form-control",placeholder="Enter Title",type="text",id="title-alert") }}</div>
+       <div class="form-group">{{ form.category(class="form-control") }}</div>
+       <div class="form-group">{{ form.body(class="ckeditor",id="content_alert") }}</div>
+        <button class="btn btn-primary post-btn">Post</button>
        <a href="{{ url_for('main.index') }}"><button type="button" class="btn btn-primary">Cancel</button></a>
     </form>
 
@@ -28,45 +28,29 @@
 
 </div>
 
- <script>
+<script>
 
-     $(document).ready(function() {
+   $(document).ready(function() {
 
+       $("#post-form").submit(function (e) {
 
-         $("#post-form").submit(function (e) {
+           e.preventDefault();
 
-             e.preventDefault();
+           $editor_data = CKEDITOR.instances.content_alert.getData();
 
+           if (!$('#title-alert').val()) {
+             alertify.alert("Title appears to be blank. Please enter title.");
+           } else if ($('#title-alert').val().length > 64) {
+             alertify.alert("The length of title is too long.");
+           } else if ($editor_data == "") {
+             alertify.alert("This post appears to be blank. Please write something or attach a link or photo to post.");
+           } else {
+                 $('#post-form').unbind('submit').submit();
+           }
 
-             $editor_data = CKEDITOR.instances.content_alert.getData();
+       });
+   });
 
-             if (!$('#title-alert').val()) {
-                 alertify.alert("Title appears to be blank. Please enter title.");
-             }
-
-             else if ($('#title-alert').val().length > 64) {
-
-                   alertify.alert("The length of title is too long.");
-             }
-
-             else if ($editor_data == "") {
-
-                 alertify.alert("This post appears to be blank. Please write something or attach a link or photo to post.");
-             }
-
-             else {
-
-                   $('#post-form').unbind('submit').submit();
-
-             }
-
-         });
-
-     });
-
- </script>
+</script>
 
 {% endblock %}
-
-
-
