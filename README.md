@@ -9,13 +9,13 @@ Yuora Deployment Guide
 
 Since this process can be difficult, as there are a number of moving pieces, we'll look at this in multiple parts, starting with the most basic configuration and working our way up:
 
-####Part 1: Setting up the basic configuration
+#### Part 1: Setting up the basic configuration
 
-####Part 2: nginx configuration
+#### Part 2: nginx configuration
 
-####Part 3: Insert data into MySQL database
+#### Part 3: Insert data into MySQL database
 
-####Part 4: Start your project
+#### Part 4: Start your project
 
 ---
 We'll specifically be using:
@@ -35,11 +35,11 @@ Think if gunicorn as the application web server that will be running behind ngin
 The end goal: HTTP requests are routed from the web server to Flask, which Flask handles appropriately, and the responses are then sent right back to the web server and finally back to the end user. Properly implementing a Web Server Gateway Interface (WSGI) will be paramount to our success.
 
 
-####Part 1 – Setup
+#### Part 1 – Setup
 Let’s get the basic configuration setup.
 
 
-#####Add a new User
+##### Add a new User
 SSH to the server as the ‘root’ user, run-
 
 ```  
@@ -51,7 +51,7 @@ $ su - newuser
 -to create a new user with 'sudo' privileges.
 
 
-#####Install the Requirements
+##### Install the Requirements
 SSH into the server with the new user, and then install the following packages:
 
 ```
@@ -59,7 +59,7 @@ $ sudo apt-get update
 $ sudo apt-get install -y python python-pip python-virtualenv python-dev nginx git
 ```
 
-#####Set up the basic configuration
+##### Set up the basic configuration
 Start by creating a new directory, "/home/www", to store the project:
 
 ```
@@ -68,7 +68,7 @@ $ sudo chown -R newuser:newuser www
 $ cd www
 ```
 
-#####Download source code from your github:
+##### Download source code from your github:
 
 ```
 $ git clone https://github.com/ywang04/flask-blog.git
@@ -107,12 +107,14 @@ export SECRET_KEY="*****"
 ```
 
 ####Part 2 – Now set up nginx:
+
 ```
 $ sudo /etc/init.d/nginx start
 $ sudo rm /etc/nginx/sites-enabled/default
 $ sudo touch /etc/nginx/sites-available/flask-blog
 $ sudo ln -s /etc/nginx/sites-available/flask-blog /etc/nginx/sites-enabled/flask-blog
 ```
+
 Edit nginx configuration file:
 
 ```
@@ -137,11 +139,13 @@ server {
 location /static means the static path of your project, here I use /home/www/flask-blog/app/static/.
 
 Restart nginx:
+
 ```
 (venv) $ sudo /etc/init.d/nginx restart 
 ```
 
-####Part 3 - Insert data into your MySQL database:
+#### Part 3 - Insert data into your MySQL database:
+
 ```
 (venv) $ python manage.py shell 
 >>> db.create_all() 
@@ -149,12 +153,14 @@ Restart nginx:
 >>> exit() 
 ```
 
-####Part4 - Start your project now:
+#### Part4 - Start your project now:
+
 ```
 (venv) $ cd /home/www/flask-blog/ 
 (venv) $ gunicorn manage:app -b localhost:8000 (or)
 (venv) $ gunicorn manage:app -b localhost:8000 &
 ```
+
 The second way is to run command at the background. 
 
 Finally, you can access your website using real name.
