@@ -106,7 +106,7 @@ export FLASK_CONFIG="production"
 export SECRET_KEY="*****"
 ```
 
-####Part 2 – Now set up nginx:
+#### Part 2 – Now set up nginx:
 
 ```
 $ sudo /etc/init.d/nginx start
