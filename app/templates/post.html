@@ -6,17 +6,18 @@
 
 {% block page_content %}
 
-<div class="edit-post-wrap">
+<div class="post-wrap post-container container-color container-border">
 
-    <a href="/">Yuora</a>
+    <div class="post-header">
 
-    <a href="{{ url_for('main.post_category',id=post.category_id) }}">
-    <span class="chevron">&nbsp;›&nbsp;{{ post.category.category_name}}</span>
-    </a>
+        <a href="/">Yuora</a>
 
-    <div class="page-header" style="margin-top: 10px">
+        <a href="{{ url_for('main.post_category',id=post.category_id) }}">
+            <span class="chevron">&nbsp;›&nbsp;{{ post.category.category_name}}</span>
+        </a>
 
         <h1>{{ post.title }}</h1>
+    </div>
 
     <div class="post-tags">
 
@@ -59,8 +60,6 @@
 
     </div>
 
-    </div>
-
     <div class="post-body">
         {% if post.body_html %}
             {{ post.body_html | safe }}
@@ -72,13 +71,13 @@
 </div>
 
 
-<div class="comment-wrap">
+<div class="comment-wrap post-container container-color">
     {% include '_comments.html' %}
 
 </div>
 
 
-<div class="post-wrap">
+<div class="post-container">
 
     {% if current_user.can(Permission.COMMENT) %}
 
@@ -87,7 +86,7 @@
 
             <form method="post">
                 {{ form.csrf_token() }}
-               <div class="form-group">{{form.body(class='comment-form')|safe}}</div>
+               <div class="form-group">{{form.body(class="comment-form")|safe}}</div>
                 <input type="submit" class="btn btn-primary">
             </form>
 
@@ -133,7 +132,7 @@
                         return false;
                     }
                 });
-        });
+            });
     });
 </script>
 
