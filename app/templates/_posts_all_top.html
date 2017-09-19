@@ -2,6 +2,7 @@
     <ul class="posts">
         {% for post in posts %}
         <li class="post">
+            <a href="{{ url_for('main.post', id=post[0].id) }}"></a>
            <!--author is a foreign key, which is a left image-->
             <div class="post-thumbnail">
                 <a href="{{ url_for('main.user', username=post[0].author.username) }}">
@@ -12,13 +13,7 @@
             <!--the post content part-->
             <div class="post-content">
                 <div class="post-date">{{ moment(post[0].timestamp).fromNow() }}</div>
-                <div class="post-title">
-                    <a href="{{ url_for('main.post', id=post[0].id) }}">
-                        {{ post[0].title }}
-                    </a>
-                </div>
-
-
+                <div class="post-title">{{ post[0].title }}</div>
                 <div class="post-footer">
                     <a style="color:#778087;font-size: small;margin-right: 2px" href="{{ url_for('main.user', username=post[0].author.username) }}">
                     <strong>{{ post[0].author.username }}</strong>
@@ -44,5 +39,11 @@
     </ul>
 </div>
 
+
+<script>
+    $('.post').on('click',function(){
+        location.href = $(this).children("a").attr("href");
+    });
+</script>
 
 
