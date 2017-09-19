@@ -1,6 +1,8 @@
 @import "alertify/css/alertify.core.css";
 @import "alertify/css/alertify.default.css";
 
+
+/*--Common Layout--*/
 * {
     box-sizing: border-box;
 }
@@ -9,6 +11,15 @@ body {
     padding-top: 70px;
     background: #e2e2e2;
     font-family: 'Lato', sans-serif;
+}
+
+.container-color {
+    background: #FFFFFF;
+}
+
+.container-border {
+    border-radius: 5px;
+    border-bottom: 4px solid #ccc;
 }
 
 /*-- Login/Register Layout --*/
@@ -55,11 +66,25 @@ div.post-tabs {
   margin-top: 16px;
 }
 
-/*--Ul Layout--*/
-ul li {
-    list-style-type:none;
+/*--MainPage Layout--*/
+.content-container {
+    width: 80%;
+    margin: 10px auto;
+    overflow: hidden;
 }
 
+.left-container {
+    width: 100%;
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+.right-container {
+    width: 100%;
+    padding-bottom: 15px;
+}
+
+/*--Post List Layout--*/
 ul.posts {
     list-style-type: none;
     margin: 0;
@@ -68,13 +93,10 @@ ul.posts {
     padding-left: 15px;
 }
 
-
-/*--Post Layout--*/
 li.post {
     padding: 10px;
     border-radius: 3px;
     margin: 5px;
-    background: #FFFFFF;
 }
 
 ul.posts li.post:hover {
@@ -105,7 +127,7 @@ div.post-footer a {
 div.post-footer a:first-child {
     color:#778087;
     font-size: small;
-    margin-right: 2px
+    margin-right: 3px;
 }
 
 div.post-footer a:last-child {
@@ -114,28 +136,9 @@ div.post-footer a:last-child {
     margin-right: 2px;
 }
 
-/*--Container Layout--*/
-.content-container {
-    width: 80%;
-    margin: 10px auto;
-    overflow: hidden;
-}
-
-.left-container {
-    width: 100%;
-    max-width: 700px;
-    background: #FFFFFF;
-    margin-bottom: 30px;
-    border-bottom: 4px solid #ccc;
-    border-radius: 5px;
-}
-
-.right-container {
-    width: 100%;
-    background: #FFFFFF;
-    padding-bottom: 15px;
-    border-radius: 6px;
-    border-bottom: 4px solid #ccc;
+/*--Category Layout--*/
+ul li {
+    list-style-type:none;
 }
 
 .category {
@@ -151,6 +154,26 @@ div.post-footer a:last-child {
     padding-right: 15px;
 }
 
+/*-- Post Detail Layout--*/
+.post-wrap {
+    padding: 5px 25px 15px;
+}
+
+.post-header {
+    margin-top: 5px;
+}
+
+.post-container {
+    width: 80%;
+    margin: 30px auto;
+}
+
+.post-container .comment-form {
+    margin-top:10px;
+    width: 100%;
+    height: 100px;
+}
+
 /*--Comments Layout--*/
 ul.comments {
     list-style-type: none;
@@ -159,8 +182,8 @@ ul.comments {
     border-top: 1px solid #e0e0e0;
 }
 
-ul.comments li.comment {
-    border-bottom: 1px solid #e0e0e0;
+li.comment {
+    border-bottom: .5px solid #ccc;
 }
 
 ul.comments li.comment:hover {
@@ -174,14 +197,26 @@ div.comment-thumbnail {
 
 div.comment-content {
     margin-left: 65px;
-
 }
 
-.comment-form {
-    margin-top:10px;
-    width: 1010px;
-    height: 100px;
+/*--New Post Layout--*/
+.new-post-wrap {
+    width: 80%;
+    margin: 30px auto;
 }
+
+.post-btn {
+    margin-right: 10px;
+}
+
+.like {
+    margin: 5px;
+}
+
+.unlike {
+    margin: 5px;
+}
+
 
 /*--pagination layout--*/
 div.pagination {
@@ -189,24 +224,6 @@ div.pagination {
     text-align: center;
     padding: 0px;
     margin: 0px;
-}
-
-div.flask-pagedown-preview {
-    margin: 10px 0px 10px 0px;
-    border: 1px solid #e0e0e0;
-    padding: 4px;
-}
-
-div.flask-pagedown-preview h1 {
-    font-size: 140%;
-}
-
-div.flask-pagedown-preview h2 {
-    font-size: 130%;
-}
-
-div.flask-pagedown-preview h3 {
-    font-size: 120%;
 }
 
 .post-author {
@@ -236,49 +253,7 @@ a:hover,a:visited,a:link,a:active {
     margin: 0 auto;
 }
 
-/*-- post new page layout--*/
-.new-post-wrap {
-    width: 80%;
-    margin: 30px auto;
-}
 
-.post-btn {
-    margin-right: 10px;
-}
-
-.like {
-    margin: 5px;
-}
-
-.unlike {
-    margin: 5px;
-}
-
-.edit-post-wrap {
-    width: 1010px;
-    margin: 30px auto;
-    background: #FFFFFF;
-    padding: 5px 25px 15px;
-}
-
-.post-wrap {
-    width: 1015px;
-    margin: 30px auto;
-}
-
-.comment-wrap {
-    width: 1010px;
-    margin: 30px auto;
-    background: #FFFFFF;
-}
-
-h1 {
-    font-size: 24px;
-    font-weight: 500;
-    line-height: 150%;
-    margin: 0px 0px 10px 0px;
-    padding: 0px;
-}
 
 .post-tags {
     margin-top: 15px;
@@ -381,7 +356,7 @@ h1 {
         float:right;
     }
 
-    .category {
+    div.category {
         text-align: center;
     }
 
@@ -394,5 +369,9 @@ h1 {
         width: 90%;
         max-width: 1050px;
         margin: 30px auto;
+    }
+
+    .post-container {
+        max-width: 800px;
     }
 }
