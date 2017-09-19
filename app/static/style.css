@@ -71,7 +71,9 @@ ul.posts {
 
 li.post {
     padding: 10px;
-	  border-radius: 3px;
+    border-radius: 3px;
+    margin: 5px;
+    background: #FFFFFF;
 }
 
 ul.posts li.post:hover {
