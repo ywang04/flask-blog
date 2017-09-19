@@ -56,17 +56,22 @@ div.post-tabs {
   margin-top: 16px;
 }
 
-ul.posts {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    border-top: 1px solid #e0e0e0;
+/*--Ul Layout--*/
+ul li {
+    list-style-type:none;
 }
 
-ul.posts li.post {
+ul.posts {
+    list-style-type: none;
+    margin: 0;
+    border-top: 1px solid #e0e0e0;
     padding: 10px;
     padding-left: 15px;
-    border-bottom: 1px solid #e0e0e0;
+}
+
+li.post {
+    padding: 10px;
+	  border-radius: 3px;
 }
 
 ul.posts li.post:hover {
@@ -84,11 +89,46 @@ div.post-thumbnail {
 div.post-content {
     margin-left: 50px;
     min-height: 48px;
-    /*color: #778087;*/
-    padding: 0;
-    /*overflow: hidden;*/
 }
 
+/*--Container Layout--*/
+.content-container {
+    width: 80%;
+    margin: 10px auto;
+    overflow: hidden;
+}
+
+.left-container {
+    width: 100%;
+    max-width: 700px;
+    background: #FFFFFF;
+    margin-bottom: 30px;
+    border-bottom: 4px solid #ccc;
+    border-radius: 5px;
+}
+
+.right-container {
+    width: 100%;
+    background: #FFFFFF;
+    padding-bottom: 15px;
+    border-radius: 6px;
+    border-bottom: 4px solid #ccc;
+}
+
+.category {
+    text-align: center;
+    padding-top: 5px;
+}
+
+.category-list {
+    padding-left: 20px;
+}
+
+.category-item {
+    padding-right: 15px;
+}
+
+/*--Comments Layout--*/
 ul.comments {
     list-style-type: none;
     margin: 0;
@@ -147,11 +187,9 @@ div.flask-pagedown-preview h3 {
 }
 
 .post-author {
-
     float: left;
     margin-right: 3px;
 }
-
 
 .post-title {
     margin-bottom: 8px;
@@ -162,45 +200,6 @@ a:hover,a:visited,a:link,a:active {
     color: #000000;
     word-break: break-all;
     font-size:14px;
-}
-
-.content-container {
-    width: 80%;
-    margin: 10px auto;
-    overflow: hidden;
-}
-
-.left-container {
-    width: 100%;
-    max-width: 700px;
-    background: #FFFFFF;
-    margin-bottom: 30px;
-    border-radius: 5px;
-}
-
-.right-container {
-    width: 100%;
-    background: #FFFFFF;
-    padding-bottom: 15px;
-    border-radius: 5px;
-}
-
-.category {
-    text-align: center;
-    padding-top: 5px;
-}
-
-.category-list {
-    padding-left: 20px;
-
-}
-
-.category-item {
-    padding-right: 15px;
-}
-
-ul li {
-    list-style-type:none;
 }
 
 
@@ -258,12 +257,10 @@ h1 {
     padding: 0px;
 }
 
-
 .post-tags {
     margin-top: 15px;
     padding-bottom: 18px;
 }
-
 
 .comment-body {
     padding-top: 8px;
@@ -292,7 +289,6 @@ h1 {
 .profile-form {
 
     margin: 0 auto;
-    /*background: #FFFFFF;*/
     padding: 31px 40px;
 
     width: 1105px;
@@ -352,23 +348,14 @@ h1 {
         width: 60%;
         max-width: 650px;
         margin: 0 20px 50px;
-        background: #FFFFFF;
-        padding: 0;
         float: left;
-        border-bottom: 4px solid #ccc;
-        border-radius: 6px;
-        transition: all .5s;
     }
 
     .right-container {
-        width: 27%;
+        width: 28%;
         max-width: 220px;
         margin: 0 20px;
-        background: #FFFFFF;
         float:right;
-        border-bottom: 4px solid #ccc;
-        border-radius: 6px;
-        transition: all .5s;
     }
 
     .category {
