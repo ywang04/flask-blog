@@ -7,7 +7,7 @@
             <li class="post">
 
                 <a href="{{ url_for('main.post', id=post.id) }}" class="test"></a>
-           <!--author is a foreign key, which is a left image-->
+                <!--author is a foreign key, which is a left image-->
                 <div class="post-thumbnail">
                     <a href="{{ url_for('main.user', username=post.author.username) }}">
                         <img class="img-rounded profile-thumbnail" src="{{ post.author.gravatar(size=40) }}">
@@ -23,19 +23,18 @@
 
                     <div class="post-footer">
 
-                       <a style="color:#778087;font-size: small;margin-right: 2px" href="{{ url_for('main.user', username=post.author.username) }}">
+                       <a href="{{ url_for('main.user', username=post.author.username) }}">
                            <strong>{{ post.author.username }}</strong>
-                        </a>
-
+                       </a>
                         <a href="{{ url_for('main.post_category',id=post.category.id) }}">
-                            <span class="label label-default" style="margin-right: 2px">{{ post.category.category_name }}</span>
+                            <span class="label label-default">{{ post.category.category_name }}</span>
                         </a>
 
                         <a href="{{ url_for('main.post',id=post.id) }}#comment-font">
-                            <span class="label label-default" style="margin-right: 2px">{{ post.comments.count() }} Comments</span>
+                            <span class="label label-default">{{ post.comments.count() }} Comments</span>
                         </a>
 
-                        <a href="#" style="color: #46b8da">
+                        <a href="#">
                            <span class="glyphicon glyphicon-thumbs-up"></span> {{post.likes.filter_by(liked=True).count()}}
                         </a>
 
@@ -44,7 +43,6 @@
                 </div>
 
             </li>
-
 
         {% endfor %}
 

@@ -15,7 +15,7 @@
                 <div class="post-date">{{ moment(post[0].timestamp).fromNow() }}</div>
                 <div class="post-title">{{ post[0].title }}</div>
                 <div class="post-footer">
-                    <a style="color:#778087;font-size: small;margin-right: 2px" href="{{ url_for('main.user', username=post[0].author.username) }}">
+                    <a href="{{ url_for('main.user', username=post[0].author.username) }}">
                     <strong>{{ post[0].author.username }}</strong>
                     </a>
 
@@ -23,10 +23,10 @@
                     </a>
 
                     <a href="{{ url_for('main.post',id=post[0].id) }}#comment-font">
-                    <span class="label label-default" style="margin-right: 2px">{{ post[0].comments.count() }} Comments</span>
+                        <span class="label label-default">{{ post[0].comments.count() }} Comments</span>
                     </a>
 
-                    <a href="#" style="color: #46b8da">
+                    <a href="#">
                        <span class="glyphicon glyphicon-thumbs-up"></span> {{post[0].likes.filter_by(liked=True).count()}}
                     </a>
 

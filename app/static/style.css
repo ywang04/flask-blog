@@ -33,7 +33,6 @@ body {
 }
 
 .profile-header {
-    /*min-height: 100px;*/
     margin-left: 240px;
     margin-top: -22px;
 }
@@ -69,6 +68,8 @@ ul.posts {
     padding-left: 15px;
 }
 
+
+/*--Post Layout--*/
 li.post {
     padding: 10px;
     border-radius: 3px;
@@ -91,6 +92,26 @@ div.post-thumbnail {
 div.post-content {
     margin-left: 50px;
     min-height: 48px;
+}
+
+div.post-footer span {
+    margin-right: 2px;
+}
+
+div.post-footer a {
+    display: inline-block;
+}
+
+div.post-footer a:first-child {
+    color:#778087;
+    font-size: small;
+    margin-right: 2px
+}
+
+div.post-footer a:last-child {
+    color: #46b8da;
+    font-size: small;
+    margin-right: 2px;
 }
 
 /*--Container Layout--*/
