@@ -32,7 +32,7 @@ class RegistrationForm(Form):
     email = StringField('Email Address', validators=[DataRequired(), Length(1, 64), Email()])
     password = PasswordField('Password',validators=[DataRequired(),EqualTo('password2',message='Passwords must match.')])
     password2 = PasswordField('Confirm Password',validators=[DataRequired()])
-    submit = SubmitField('Sign Up Now',render_kw={"class":"btn btn-primary btn-block"})
+    submit = SubmitField('Sign Up Now')
 
 
     def validate_email(self,field):
