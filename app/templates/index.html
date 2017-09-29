@@ -5,9 +5,6 @@
 {% block title %}Yuora | All{% endblock %}
 
 {% block page_content %}
-
-        <div class="content-container">
-
         <div class="tab">
             <ul class="nav nav-tabs">
 
@@ -34,10 +31,10 @@
             </ul>
         </div>
 
+        <div class="content-container">
         {% include '_posts_all.html' %}
 
-
-        <div class="right-container container-color container-border">
+        <div class="right-container container-color container-border col">
 
             {% include '_category_show.html' %}
 
