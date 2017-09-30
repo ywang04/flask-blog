@@ -37,16 +37,10 @@
         <div class="right-container container-color container-border col">
 
             {% include '_category_show.html' %}
-
         </div>
 
         </div>
 
-        {% if pagination %}
-            <div class="pagination">
-                {{ macros.pagination_widget(pagination,'main.index') }}
-            </div>
-        {% endif %}
 
 <script>
  if(!!window.performance && window.performance.navigation.type === 2) {
