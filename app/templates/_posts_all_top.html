@@ -1,29 +1,31 @@
 <div class="left-container container-color container-border col">
-    <div class="tabs">
-            <ul class="nav nav-tabs">
-                <li{% if not show_followed %}{% endif %}>
-                    <a href="{{ url_for('main.show_all') }}">
-                        All
-                    </a>
-                </li>
-                <li class="active">
-                    <a href="{{ url_for('main.post_top') }}">
-                        Top
-                    </a>
-                </li>
 
-                {% if current_user.is_authenticated %}
-                    <li{% if show_followed %} class="active" {% endif %}>
-                        <a href="{{ url_for('main.show_followed') }}">
-                            Followers
-                        </a>
-                    </li>
-                {% endif %}
-            </ul>
-        </div>
+    <div class="tabs">
+        <ul class="nav nav-tabs">
+            <li{% if not show_followed %}{% endif %}>
+                <a href="{{ url_for('main.show_all') }}">
+                    All
+                </a>
+            </li>
+            <li class="active">
+                <a href="{{ url_for('main.post_top') }}">
+                    Top
+                </a>
+            </li>
+
+            {% if current_user.is_authenticated %}
+                <li{% if show_followed %} class="active" {% endif %}>
+                    <a href="{{ url_for('main.show_followed') }}">
+                        Followers
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+
     <ul class="posts">
         {% for post in posts %}
-        <li class="post container-color">
+        <li class="post">
             <a href="{{ url_for('main.post', id=post[0].id) }}"></a>
            <!--author is a foreign key, which is a left image-->
             <div class="post-thumbnail">
