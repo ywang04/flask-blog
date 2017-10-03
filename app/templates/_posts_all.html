@@ -30,9 +30,9 @@
 
         {% for post in posts %}
 
-            <li class="post container-color">
+            <li class="post">
 
-                <a href="{{ url_for('main.post', id=post.id) }}" class="test"></a>
+                <a href="{{ url_for('main.post', id=post.id) }}"></a>
                 <!--author is a foreign key, which is a left image-->
                 <div class="post-thumbnail">
                     <a href="{{ url_for('main.user', username=post.author.username) }}">
