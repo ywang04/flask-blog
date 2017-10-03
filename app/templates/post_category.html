@@ -9,27 +9,10 @@
 <div class="post-tabs">
 
     <div class="content-container">
-
-      <div class="tab">
-          <ul class="nav nav-tabs">
-          <li{% if not show_followed %} class="active"{% endif %}><a href="{{ url_for('main.show_all') }}">
-             All</a>
-           </li>
-          <li><a href="{{ url_for('main.category_top',id=category_id) }}">Top</a></li>
-          {% if current_user.is_authenticated %}
-              <li{% if show_followed %} class="active" {% endif %}>
-                <a href="{{ url_for('main.show_followed') }}">Followers</a>
-              </li>
-          {% endif %}
-          </ul>
-      </div>
-
         {% include '_posts_all.html' %}
 
-
-        <div class="right-container container-color container-border">
+        <div class="right-container container-color container-border col">
             {% include '_category_show.html' %}
-
         </div>
 
     </div>
@@ -41,4 +24,5 @@
     {% endif %}
 
 </div>
+
 {% endblock %}
