@@ -2,19 +2,13 @@
 {% import "_macros.html" as macros %}
 {% import "bootstrap/wtf.html" as wtf %}
 
-{% block title %}Yuora - Settings{% endblock %}
+{% block title %}Yuora | Settings{% endblock %}
 
 {% block page_content %}
 
-
-<div class="profile-form">
-
-    <img class="img-rounded profile-thumbnail" src="{{ user.gravatar(size=180) }}">
-{#    <a href="{{ url_for('auth.upload') }}"><img class="img-rounded profile-thumbnail" src="{{ user.gravatar(size=180) }}"></a>#}
-
-    <div class="profile-header">
-
-            <h2>{{ user.username }}</h2>
+    <div class="profile-container">
+        <div class="profile-header profile-col">
+            <img src="{{ user.gravatar(size=60) }}">
             {% if user.name or user.location %}
             <p>
                 {% if user.name %}{{ user.name }}{% endif %}
@@ -38,13 +32,13 @@
                     {% endif %}
                 {% endif %}
 
-                <a href="{{ url_for('main.followers',username=user.username) }}" style="text-decoration:none;">
+                <a href="{{ url_for('main.followers',username=user.username) }}">
 
                     Followers: <span class="badge">{{ user.followers.count() }}</span>
 
                 </a>
 
-                <a href="{{ url_for('main.followed_by',username=user.username) }}" style="text-decoration:none;">
+                <a href="{{ url_for('main.followed_by',username=user.username) }}">
 
                     Following: <span class="badge">{{ user.followed.count() }}</span>
 
@@ -57,25 +51,17 @@
             </p>
 
             <p>
-
             <a class="btn btn-default" href="{{ url_for('auth.change_password',username=user) }}">Change Password</a>
-
             </p>
 
-         </div>
-</div>
+        </div>
 
+        <div class="profile-col">
 
-<div class="profile-info-wrap">
+            {{ wtf.quick_form(form) }}
 
-    <div class="profile-info">
-
-    {{ wtf.quick_form(form) }}
-
+        </div>
     </div>
-
-</div>
-
 
 {% endblock %}
 
