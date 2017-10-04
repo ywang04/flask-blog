@@ -1,72 +1,65 @@
 {% extends "base.html" %}
 {% import "_macros.html" as macros %}
 
-{% block title %}Yuora - {{ user.username }}{% endblock %}
+{% block title %}Yuora | {{ user.username }}{% endblock %}
 
 {% block page_content %}
 
+    <div class="user-container">
 
-<div class="profile-form">
-
-     <img class="img-rounded profile-thumbnail" src="{{ user.gravatar(size=180) }}">
-
-     <div class="profile-header">
-
-            <h2>{{ user.username }}</h2>
-            {% if user.name or user.location %}
-            <p>
-                {% if user.name %}{{ user.name }}{% endif %}
-                {% if user.location %}
-                    From <a href="http://maps.google.com/?q={{ user.location }}">{{ user.location }}</a>
-                {% endif %}
-            </p>
-            {% endif %}
-            {% if current_user.is_administrator() %}
-            <p><a href="mailto:{{ user.email }}">{{ user.email }}</a></p>
-            {% endif %}
-            {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
-            <p>Member since {{ moment(user.member_since).format('L') }}.</p>
-            <p>Last seen {{ moment(user.last_seen).fromNow() }}.</p>
-            <p>
-                {% if current_user.can(Permission.FOLLOW) and user != current_user %}
-                    {% if not current_user.is_following(user) %}
-                       <a href="{{ url_for('main.follow',username=user.username)}}" class="btn btn-default">Follow</a>
-                    {% else %}
-                    <a href="{{ url_for('main.unfollow',username=user.username) }}" class="btn btn-default">Unfollow</a>
+        <div class="user-header user-col">
+                <h2>{{ user.username }}</h2>
+                {% if user.name or user.location %}
+                <p>
+                    {% if user.name %}{{ user.name }}{% endif %}
+                    {% if user.location %}
+                        From <a href="http://maps.google.com/?q={{ user.location }}">{{ user.location }}</a>
                     {% endif %}
+                </p>
                 {% endif %}
+                {% if current_user.is_administrator() %}
+                <p><a href="mailto:{{ user.email }}">{{ user.email }}</a></p>
+                {% endif %}
+                {% if user.about_me %}<p>{{ user.about_me }}</p>{% endif %}
+                <p>Member since {{ moment(user.member_since).format('L') }}.</p>
+                <p>Last seen {{ moment(user.last_seen).fromNow() }}.</p>
 
-                <a href="{{ url_for('main.followers',username=user.username) }}" style="text-decoration:none;">
+                <p>
+                    <div class="follow">
+                    {% if current_user.can(Permission.FOLLOW) and user != current_user %}
+                        {% if not current_user.is_following(user) %}
+                           <a href="{{ url_for('main.follow',username=user.username)}}" class="btn btn-default">Follow</a>
+                        {% else %}
+                        <a href="{{ url_for('main.unfollow',username=user.username) }}" class="btn btn-default">Unfollow</a>
+                        {% endif %}
+                    {% endif %}
+                    </div>
 
+
+                    <a href="{{ url_for('main.followers',username=user.username) }}">
                     Followers: <span class="badge">{{ user.followers.count() }}</span>
+                    </a>
 
-                </a>
+                    <a href="{{ url_for('main.followed_by',username=user.username) }}">
+                        Following: <span class="badge">{{ user.followed.count() }}</span>
+                    </a>
+                </p>
 
-                <a href="{{ url_for('main.followed_by',username=user.username) }}" style="text-decoration:none;">
-
-                    Following: <span class="badge">{{ user.followed.count() }}</span>
-
-                </a>
-
-                {% if current_user.is_authenticated and user != current_user and user.is_following(current_user) %}
-                    <span class="label label-default">Follows you</span>
-                {% endif %}
-
-            </p>
         </div>
 
-</div>
+        <div class="user-wrap user-col">
 
-<div class="profile-wrap">
+            {% include '_posts_user.html' %}
 
-    {% include '_posts_user.html' %}
+        </div>
 
-</div>
+    </div>
 
-{% if pagination %}
-<div class="pagination">
-    {{ macros.pagination_widget(pagination, 'main.user',username=user.username) }}
-</div>
-{% endif %}
+     {% if pagination %}
+        <div class="pagination">
+            {{ macros.pagination_widget(pagination, 'main.user',username=user.username) }}
+        </div>
+    {% endif %}
+
 {% endblock %}
 
