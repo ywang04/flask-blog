@@ -2,7 +2,7 @@
 {% import "bootstrap/wtf.html" as wtf %}
 {% import "_macros.html" as macros %}
 
-{% block title %}Yuora - Post{% endblock %}
+{% block title %}Yuora | Post{% endblock %}
 
 {% block page_content %}
 
@@ -21,34 +21,33 @@
 
     <div class="post-tags">
 
-        <div class="post-author">
-          <a href="{{ url_for('main.user', username=post.author.username) }}" style="margin-right: 3px">
-              <strong>{{ post.author.username }}</strong>
-          </a>
-        </div>
+        <a href="{{ url_for('main.user', username=post.author.username) }}">
+            <strong>{{ post.author.username }}</strong>
+        </a>
+
 
         {% if current_user == post.author %}
-        <a href="{{ url_for('main.post_edit', id=post.id) }}" style="margin: 4px">
+        <a href="{{ url_for('main.post_edit', id=post.id) }}">
             <span class="label label-default">Edit</span>
         </a>
 
-        <a href="#" id="simple_alert" style="margin: 3px;">
+        <a href="#" id="simple_alert">
             <span class="label label-default">Delete</span>
         </a>
 
         {% elif current_user.is_administrator() %}
-        <a href="{{ url_for('main.post_edit', id=post.id) }}" style="margin: 4px;">
+        <a href="{{ url_for('main.post_edit', id=post.id) }}">
             <span class="label label-default">Edit</span>
         </a>
 
-        <a href="#" id="simple_alert" style="margin: 3px;">
+        <a href="#" id="simple_alert">
             <span class="label label-default">Delete</span>
         </a>
         {% endif %}
 
       {% if current_user.is_authenticated %}
         {% if current_user.is_like_post(post) %}
-            <a href="" class="unlike" style="color: #46b8da">
+            <a href="" class="unlike">
                 <span class="glyphicon glyphicon-thumbs-up"></span>
             </a>
         {% else %}
@@ -100,7 +99,6 @@
 </div>
 {% endif %}
 
-
 <script>
     $(document).ready(function() {
 
@@ -137,5 +135,7 @@
 </script>
 
 {% endblock %}
+
+
 
 
