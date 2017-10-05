@@ -7,15 +7,17 @@
 
 <div class="post-container">
 
-   <form method="post" id="post-edit-form">
+   <form method="post" id="post-form">
        {{ form.csrf_token() }}
        <div class="form-group"> {{ form.title(class="form-control",placeholder="Enter Title",type='text',id='title-alert') }}</div>
        <div class="form-group">{{ form.category(class="form-control") }} </div>
        <div class="form-group">{{ form.body(class="ckeditor",id='content_alert') }}</div>
-       <button type="submit" class="btn btn-primary">Post</button>
+       <div class="post-button">
+       <button type="submit" class="btn btn-primary post-btn">Post</button>
        <a href="{{ url_for('main.post',id=post.id) }}">
            <button type="button" class="btn btn-primary">Cancel</button>
        </a>
+       </div>
    </form>
 
 </div>
@@ -25,7 +27,7 @@
      $(document).ready(function() {
 
 
-         $("#post-edit-form").submit(function (e) {
+         $("#post-form").submit(function (e) {
 
              e.preventDefault();
 
@@ -41,7 +43,7 @@
                  alertify.alert("This post appears to be blank. Please write something or attach a link or photo to post.");
              } else {
 
-                   $('#post-edit-form').unbind('submit').submit();
+                   $('#post-form').unbind('submit').submit();
              }
 
          });
