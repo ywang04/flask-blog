@@ -6,7 +6,7 @@
 
 {% block page_content %}
 
-<div class="post-wrap post-container container-color container-border">
+<div class="post-container container-color container-border">
 
     <div class="post-header">
 
@@ -19,46 +19,6 @@
         <h1>{{ post.title }}</h1>
     </div>
 
-    <div class="post-tags">
-
-        <a href="{{ url_for('main.user', username=post.author.username) }}">
-            <strong>{{ post.author.username }}</strong>
-        </a>
-
-
-        {% if current_user == post.author %}
-        <a href="{{ url_for('main.post_edit', id=post.id) }}">
-            <span class="label label-default">Edit</span>
-        </a>
-
-        <a href="#" id="simple_alert">
-            <span class="label label-default">Delete</span>
-        </a>
-
-        {% elif current_user.is_administrator() %}
-        <a href="{{ url_for('main.post_edit', id=post.id) }}">
-            <span class="label label-default">Edit</span>
-        </a>
-
-        <a href="#" id="simple_alert">
-            <span class="label label-default">Delete</span>
-        </a>
-        {% endif %}
-
-      {% if current_user.is_authenticated %}
-        {% if current_user.is_like_post(post) %}
-            <a href="" class="unlike">
-                <span class="glyphicon glyphicon-thumbs-up"></span>
-            </a>
-        {% else %}
-            <a href="" class="like">
-                <span class="glyphicon glyphicon-thumbs-up"></span>
-            </a>
-        {% endif %}
-      {% endif %}
-
-    </div>
-
     <div class="post-body">
         {% if post.body_html %}
             {{ post.body_html | safe }}
@@ -67,30 +27,99 @@
         {% endif %}
     </div>
 
-</div>
+    <ul class="post-tags">
+        <li>
+            <a href="{{ url_for('main.user', username=post.author.username) }}">
+                <strong>{{ post.author.username }}</strong>
+            </a>
+        </li>
 
 
-<div class="comment-wrap post-container container-color">
+        {% if current_user == post.author %}
+            <li>
+                <a href="{{ url_for('main.post_edit', id=post.id) }}">
+                    <span class="label label-default">Edit</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" id="simple_alert">
+                    <span class="label label-default">Delete</span>
+                </a>
+            </li>
+
+{#            <li>#}
+{#                <a href="#" id="show_comment">#}
+{#                    <span class="label label-default">Comment</span>#}
+{#                </a>#}
+{#            </li>#}
+
+
+        {% elif current_user.is_administrator() %}
+            <li>
+                <a href="{{ url_for('main.post_edit', id=post.id) }}">
+                    <span class="label label-default">Edit</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" id="simple_alert">
+                    <span class="label label-default">Delete</span>
+                </a>
+            </li>
+        {% endif %}
+
+      {% if current_user.is_authenticated %}
+          <li>
+            <a href="#" id="show_comment">
+                <span class="label label-default">Comment</span>
+            </a>
+          </li>
+        {% if current_user.is_like_post(post) %}
+            <li>
+                <a href="" class="unlike">
+                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                </a>
+            </li>
+        {% else %}
+            <li>
+                <a href="" class="like">
+                    <span class="glyphicon glyphicon-thumbs-up"></span>
+                </a>
+            </li>
+        {% endif %}
+      {% endif %}
+
+    </ul>
+
+    <div class="text-box">
+    {% if current_user.can(Permission.COMMENT) %}
+            <form method="post" class="form-container">
+                {{ form.csrf_token() }}
+                <div class="form-group">{{form.body(class="comment-form")|safe}}</div>
+                <input type="submit" class="btn btn-primary" value="Comment">
+            </form>
+    {% endif %}
+    </div>
+
+
     {% include '_comments.html' %}
 
+
 </div>
 
-
-<div class="post-container">
-
-    {% if current_user.can(Permission.COMMENT) %}
-
-        <span id="comment-font">Add a Comment</span>
-        <a class="to-top" href="" onclick="goTop()"><strong>↑</strong> Back to Top</a>
-
-            <form method="post">
-                {{ form.csrf_token() }}
-               <div class="form-group">{{form.body(class="comment-form")|safe}}</div>
-                <input type="submit" class="btn btn-primary">
-            </form>
-
-    {% endif %}
-</div>
+{#<div class="post-container">#}
+{#    {% if current_user.can(Permission.COMMENT) %}#}
+{##}
+{#        <span id="comment-font">Add a Comment</span>#}
+{#        <a class="to-top" href="" onclick="goTop()"><strong>↑</strong> Back to Top</a>#}
+{#            <form method="post">#}
+{#                {{ form.csrf_token() }}#}
+{#                <div class="form-group">{{form.body(class="comment-form")|safe}}</div>#}
+{#                <input type="submit" class="btn btn-primary">#}
+{#            </form>#}
+{#    {% endif %}#}
+{#</div>#}
 
 
 {% if pagination %}
@@ -100,6 +129,7 @@
 {% endif %}
 
 <script>
+
     $(document).ready(function() {
 
         $('.like').on('click', function() {
@@ -131,7 +161,19 @@
                     }
                 });
             });
+
     });
+
+    const comment = document.getElementById('show_comment');
+    const commentDiv = document.querySelector('.text-box');
+    comment.addEventListener('click',function() {
+        if ( commentDiv.className === 'text-box') {
+             commentDiv.className = 'text-box-on'
+        } else {
+             commentDiv.className = 'text-box';
+        }
+    });
+
 </script>
 
 {% endblock %}
