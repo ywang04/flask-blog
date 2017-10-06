@@ -1,12 +1,12 @@
 {% extends "base.html" %}
 {% import "_macros.html" as macros %}
 
-{% block title %}Yuora - {{ title }} {{ user.username }}{% endblock %}
+{% block title %}Yuora | {{ title }} {{ user.username }}{% endblock %}
 
 {% block page_content %}
 
 
-<div class="page-header" style="text-align: center">
+<div class="title-header">
 
     <h2>{{ title }} {{ user.username }}</h2>
 
@@ -15,33 +15,33 @@
 
 <div class="followers-wrap">
     <table class="table table-hover followers">
-    <thead>
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Since</th>
+            </tr>
+        </thead>
+
+        {% for follow in follows %}
+
         <tr>
-            <th>User</th>
-            <th>Since</th>
+            <td>
+    {# here, user is defined in follows = [{'user':item.follower,'timestamp': item.timestamp} for item in pagination.items]#}
+
+                <a href="{{ url_for('main.user',username=follow.user.username)}}">
+{#                        <img class="img-rounded" src="{{ follow.user.gravatar(size=40) }}">#}
+                    {{ follow.user.username }}
+                </a>
+
+            </td>
+
+            <td>
+                {{ moment(follow.timestamp).format('L') }}
+
+            </td>
         </tr>
-    </thead>
-    {% for follow in follows %}
-
-    <tr>
-        <td>
-{# here, user is defined in follows = [{'user':item.follower,'timestamp': item.timestamp} for item in pagination.items]#}
-
-            <a href="{{ url_for('main.user',username=follow.user.username)}}" style="text-decoration:none;">
-                    <img class="img-rounded" src="{{ follow.user.gravatar(size=32) }}">
-                {{ follow.user.username }}
-            </a>
-
-        </td>
-
-        <td>
-            {{ moment(follow.timestamp).format('L') }}
-
-        </td>
-    </tr>
-    {% endfor %}
-</table>
-
+        {% endfor %}
+    </table>
 </div>
 
 <div class="pagination">
