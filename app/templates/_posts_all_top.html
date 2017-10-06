@@ -41,11 +41,11 @@
                     <strong>{{ post[0].author.username }}</strong>
                     </a>
 
-                    <a href="{{ url_for('main.post_category',id=post[0].category.id) }}"><span class="label label-default" style="margin-right: 2px">{{ post[0].category.category_name }}</span>
-                    </a>
-
                     <a href="{{ url_for('main.post',id=post[0].id) }}#comment-font">
                         <span class="label label-default">{{ post[0].comments.count() }} Comments</span>
+                    </a>
+
+                    <a class="category" href="{{ url_for('main.post_category',id=post[0].category.id) }}"><span class="label label-default" style="margin-right: 2px">{{ post[0].category.category_name }}</span>
                     </a>
 
                     <a href="#">
@@ -53,8 +53,8 @@
                     </a>
 
                 </div>
-
             </div>
+
 
         </li>
         {% endfor %}
