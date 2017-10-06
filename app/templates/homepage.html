@@ -24,8 +24,8 @@
                 <p>Member since {{ moment(user.member_since).format('L') }}.</p>
                 <p>Last seen {{ moment(user.last_seen).fromNow() }}.</p>
 
-                <p>
-                    <div class="follow">
+                <p class="follow">
+
                     {% if current_user.can(Permission.FOLLOW) and user != current_user %}
                         {% if not current_user.is_following(user) %}
                            <a href="{{ url_for('main.follow',username=user.username)}}" class="btn btn-default">Follow</a>
@@ -33,8 +33,6 @@
                         <a href="{{ url_for('main.unfollow',username=user.username) }}" class="btn btn-default">Unfollow</a>
                         {% endif %}
                     {% endif %}
-                    </div>
-
 
                     <a href="{{ url_for('main.followers',username=user.username) }}">
                     Followers: <span class="badge">{{ user.followers.count() }}</span>
