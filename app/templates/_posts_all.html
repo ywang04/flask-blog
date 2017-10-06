@@ -42,21 +42,21 @@
                 <div class="post-content">
 
                     <div class="post-date">{{ moment(post.timestamp).fromNow() }}</div>
-
                     <div class="post-title">{{ post.title }}</div>
-
                     <div class="post-footer">
 
                        <a href="{{ url_for('main.user', username=post.author.username) }}">
                            <strong>{{ post.author.username }}</strong>
                        </a>
-                        <a href="{{ url_for('main.post_category',id=post.category.id) }}">
-                            <span class="label label-default">{{ post.category.category_name }}</span>
-                        </a>
 
                         <a href="{{ url_for('main.post',id=post.id) }}#comment-font">
                             <span class="label label-default">{{ post.comments.count() }} Comments</span>
                         </a>
+
+                        <a class="category" href="{{ url_for('main.post_category',id=post.category.id) }}">
+                            <span class="label label-default">{{ post.category.category_name }}</span>
+                        </a>
+
 
                         <a href="#">
                            <span class="glyphicon glyphicon-thumbs-up"></span> {{post.likes.filter_by(liked=True).count()}}
@@ -65,6 +65,10 @@
                     </div>
 
                 </div>
+
+
+
+
 
             </li>
 
