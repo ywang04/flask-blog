@@ -449,6 +449,7 @@ ul.comments li.comment:hover {
         display: flex;
         padding: 0 40px;
         max-width: 1000px;
+        width: 90%;
     }
 
     .profile-col {
@@ -464,6 +465,7 @@ ul.comments li.comment:hover {
     .user-container {
         display: flex;
         max-width: 1000px;
+        width: 90%;
     }
 
     .user-col {
