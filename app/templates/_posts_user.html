@@ -1,4 +1,4 @@
-<ul class="posts">
+<ul class="posts container-color container-border">
     {% for post in posts %}
     <li class="post">
 
@@ -16,33 +16,40 @@
                 <a href="{{ url_for('main.post',id=post.id) }}">{{ post.title }}</a>
             </div>
 
-
-
         <!--The permanent links are added at the bottom of each post in the generic _posts.html template.-->
-        <div class="post-footer">
+            <div class="post-footer">
 
 
-            <strong><a style="color:#778087;font-size: small;margin-right: 2px" href="{{ url_for('main.user',username=post.author.username) }}" style="text-decoration:none;">
-                {{ post.author.username }}
-            </a></strong>
-
-            <a href="{{ url_for('main.post_category',id=post.category.id) }}">
-                   <span class="label label-default" style="margin-right: 2px">{{ post.category.category_name }}</span>
+            <a href="{{ url_for('main.user',username=post.author.username) }}">
+                <strong>{{ post.author.username }}</strong>
             </a>
 
             <a href="{{ url_for('main.post',id=post.id) }}#comment-font">
-                <span class="label label-default" style="margin-right: 2px">{{ post.comments.count() }} Comments</span>
+                <span class="label label-default">{{ post.comments.count() }} Comments</span>
             </a>
 
-            <a href="#" style="color: #46b8da">
+            <a class="category" href="{{ url_for('main.post_category',id=post.category.id) }}">
+                <span class="label label-default">{{ post.category.category_name }}</span>
+            </a>
+
+            <a href="#">
                 <span class="glyphicon glyphicon-thumbs-up"></span> {{post.likes.filter_by(liked=True).count()}}
             </a>
         </div>
-
         </div>
     </li>
     {% endfor %}
 </ul>
+
+<script>
+
+    if(!!window.performance && window.performance.navigation.type === 2) {
+        console.log('Reloading');
+        window.location.reload();
+    }
+
+</script>
+
 
 
 
