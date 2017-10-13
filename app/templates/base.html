@@ -35,7 +35,7 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     {% if current_user.is_authenticated %}
-                    <li><a href={{ url_for('main.post_new') }}><span class="brand">New Post</span></a></li>
+                    <li><a class="active" href={{ url_for('main.post_new') }} ><span class="brand">New Post</span></a></li>
                     {% endif %}
 
                     {% if current_user.is_administrator() %}
@@ -94,7 +94,19 @@
     {% endfor %}
 
    {% block page_content %}
+
    {% endblock %}
+
+    {% block footer %}
+     <div class="page-footer">
+       <ul class="contact-info">
+        <li><a href="https://www.linkedin.com/in/ywang04/" class="social linkedin">LinkedIn</a></li>
+        <li><a href="https://github.com/ywang04" class="social github">Github</a></li>
+        <li><a href="https://twitter.com/ywang04" class="social twitter">Twitter</a></li>
+       </ul>
+         <p class="copyright">© 2017 Yuora</p>
+     </div>
+    {% endblock %}
 
 {% endblock %}
 
@@ -103,3 +115,5 @@
 {{ super() }}
 {{ moment.include_moment() }}
 {% endblock %}
+
+
