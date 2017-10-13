@@ -66,10 +66,6 @@
 
                 </div>
 
-
-
-
-
             </li>
 
         {% endfor %}
@@ -79,8 +75,15 @@
 </div>
 
 <script>
+
     $('.post').on('click',function(){
         location.href = $(this).children("a").attr("href");
     });
+
+    if(!!window.performance && window.performance.navigation.type === 2) {
+        console.log('Reloading');
+        window.location.reload();
+    }
+
 </script>
 
