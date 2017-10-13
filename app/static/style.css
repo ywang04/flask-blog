@@ -282,10 +282,6 @@ a:hover,a:visited,a:link,a:active {
    color: #46b8da;
 }
 
-.post-tags .unlike {
-   color: #000;
-}
-
 .post-container .comment-form {
     margin-top:30px;
     width: 100%;
