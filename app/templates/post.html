@@ -65,13 +65,13 @@
 
         {% if current_user.is_like_post(post) %}
 
-            <a href="#" class="like">
+            <a href="#" class="like like-active">
                 <span class="glyphicon glyphicon-thumbs-up"></span>
             </a>
 
         {% else %}
 
-            <a href="#">
+            <a href="#" class="like">
                 <span class="glyphicon glyphicon-thumbs-up"></span>
             </a>
 
@@ -80,13 +80,13 @@
 
     </div>
 
-    <div class="text-box">
+    <div class="text-box-off">
     {% if current_user.can(Permission.COMMENT) %}
-            <form method="post" class="form-container">
-                {{ form.csrf_token() }}
-                <div class="form-group">{{form.body(class="comment-form")|safe}}</div>
-                <input type="submit" class="btn btn-primary" value="Comment">
-            </form>
+        <form method="post" class="form-container">
+            {{ form.csrf_token() }}
+            <div class="form-group">{{form.body(class="comment-form")|safe}}</div>
+            <input type="submit" class="btn btn-primary" value="Comment">
+        </form>
     {% endif %}
     </div>
 
@@ -106,42 +106,37 @@
 
         $('#id-a-comment').on('click', function(e) {
             e.preventDefault();
-            $('.text-box').toggleClass('text-box-on','text-box');
+            $('.text-box-off').toggleClass('text-box-on');
         });
 
-        $('.glyphicon').on('click', function(e) {
-            e.preventDefault();
-            var url = "{{ url_for('main.post_like',id=post.id) }}";
-            $.post(url,function(response){
-                console.log(response);
+       $('.like').on('click', function(e) {
+           e.preventDefault();
+           var url = "{{ url_for('main.post_like',id=post.id) }}";
+           $.post(url,function(response) {
+               console.log(response);
             });
-            if ($(this).parent().attr('class') === "like") {
-                $(this).parent().removeClass('like');
+           $(this).toggleClass('like-active');
+       });
 
-            } else {
-                $(this).parent().addClass('like');
-            }
-        });
+       $('.show-alert').on('click', function(e) {
+           e.preventDefault();
+           alertify.confirm("Are you sure you want to delete this post?", function(e) {
+                if (e) {
+                    var url = "{{ url_for('main.post_delete',id=post.id) }}";
+                    $.ajax(url, {
+                        type: 'POST',
+                        success: function(response) {
+                            window.location = '/';
+                        }
+                   });
+                } else {
+                    return false;
+                }
+           });
+       });
 
-        $('.show-alert').on('click', function(e) {
-            e.preventDefault();
-            alertify.confirm("Are you sure you want to delete this post?", function(e) {
-                    if (e) {
-                        var url = "{{ url_for('main.post_delete',id=post.id) }}";
-                        $.ajax(url,{
-                            type: 'POST',
-                            success: function(response) {
-                                window.location = '/';
-                            }
-                        });
-                    } else {
-                        return false;
-                    }
-                });
-        });
-
-        if (!$('ul.comments li').length) {
-            $('ul.comments').hide();
+       if (!$('ul.comments li').length) {
+           $('ul.comments').hide();
         }
     });
 
