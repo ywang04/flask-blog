@@ -278,7 +278,7 @@ a:hover,a:visited,a:link,a:active {
     display: none;
 }
 
-.post-tags .like {
+.post-tags .like-active {
    color: #46b8da;
 }
 
@@ -288,7 +288,7 @@ a:hover,a:visited,a:link,a:active {
     height: 100px;
 }
 
-.text-box {
+.text-box-off {
     display: none;
 }
 
