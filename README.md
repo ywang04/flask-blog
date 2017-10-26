@@ -124,16 +124,25 @@ Edit nginx configuration file:
 Add following into nginx configuration file:
 
 ```
-server { 
-    location / { 
-        proxy_pass http://localhost:8000; 
-        proxy_set_header Host $host; 
-        proxy_set_header X-Real-IP $remote_addr; 
+server {
+    listen       80;
+    location / {
+        deny all;
     }
-    location /static { 
-        alias /home/www/flask-blog/app/static/; 
-    } 
 }
+
+server {
+    server_name www.yuora.tech yuora.tech;
+    location / {
+        proxy_pass http://localhost:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+    location /static {
+        alias  /home/www/flask-blog/app/static/;
+    }
+}
+
 ```
 
 location /static means the static path of your project, here I use /home/www/flask-blog/app/static/.
