@@ -37,7 +37,7 @@ div.pagination {
 }
 
 .to-top {
-    float:right;
+    float: right;
 }
 
 /*--Footer Layout--*/
@@ -188,7 +188,7 @@ div.post-footer a {
 }
 
 div.post-footer a:first-child {
-    color:#778087;
+    color: #778087;
     font-size: small;
     margin-right: 4px;
 }
@@ -204,15 +204,20 @@ div.post-footer .category {
 }
 
 a:hover,a:visited,a:link,a:active {
-    text-decoration:none;
+    text-decoration: none;
     color: #000000;
     word-break: break-all;
-    font-size:14px;
+    font-size: 14px;
+}
+
+/*-- unconfirm layout --*/
+a.decoration:hover {
+  text-decoration: underline;
 }
 
 .brand-size {
-    font-size:30px;
-    color:#EE9A00;
+    font-size: 30px;
+    color: #EE9A00;
 }
 
 /*.comment-body {*/
@@ -263,7 +268,7 @@ a:hover,a:visited,a:link,a:active {
 }
 
 .post-tags a:first-child {
-    color:#778087;
+    color: #778087;
     font-size: small;
     margin-right: 4px;
 }
