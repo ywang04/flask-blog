@@ -258,6 +258,10 @@ a.decoration:hover {
     padding: 0;
 }
 
+.label-size {
+    font-size: 1em;
+}
+
 /*.post-tags span {*/
     /*display: inline-block;*/
     /*margin-right: 2px;*/

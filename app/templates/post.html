@@ -37,21 +37,21 @@
         {% if current_user == post.author %}
 
             <a href="{{ url_for('main.post_edit', id=post.id) }}">
-                <span class="label label-default">Edit</span>
+                <h4><span class="label label-default label-size">Edit</span></h4>
             </a>
 
             <a href="#" class="show-alert">
-                <span class="label label-default">Delete</span>
+                <h3><span class="label label-default">Delete</span></h3>
             </a>
 
         {% elif current_user.is_administrator() %}
 
             <a href="{{ url_for('main.post_edit', id=post.id) }}">
-                <span class="label label-default">Edit</span>
+                <h4><span class="label label-default label-size">Edit</span></h4>
             </a>
 
             <a href="#" class="show-alert">
-                <span class="label label-default">Delete</span>
+                <h3><span class="label label-default">Delete</span></h3>
             </a>
 
         {% endif %}
@@ -59,20 +59,20 @@
       {% if current_user.is_authenticated %}
 
              <a href="#" id="id-a-comment">
-                 <span class="label label-default">Comment</span>
+                 <h3><span class="label label-default">Comment</span></h3>
              </a>
 
 
         {% if current_user.is_like_post(post) %}
 
             <a href="#" class="like like-active">
-                <span class="glyphicon glyphicon-thumbs-up"></span>
+                <h3><span class="glyphicon glyphicon-thumbs-up"></span></h3>
             </a>
 
         {% else %}
 
             <a href="#" class="like">
-                <span class="glyphicon glyphicon-thumbs-up"></span>
+                <h3><span class="glyphicon glyphicon-thumbs-up"></span></h3>
             </a>
 
         {% endif %}
