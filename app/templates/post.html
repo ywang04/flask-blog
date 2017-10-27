@@ -37,7 +37,7 @@
         {% if current_user == post.author %}
 
             <a href="{{ url_for('main.post_edit', id=post.id) }}">
-                <h4><span class="label label-default label-size">Edit</span></h4>
+                <h5><span class="label label-default label-size">Edit</span></h5>
             </a>
 
             <a href="#" class="show-alert">
@@ -47,7 +47,7 @@
         {% elif current_user.is_administrator() %}
 
             <a href="{{ url_for('main.post_edit', id=post.id) }}">
-                <h4><span class="label label-default label-size">Edit</span></h4>
+                <h5><span class="label label-default label-size">Edit</span></h5>
             </a>
 
             <a href="#" class="show-alert">
