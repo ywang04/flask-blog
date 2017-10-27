@@ -85,6 +85,15 @@ a.social {
     width: 310px;
 }
 
+#id-span-brand {
+    font-size: 30px;
+    color: #EE9A00;
+}
+
+.brand-size {
+    font-size: 1.2em;
+}
+
 /*--MainPage Layout--*/
 .content-container {
     max-width: 1000px;
@@ -215,10 +224,7 @@ a.decoration:hover {
   text-decoration: underline;
 }
 
-.brand-size {
-    font-size: 30px;
-    color: #EE9A00;
-}
+
 
 /*.comment-body {*/
     /*padding-top: 8px;*/
