@@ -65,13 +65,13 @@
 
         {% if current_user.is_like_post(post) %}
 
-            <a href="#" class="like like-active">
+            <a href="#" class="post-like post-like-active">
                 <h3><span class="glyphicon glyphicon-thumbs-up"></span></h3>
             </a>
 
         {% else %}
 
-            <a href="#" class="like">
+            <a href="#" class="post-like">
                 <h3><span class="glyphicon glyphicon-thumbs-up"></span></h3>
             </a>
 
@@ -109,13 +109,13 @@
             $('.text-box-off').toggleClass('text-box-on');
         });
 
-       $('.like').on('click', function(e){
+       $('.post-like').on('click', function(e){
            e.preventDefault();
            var url = "{{ url_for('main.post_like',id=post.id) }}";
            $.post(url,function(response) {
                console.log(response);
             });
-           $(this).toggleClass('like-active');
+           $(this).toggleClass('post-like-active');
        });
 
        $('.show-alert').on('click', function(e){

@@ -293,7 +293,7 @@ a.decoration:hover {
     display: none;
 }
 
-.post-tags .like-active {
+.post-tags .post-like-active {
    color: #46b8da;
 }
 
