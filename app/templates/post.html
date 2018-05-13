@@ -112,7 +112,7 @@
        $('.post-like').on('click', function(e){
            e.preventDefault();
            var url = "{{ url_for('main.post_like',id=post.id) }}";
-           $.post(url,function(response) {
+           $.get(url,function(response) {
                console.log(response);
             });
            $(this).toggleClass('post-like-active');
@@ -124,7 +124,7 @@
                 if (e) {
                     var url = "{{ url_for('main.post_delete',id=post.id) }}";
                     $.ajax(url, {
-                        type: 'POST',
+                        type: 'GET',
                         success: function(response) {
                             window.location = '/';
                         }

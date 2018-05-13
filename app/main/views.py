@@ -310,7 +310,6 @@ def category_top(id):
     page = request.args.get('page', 1, type=int)
     query = Post.query.filter_by(category_id=id).join(Like, Like.post_id == Post.id).add_columns(func.sum(Like.liked)).group_by(Post.id).order_by(
         func.sum(Like.liked).desc())
-    print query
     pagination = query.paginate(
         page, per_page=current_app.config['YUORA_POSTS_PER_PAGE'],
         error_out=False)
@@ -323,7 +322,7 @@ def category_top(id):
 @login_required
 def post_like(id):
     post = Post.query.get_or_404(id)
-    if request.method == 'POST':
+    if request.method == 'GET':
         if current_user.is_like_post(post):
             res = Like.query.filter_by(post_id=post.id).filter_by(user_id = current_user.id).first()
             if res:
@@ -348,7 +347,6 @@ def post_top():
 
 #select * from posts ps join (SELECT ls.post_id,count(ls.post_id) as c FROM likes ls GROUP BY ls.post_id) ls on ps.id = ls.post_id order by c desc;
     query = Post.query.join(Like,Like.post_id==Post.id).add_columns(func.sum(Like.liked)).group_by(Post.id).order_by(func.sum(Like.liked).desc())
-    print query
     pagination = query.paginate(
     page, per_page=current_app.config['YUORA_POSTS_PER_PAGE'],
     error_out=False)
