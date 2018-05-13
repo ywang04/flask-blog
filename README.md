@@ -75,11 +75,11 @@ $ git clone https://github.com/ywang04/flask-blog.git
 Then create and activate a virtualenv:
 
 ```
-$ sudo virtualenv env
+$ virtualenv env
 $ source env/bin/activate
 ```
 
-Install the requirements:
+Go to flask-blog folder and install the requirements:
 ```
 (venv) $ pip install -r requirements/common.txt 
 (venv) $ pip install gunicorn
@@ -94,7 +94,7 @@ mysql> CREATE DATABASE data CHARACTER SET 'utf8' COLLATE 'utf8_general_ci';
 mysql> exit
 ```
 
-Configure environment variables in ~/.bash_profile under newuser:
+Configure environment variables in ~/.bash_profile for newuser:
 ```
 export MAIL_USERNAME="*****@gmail.com"
 export MAIL_PASSWORD="*****"
