@@ -1,0 +1,11 @@
+# python compile files
+*.pyc
+
+# ignore vscode environment
+.vscode/
+
+# ignore tmp
+tmp/
+
+# ignore supervisor configure file
+supervisor.conf
