@@ -5,9 +5,6 @@ BeautifulSoup==3.2.1
 bleach==1.4.3
 blinker==1.4
 decorator==4.0.9
-Django==1.7.11
-django-bootstrap-toolkit==2.15.0
-django-registration-redux==1.4
 Flask==0.10.1
 Flask-Bootstrap==3.0.3.1
 Flask-HTTPAuth==3.1.2
@@ -33,7 +30,6 @@ Markdown==2.6.6
 MarkupSafe==0.18
 mercurial==3.8.1
 micawber==0.3.3
-MySQL-python==1.2.5
 pathlib2==2.1.0
 peewee==2.8.1
 pexpect==4.0.1
