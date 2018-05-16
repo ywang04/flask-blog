@@ -2,6 +2,9 @@ What is Yuora?
 ===
 Yuora is created with Python Flask Framework from scratch. Front end uses HTML5, CSS3, JavaScript, jQuery and Ajax. Yuora is a social networking website where users can post comments and connect with people who contribute unique insights and quality articles.  Please feel free to contact Yuora Admin via email yang.wang04@gmail.com if you have any issues. Any feedback is welcome.
 
+HomePage: [Yuora](http://yuora.tech)
+===
+
 Yuora Deployment Guide
 ===
 
